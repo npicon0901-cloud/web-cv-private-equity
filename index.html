@@ -327,28 +327,138 @@
       animation: glitch-skew 2.4s 0.5s ease-in-out forwards;
     }
 
-    .hero-sub {
-      font-family: 'DM Sans', sans-serif;
-      font-size: clamp(0.95rem, 2vw, 1.15rem);
-      font-weight: 300;
-      color: rgba(248, 245, 240, 0.65);
-      max-width: 520px;
-      margin-bottom: 2.8rem;
-      opacity: 0;
-      animation: fadeUp 0.8s 0.9s ease forwards;
-    }
-
     .hero-typewriter {
-      display: inline-block;
-      color: var(--gold);
+      display: inline;
+      color: var(--text);
       border-right: 2px solid var(--gold);
-      white-space: nowrap;
-      overflow: hidden;
       animation: blink-caret 0.75s step-end infinite;
     }
 
     @keyframes blink-caret {
       50% { border-color: transparent; }
+    }
+
+    .hero-sous-titre {
+      font-family: 'DM Sans', sans-serif;
+      font-size: clamp(0.78rem, 1.5vw, 0.9rem);
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      color: var(--gold);
+      margin-top: 1.4rem;
+      margin-bottom: 1.8rem;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.9s ease forwards;
+    }
+
+    .hero-sous-titre span {
+      color: rgba(201, 168, 76, 0.5);
+      margin: 0 0.4rem;
+    }
+
+    .hero-body {
+      font-family: 'DM Sans', sans-serif;
+      font-size: clamp(0.88rem, 1.6vw, 0.97rem);
+      font-weight: 300;
+      line-height: 1.85;
+      color: rgba(248, 245, 240, 0.72);
+      max-width: 680px;
+      margin-bottom: 2.2rem;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-bottom: 2.8rem;
+    }
+
+    /* ---- STATS ---- */
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(4, auto);
+      gap: 0 2.8rem;
+      margin-bottom: 2.8rem;
+      width: fit-content;
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+      padding-right: 2.8rem;
+      border-right: 1px solid var(--gold-dim);
+    }
+
+    .stat-item:last-child {
+      border-right: none;
+      padding-right: 0;
+    }
+
+    .stat-value-wrap {
+      display: flex;
+      align-items: baseline;
+      gap: 0.3rem;
+      line-height: 1;
+    }
+
+    .stat-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      font-weight: 300;
+      color: var(--gold);
+      letter-spacing: -0.01em;
+      line-height: 1;
+    }
+
+    .stat-unit {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1rem, 2vw, 1.4rem);
+      font-weight: 300;
+      color: var(--gold);
+      opacity: 0.75;
+    }
+
+    .stat-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(248, 245, 240, 0.45);
+      margin-top: 0.3rem;
+    }
+
+    .stat-tag {
+      display: inline-block;
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--navy);
+      background: var(--gold);
+      padding: 0.15rem 0.5rem;
+      border-radius: 2px;
+      margin-top: 0.25rem;
+      width: fit-content;
+    }
+
+    @media (max-width: 640px) {
+      .hero-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem 0;
+        width: 100%;
+      }
+
+      .stat-item {
+        border-right: none;
+        padding-right: 0;
+        border-bottom: 1px solid var(--gold-dim);
+        padding-bottom: 1.5rem;
+      }
+
+      .stat-item:nth-child(3),
+      .stat-item:last-child {
+        border-bottom: none;
+      }
     }
 
     .hero-cta {
@@ -659,14 +769,64 @@
     <canvas id="canvas-particules"></canvas>
     <div class="hero-content">
       <p class="hero-eyebrow">CV Interactif</p>
+
       <h1 class="hero-title">
-        <span class="glitch" data-text="Nathan Picon">Nathan Picon</span>
-      </h1>
-      <p class="hero-sub">
         <span class="hero-typewriter" id="typewriter"></span>
+      </h1>
+
+      <p class="hero-sous-titre">
+        Etudiant Licence IAE Lyon 3
+        <span>·</span>
+        Candidat MSc Finance ESCP Janvier 2027
+        <span>·</span>
+        Disponible Paris Septembre 2026
       </p>
-      <a href="#projet" class="hero-cta">
-        <span>Decouvrir</span>
+
+      <p class="hero-body fade-in fade-in-delay-2">
+        Je ne suis pas le produit standard d'une grande ecole parisienne. Mon parcours s'est construit autrement, par le travail, la curiosite, et une conviction profonde sur ce que je veux construire. Trois experiences chez Avizeo, cabinet d'expertise comptable a Lyon, m'ont expose a des missions de restructuration financiere (~10 M euros), consolidation de holding et valorisation d'actifs que beaucoup n'abordent qu'en Master. En parallele, je travaille chaque soir et chaque week-end en salle au restaurant de l'Institut Paul Bocuse, parce que la charge de travail est pour moi une source de motivation, pas une contrainte. Ce qui me differencie, c'est que je n'attends pas qu'on me dise quoi faire. Je prends des initiatives, j'apprends vite, et j'ai une vision claire de la ou je vais. Vous savez mieux que quiconque qu'un bon investissement, c'est d'abord une conviction sur le potentiel, pas uniquement sur le passe.
+      </p>
+
+      <div class="hero-badges fade-in fade-in-delay-3">
+        <span class="badge">Rigueur</span>
+        <span class="badge">Initiative</span>
+        <span class="badge">Ambition</span>
+        <span class="badge">Excellence</span>
+        <span class="badge">Curiosite</span>
+        <span class="badge">Loyaute</span>
+      </div>
+
+      <div class="hero-stats fade-in fade-in-delay-4" id="hero-stats">
+        <div class="stat-item">
+          <div class="stat-value-wrap">
+            <span class="stat-value" data-target="10" data-prefix="" data-suffix="">0</span>
+            <span class="stat-unit">M euros</span>
+          </div>
+          <p class="stat-label">Restructuration financiere</p>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value-wrap">
+            <span class="stat-value" data-target="8" data-prefix="" data-suffix="">0</span>
+          </div>
+          <p class="stat-label">Filiales consolidees</p>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value-wrap">
+            <span class="stat-value" data-target="3" data-prefix="" data-suffix="">0</span>
+            <span class="stat-unit">ans</span>
+          </div>
+          <p class="stat-label">Institut Paul Bocuse</p>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value-wrap">
+            <span class="stat-value" data-target="1" data-prefix="#" data-suffix="">0</span>
+          </div>
+          <p class="stat-label">FT Ranking ESCP 2025</p>
+          <span class="stat-tag">Objectif</span>
+        </div>
+      </div>
+
+      <a href="#projet" class="hero-cta fade-in fade-in-delay-5">
+        <span>Decouvrir mon parcours</span>
       </a>
     </div>
     <div class="scroll-indicator">
@@ -808,9 +968,8 @@
 
     /* ---- TYPEWRITER ---- */
     const phrases = [
-      'Finance & Private Equity',
-      'Analyse Financiere',
-      'Investissement',
+      'Nathan Picon.',
+      'Private Equity. Investment Banking. M&A.',
     ];
     let pIndex = 0, cIndex = 0, deleting = false;
     const tw = document.getElementById('typewriter');
@@ -821,7 +980,8 @@
         tw.textContent = current.slice(0, ++cIndex);
         if (cIndex === current.length) {
           deleting = true;
-          setTimeout(typeLoop, 1800);
+          const pause = pIndex === 0 ? 2400 : 2000;
+          setTimeout(typeLoop, pause);
           return;
         }
       } else {
@@ -829,12 +989,47 @@
         if (cIndex === 0) {
           deleting = false;
           pIndex = (pIndex + 1) % phrases.length;
+          setTimeout(typeLoop, 400);
+          return;
         }
       }
-      setTimeout(typeLoop, deleting ? 45 : 90);
+      const speed = deleting ? 38 : (pIndex === 0 ? 95 : 55);
+      setTimeout(typeLoop, speed);
     }
 
-    setTimeout(typeLoop, 1400);
+    setTimeout(typeLoop, 800);
+
+    /* ---- STATS COUNTER ---- */
+    function easeOutQuart(t) { return 1 - Math.pow(1 - t, 4); }
+
+    function animateCounter(el) {
+      const target   = parseInt(el.dataset.target, 10);
+      const prefix   = el.dataset.prefix  || '';
+      const suffix   = el.dataset.suffix  || '';
+      const duration = 1800;
+      const start    = performance.now();
+
+      function step(now) {
+        const elapsed  = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const value    = Math.round(easeOutQuart(progress) * target);
+        el.textContent = prefix + value + suffix;
+        if (progress < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+
+    const statsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.querySelectorAll('.stat-value').forEach(animateCounter);
+          statsObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.4 });
+
+    const heroStats = document.getElementById('hero-stats');
+    if (heroStats) statsObserver.observe(heroStats);
 
     /* ---- CANVAS PARTICULES ---- */
     (function initParticules() {
