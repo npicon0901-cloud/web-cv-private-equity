@@ -1131,6 +1131,150 @@
     }
 
     /* =============================================
+       SKILLS SECTION
+    ============================================= */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.2rem;
+      margin-bottom: 3rem;
+    }
+
+    @media (max-width: 720px) {
+      .skills-grid { grid-template-columns: 1fr; }
+    }
+
+    .skill-card {
+      background: rgba(6, 10, 16, 0.85);
+      border: 1px solid var(--gold-dim);
+      border-radius: 3px;
+      padding: 1.6rem 1.7rem 1.5rem;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .skill-card:hover {
+      border-color: var(--gold);
+      box-shadow: 0 6px 32px rgba(201, 168, 76, 0.12), 0 0 0 1px rgba(201, 168, 76, 0.08);
+      transform: translateY(-3px);
+    }
+
+    .skill-cat-header {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+
+    .skill-cat-icon {
+      width: 28px;
+      height: 28px;
+      border: 1px solid var(--gold-dim);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .skill-cat-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
+      font-weight: 400;
+      color: var(--text);
+      letter-spacing: 0.02em;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .skill-tag {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 300;
+      padding: 0.28rem 0.72rem;
+      border: 1px solid rgba(201, 168, 76, 0.2);
+      border-radius: 2px;
+      color: rgba(248, 245, 240, 0.62);
+      line-height: 1.4;
+      transition: border-color 0.22s ease, color 0.22s ease, background 0.22s ease;
+    }
+
+    .skill-tag:hover {
+      border-color: var(--gold);
+      color: var(--text);
+      background: rgba(201, 168, 76, 0.05);
+    }
+
+    /* Soft skills : tag avec contexte -> slightly larger */
+    .skill-card--soft .skill-tag {
+      font-size: 0.75rem;
+      padding: 0.32rem 0.8rem;
+    }
+
+    /* Certifications */
+    .certif-section {
+      margin-top: 0.5rem;
+    }
+
+    .certif-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      opacity: 0.8;
+    }
+
+    .certif-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+    }
+
+    .certif-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.45rem 1rem;
+      border: 1px solid var(--gold);
+      border-radius: 2px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      color: var(--gold);
+      background: rgba(201, 168, 76, 0.04);
+      transition: background 0.25s ease, color 0.25s ease;
+    }
+
+    .certif-badge::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .certif-badge:hover {
+      background: var(--gold);
+      color: var(--navy);
+    }
+
+    .certif-badge:hover::before {
+      background: var(--navy);
+    }
+
+    /* =============================================
        FOOTER / CONTACT
     ============================================= */
     #contact {
@@ -1667,9 +1811,98 @@
   <section id="skills">
     <p class="section-label fade-in">04</p>
     <h2 class="section-title fade-in fade-in-delay-1">Skills</h2>
-    <div class="skills-grid fade-in fade-in-delay-2">
-      <!-- cartes skills injectees plus tard -->
+
+    <div class="skills-grid">
+
+      <!-- Finance & Analyse -->
+      <div class="skill-card fade-in">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon">F</div>
+          <h3 class="skill-cat-title">Finance &amp; Analyse</h3>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">Evaluation d'entreprises</span>
+          <span class="skill-tag">LBO</span>
+          <span class="skill-tag">M&amp;A</span>
+          <span class="skill-tag">DCF</span>
+          <span class="skill-tag">EV/EBITDA</span>
+          <span class="skill-tag">Modelisation financiere</span>
+          <span class="skill-tag">SIG</span>
+          <span class="skill-tag">Analyse de bilan</span>
+          <span class="skill-tag">Restructuring holding</span>
+          <span class="skill-tag">Marches financiers</span>
+        </div>
+      </div>
+
+      <!-- Comptabilite -->
+      <div class="skill-card fade-in fade-in-delay-1">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon">C</div>
+          <h3 class="skill-cat-title">Comptabilite</h3>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">Consolidation</span>
+          <span class="skill-tag">Revision comptable</span>
+          <span class="skill-tag">TVA</span>
+          <span class="skill-tag">IS</span>
+          <span class="skill-tag">IR</span>
+          <span class="skill-tag">CA3 / CA12</span>
+          <span class="skill-tag">Liasse fiscale</span>
+          <span class="skill-tag">Droit des societes</span>
+        </div>
+      </div>
+
+      <!-- Outils & Tech -->
+      <div class="skill-card fade-in fade-in-delay-2">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon">T</div>
+          <h3 class="skill-cat-title">Outils &amp; Tech</h3>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">Excel avance macros VBA</span>
+          <span class="skill-tag">Cegid</span>
+          <span class="skill-tag">Quadratus</span>
+          <span class="skill-tag">Xlstat</span>
+          <span class="skill-tag">PowerPoint</span>
+          <span class="skill-tag">Python (en cours)</span>
+          <span class="skill-tag">Prompt Engineering Claude / GPT-4</span>
+          <span class="skill-tag">Automatisation IA finance</span>
+        </div>
+      </div>
+
+      <!-- Soft Skills -->
+      <div class="skill-card skill-card--soft fade-in fade-in-delay-3">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon">S</div>
+          <h3 class="skill-cat-title">Soft Skills</h3>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">Rigueur analytique &middot; 3 ans Avizeo</span>
+          <span class="skill-tag">Resistance a la pression &middot; Paul Bocuse 280 couverts</span>
+          <span class="skill-tag">Initiative autonome &middot; TVA non demandee</span>
+          <span class="skill-tag">Leadership &amp; ecoute</span>
+          <span class="skill-tag">Apprentissage rapide</span>
+          <span class="skill-tag">Vision long terme</span>
+          <span class="skill-tag">Loyaute &amp; fidelite aux engagements</span>
+          <span class="skill-tag">Curiosite permanente</span>
+        </div>
+      </div>
+
     </div>
+
+    <!-- Certifications en cours -->
+    <div class="certif-section fade-in">
+      <p class="certif-label">Certifications en cours</p>
+      <div class="certif-badges">
+        <span class="certif-badge">CFA Level 1</span>
+        <span class="certif-badge">Bloomberg Market Concepts</span>
+        <span class="certif-badge">TOEIC 900+</span>
+        <span class="certif-badge">Python Pandas Finance</span>
+        <span class="certif-badge">Prompt Engineering Anthropic</span>
+        <span class="certif-badge">VBA Avance</span>
+      </div>
+    </div>
+
   </section>
 
   <!-- LANGUES -->
