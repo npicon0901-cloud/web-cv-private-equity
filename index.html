@@ -1275,14 +1275,368 @@
     }
 
     /* =============================================
-       FOOTER / CONTACT
+       LANGUES SECTION
+    ============================================= */
+    .langues-list {
+      max-width: 620px;
+      display: flex;
+      flex-direction: column;
+      gap: 2.4rem;
+    }
+
+    .langue-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .langue-nom {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.2rem, 2.5vw, 1.55rem);
+      font-weight: 400;
+      color: var(--text);
+    }
+
+    .langue-badges {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .langue-badge {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.67rem;
+      font-weight: 400;
+      letter-spacing: 0.07em;
+      color: var(--gold);
+      border: 1px solid var(--gold-dim);
+      padding: 0.18rem 0.65rem;
+      border-radius: 2px;
+    }
+
+    .langue-pct {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 300;
+      color: rgba(248, 245, 240, 0.38);
+    }
+
+    .langue-bar-outer {
+      position: relative;
+      padding-bottom: 1.6rem;
+    }
+
+    .langue-objectif-marker {
+      position: absolute;
+      top: -3px;
+      height: calc(4px + 20px);
+      width: 0;
+      border-left: 1px dashed rgba(201, 168, 76, 0.5);
+      pointer-events: none;
+    }
+
+    .langue-objectif-label {
+      position: absolute;
+      top: 9px;
+      left: 5px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.58rem;
+      color: rgba(201, 168, 76, 0.55);
+      white-space: nowrap;
+      letter-spacing: 0.09em;
+    }
+
+    .langue-demarche {
+      background: rgba(6, 10, 16, 0.82);
+      border: 1px solid var(--gold-dim);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 3px 3px 0;
+      padding: 1.2rem 1.6rem;
+      margin-top: 0.4rem;
+    }
+
+    .langue-demarche-title {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.66rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.8rem;
+      opacity: 0.85;
+    }
+
+    .langue-demarche-items {
+      display: flex;
+      flex-direction: column;
+      gap: 0.32rem;
+    }
+
+    .langue-demarche-item {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 300;
+      color: rgba(248, 245, 240, 0.62);
+      padding-left: 1rem;
+      position: relative;
+      line-height: 1.55;
+    }
+
+    .langue-demarche-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.65em;
+      width: 5px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    /* =============================================
+       ANNEE 2027 SECTION
+    ============================================= */
+    .annee-accroche {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 3.5rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.1rem, 2.2vw, 1.45rem);
+      font-style: italic;
+      font-weight: 400;
+      color: rgba(248, 245, 240, 0.82);
+      line-height: 1.72;
+    }
+
+    .annee-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.1rem;
+    }
+
+    @media (max-width: 680px) {
+      .annee-grid { grid-template-columns: 1fr; }
+    }
+
+    .annee-card {
+      background: rgba(6, 10, 16, 0.82);
+      border: 1px solid var(--gold-dim);
+      border-radius: 3px;
+      padding: 1.5rem 1.6rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+      transition: border-color 0.3s ease;
+    }
+
+    .annee-card:hover { border-color: rgba(201, 168, 76, 0.42); }
+
+    .annee-card-header {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+
+    .annee-card-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.6rem;
+      font-weight: 500;
+      color: var(--navy);
+      background: var(--gold);
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .annee-card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1rem, 1.8vw, 1.25rem);
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.25;
+    }
+
+    .annee-card-text {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.84rem;
+      font-weight: 300;
+      color: rgba(248, 245, 240, 0.62);
+      line-height: 1.82;
+    }
+
+    /* Checklist animee */
+    .checklist {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.65rem;
+    }
+
+    .check-box {
+      width: 14px;
+      height: 14px;
+      border: 1.5px solid rgba(201, 168, 76, 0.3);
+      border-radius: 2px;
+      flex-shrink: 0;
+      margin-top: 3px;
+      position: relative;
+      transition: border-color 0.3s ease;
+    }
+
+    .check-box::after {
+      content: '';
+      position: absolute;
+      left: 1px;
+      top: 4px;
+      width: 8px;
+      height: 4px;
+      border-left: 1.5px solid var(--gold);
+      border-bottom: 1.5px solid var(--gold);
+      transform: rotate(-45deg) scale(0);
+      transform-origin: bottom left;
+      transition: transform 0.32s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .annee-card.fade-in.visible .check-box { border-color: var(--gold); }
+    .annee-card.fade-in.visible .check-box::after { transform: rotate(-45deg) scale(1); }
+
+    .annee-card.fade-in.visible .check-item:nth-child(1) .check-box::after { transition-delay: 0.35s; }
+    .annee-card.fade-in.visible .check-item:nth-child(2) .check-box::after { transition-delay: 0.55s; }
+    .annee-card.fade-in.visible .check-item:nth-child(3) .check-box::after { transition-delay: 0.75s; }
+
+    .check-text {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 300;
+      color: rgba(248, 245, 240, 0.65);
+      line-height: 1.5;
+    }
+
+    /* =============================================
+       CONTACT SECTION
     ============================================= */
     #contact {
-      min-height: 60vh;
+      min-height: 70vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      align-items: center;
     }
+
+    .contact-accroche {
+      text-align: center;
+      max-width: 680px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.1rem, 2.2vw, 1.45rem);
+      font-style: italic;
+      font-weight: 400;
+      color: rgba(248, 245, 240, 0.72);
+      line-height: 1.72;
+      margin-bottom: 3.2rem;
+    }
+
+    .contact-items {
+      display: flex;
+      flex-direction: column;
+      gap: 1.3rem;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1.1rem;
+    }
+
+    .contact-icon {
+      width: 36px;
+      height: 36px;
+      border: 1px solid var(--gold-dim);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.78rem;
+      color: var(--gold);
+      flex-shrink: 0;
+      transition: border-color 0.25s ease, background 0.25s ease;
+    }
+
+    .contact-item:hover .contact-icon {
+      border-color: var(--gold);
+      background: rgba(201, 168, 76, 0.07);
+    }
+
+    .contact-info { display: flex; flex-direction: column; gap: 0.1rem; }
+
+    .contact-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.62rem;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(248, 245, 240, 0.3);
+    }
+
+    .contact-value {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: var(--text);
+    }
+
+    .contact-link {
+      color: var(--text);
+      text-decoration: none;
+      transition: color 0.22s ease;
+    }
+
+    .contact-link:hover { color: var(--gold); }
+
+    .contact-btn-email {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 2rem;
+      border: 1px solid var(--gold);
+      border-radius: 2px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+      margin-top: 1.8rem;
+      transition: color 0.3s ease;
+    }
+
+    .contact-btn-email::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--gold);
+      transform: translateX(-105%);
+      transition: transform 0.36s cubic-bezier(0.77, 0, 0.18, 1);
+    }
+
+    .contact-btn-email:hover { color: var(--bg); }
+    .contact-btn-email:hover::before { transform: translateX(0); }
+    .contact-btn-email span { position: relative; z-index: 1; }
 
     /* =============================================
        KEYFRAMES UTILS
@@ -1909,19 +2263,208 @@
   <section id="langues">
     <p class="section-label fade-in">05</p>
     <h2 class="section-title fade-in fade-in-delay-1">Langues</h2>
-    <!-- barres de progression injectees plus tard -->
+
+    <div class="langues-list">
+
+      <!-- Francais -->
+      <div class="fade-in">
+        <div class="langue-header">
+          <span class="langue-nom">Francais</span>
+          <div class="langue-badges">
+            <span class="langue-badge">Langue natale</span>
+            <span class="langue-pct">100%</span>
+          </div>
+        </div>
+        <div class="progress-bar-wrap">
+          <div class="progress-bar-fill" data-width="100%"></div>
+        </div>
+      </div>
+
+      <!-- Anglais -->
+      <div class="fade-in">
+        <div class="langue-header">
+          <span class="langue-nom">Anglais</span>
+          <div class="langue-badges">
+            <span class="langue-badge">TOEIC 725 / 990</span>
+            <span class="langue-pct">73%</span>
+          </div>
+        </div>
+        <div class="langue-bar-outer">
+          <div class="progress-bar-wrap">
+            <div class="progress-bar-fill" data-width="73%"></div>
+          </div>
+          <div class="langue-objectif-marker" style="left: 91%;">
+            <span class="langue-objectif-label">Objectif 900+</span>
+          </div>
+        </div>
+
+        <div class="langue-demarche fade-in">
+          <p class="langue-demarche-title">Demarche active</p>
+          <div class="langue-demarche-items">
+            <span class="langue-demarche-item">Lecture Financial Times quotidienne</span>
+            <span class="langue-demarche-item">Series et films en version originale anglaise</span>
+            <span class="langue-demarche-item">Preparation Global Exam TOEIC</span>
+            <span class="langue-demarche-item">Bloomberg, Financial Times, Wall Street Journal</span>
+            <span class="langue-demarche-item">Maitrise du vocabulaire financier : LBO, DCF, EBITDA, covenant, equity bridge...</span>
+            <span class="langue-demarche-item">Objectif 900+ avant septembre 2026</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </section>
 
-  <!-- ANNEE 2027 -->
+  <!-- ANNEE 2026 / 2027 -->
   <section id="annee2027">
     <p class="section-label fade-in">06</p>
-    <h2 class="section-title fade-in fade-in-delay-1">2027</h2>
+    <h2 class="section-title fade-in fade-in-delay-1">2026 / 2027</h2>
+
+    <p class="annee-accroche fade-in fade-in-delay-2">
+      "Cette annee n'est pas une pause. C'est l'annee la plus importante de ma trajectoire. Chaque decision, chaque heure investie, chaque contact noue sera une brique de ce que je construis."
+    </p>
+
+    <div class="annee-grid">
+
+      <!-- A : Stage PE/IB -->
+      <div class="annee-card fade-in">
+        <div class="annee-card-header">
+          <span class="annee-card-label">A</span>
+          <h3 class="annee-card-title">Stage PE / IB Paris &mdash; Sept. 2026 / Fev. 2027</h3>
+        </div>
+        <p class="annee-card-text">
+          Je recherche un stage de 6 mois a Paris au sein d'un fonds de Private Equity ou d'une banque d'investissement. Ce stage represente pour moi un changement de ville complet et un investissement total. Je ne viens pas a Paris pour observer, je viens pour contribuer, apprendre de l'interieur, me rendre indispensable, et construire un reseau parisien solide.
+        </p>
+      </div>
+
+      <!-- B : Certifications financieres -->
+      <div class="annee-card fade-in fade-in-delay-1">
+        <div class="annee-card-header">
+          <span class="annee-card-label">B</span>
+          <h3 class="annee-card-title">Certifications financieres</h3>
+        </div>
+        <div class="checklist">
+          <div class="check-item">
+            <div class="check-box"></div>
+            <span class="check-text">CFA Level 1 &mdash; session decembre 2026</span>
+          </div>
+          <div class="check-item">
+            <div class="check-box"></div>
+            <span class="check-text">Bloomberg Market Concepts &mdash; avant septembre 2026</span>
+          </div>
+          <div class="check-item">
+            <div class="check-box"></div>
+            <span class="check-text">Modelisation LBO / DCF avancee</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- C : Certifications IA -->
+      <div class="annee-card fade-in fade-in-delay-2">
+        <div class="annee-card-header">
+          <span class="annee-card-label">C</span>
+          <h3 class="annee-card-title">Certifications IA</h3>
+        </div>
+        <div class="checklist">
+          <div class="check-item">
+            <div class="check-box"></div>
+            <span class="check-text">Prompt Engineering Anthropic Claude</span>
+          </div>
+          <div class="check-item">
+            <div class="check-box"></div>
+            <span class="check-text">Python Pandas Finance</span>
+          </div>
+          <div class="check-item">
+            <div class="check-box"></div>
+            <span class="check-text">VBA Excel professionnel</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- D : TOEIC 900+ -->
+      <div class="annee-card fade-in fade-in-delay-3">
+        <div class="annee-card-header">
+          <span class="annee-card-label">D</span>
+          <h3 class="annee-card-title">TOEIC 900+</h3>
+        </div>
+        <p class="annee-card-text">
+          Preparation intensive. Financial Times quotidien, Global Exam, Bloomberg. Objectif avant septembre 2026.
+        </p>
+      </div>
+
+      <!-- E : TAGE MAGE -->
+      <div class="annee-card fade-in fade-in-delay-4">
+        <div class="annee-card-header">
+          <span class="annee-card-label">E</span>
+          <h3 class="annee-card-title">TAGE MAGE 400+</h3>
+        </div>
+        <p class="annee-card-text">
+          Preparation en parallele si temps disponible.
+        </p>
+      </div>
+
+      <!-- F : ESCP -->
+      <div class="annee-card fade-in fade-in-delay-5">
+        <div class="annee-card-header">
+          <span class="annee-card-label">F</span>
+          <h3 class="annee-card-title">MSc Finance ESCP &mdash; Janvier 2027</h3>
+        </div>
+        <p class="annee-card-text">
+          L'ESCP Business School, elue n.1 mondial par le Financial Times 2025. Cette fois j'arriverai avec 6 mois d'experience PE / IB reelle, un TOEIC 900+, des certifications CFA et Bloomberg, et un projet professionnel irrefutable.
+        </p>
+      </div>
+
+    </div>
   </section>
 
   <!-- CONTACT -->
   <section id="contact">
-    <p class="section-label fade-in">07</p>
-    <h2 class="section-title fade-in fade-in-delay-1">Contact</h2>
+    <p class="section-label fade-in" style="text-align:center">07</p>
+    <h2 class="section-title fade-in fade-in-delay-1" style="text-align:center">Contact</h2>
+
+    <p class="contact-accroche fade-in fade-in-delay-2">
+      "Vous savez mieux que quiconque qu'un bon investissement, c'est d'abord une conviction sur le potentiel, pas uniquement sur le passe."
+    </p>
+
+    <div class="contact-items fade-in fade-in-delay-3">
+
+      <div class="contact-item">
+        <div class="contact-icon">T</div>
+        <div class="contact-info">
+          <span class="contact-label">Telephone</span>
+          <a href="tel:+33610189215" class="contact-value contact-link">+33 6 10 18 92 15</a>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-icon">@</div>
+        <div class="contact-info">
+          <span class="contact-label">Email</span>
+          <a href="mailto:npicon0901@gmail.com" class="contact-value contact-link">npicon0901@gmail.com</a>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-icon">in</div>
+        <div class="contact-info">
+          <span class="contact-label">LinkedIn</span>
+          <a href="https://www.linkedin.com/in/nathan-picon-b7a43a2a0" target="_blank" rel="noopener" class="contact-value contact-link">linkedin.com/in/nathan-picon-b7a43a2a0</a>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-icon">&#x25CE;</div>
+        <div class="contact-info">
+          <span class="contact-label">Localisation</span>
+          <span class="contact-value">Lyon &mdash; Disponible Paris, septembre 2026</span>
+        </div>
+      </div>
+
+    </div>
+
+    <a href="mailto:npicon0901@gmail.com" class="contact-btn-email fade-in fade-in-delay-4">
+      <span>Envoyer un message</span>
+    </a>
+
   </section>
 
   <!-- ============================================================
