@@ -1412,117 +1412,34 @@
       line-height: 1.72;
     }
 
-    .annee-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.1rem;
+    .annee-narrative {
+      max-width: 800px;
     }
 
-    @media (max-width: 680px) {
-      .annee-grid { grid-template-columns: 1fr; }
-    }
-
-    .annee-card {
-      background: rgba(6, 10, 16, 0.82);
-      border: 1px solid var(--gold-dim);
-      border-radius: 3px;
-      padding: 1.5rem 1.6rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.9rem;
-      transition: border-color 0.3s ease;
-    }
-
-    .annee-card:hover { border-color: rgba(201, 168, 76, 0.42); }
-
-    .annee-card-header {
-      display: flex;
-      align-items: center;
-      gap: 0.7rem;
-    }
-
-    .annee-card-label {
+    .annee-sep {
+      display: block;
       font-family: 'DM Sans', sans-serif;
-      font-size: 0.6rem;
+      font-size: 0.62rem;
       font-weight: 500;
-      color: var(--navy);
-      background: var(--gold);
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: 0.6;
+      margin-bottom: 0.75rem;
+      margin-top: 2.4rem;
     }
 
-    .annee-card-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1rem, 1.8vw, 1.25rem);
-      font-weight: 400;
-      color: var(--text);
-      line-height: 1.25;
+    .annee-sep:first-child {
+      margin-top: 0;
     }
 
-    .annee-card-text {
+    .annee-para {
       font-family: 'DM Sans', sans-serif;
-      font-size: 0.84rem;
+      font-size: clamp(0.92rem, 1.65vw, 1.02rem);
       font-weight: 300;
-      color: rgba(248, 245, 240, 0.62);
-      line-height: 1.82;
-    }
-
-    /* Checklist animee */
-    .checklist {
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
-    }
-
-    .check-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.65rem;
-    }
-
-    .check-box {
-      width: 14px;
-      height: 14px;
-      border: 1.5px solid rgba(201, 168, 76, 0.3);
-      border-radius: 2px;
-      flex-shrink: 0;
-      margin-top: 3px;
-      position: relative;
-      transition: border-color 0.3s ease;
-    }
-
-    .check-box::after {
-      content: '';
-      position: absolute;
-      left: 1px;
-      top: 4px;
-      width: 8px;
-      height: 4px;
-      border-left: 1.5px solid var(--gold);
-      border-bottom: 1.5px solid var(--gold);
-      transform: rotate(-45deg) scale(0);
-      transform-origin: bottom left;
-      transition: transform 0.32s cubic-bezier(0.34, 1.56, 0.64, 1);
-    }
-
-    .annee-card.fade-in.visible .check-box { border-color: var(--gold); }
-    .annee-card.fade-in.visible .check-box::after { transform: rotate(-45deg) scale(1); }
-
-    .annee-card.fade-in.visible .check-item:nth-child(1) .check-box::after { transition-delay: 0.35s; }
-    .annee-card.fade-in.visible .check-item:nth-child(2) .check-box::after { transition-delay: 0.55s; }
-    .annee-card.fade-in.visible .check-item:nth-child(3) .check-box::after { transition-delay: 0.75s; }
-
-    .check-text {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.82rem;
-      font-weight: 300;
-      color: rgba(248, 245, 240, 0.65);
-      line-height: 1.5;
+      line-height: 2.0;
+      color: rgba(248, 245, 240, 0.75);
+      margin-bottom: 0;
     }
 
     /* =============================================
@@ -2354,101 +2271,43 @@
   <!-- ANNEE 2026 / 2027 -->
   <section id="annee2027">
     <p class="section-label fade-in">06</p>
-    <h2 class="section-title fade-in fade-in-delay-1">2026 / 2027</h2>
+    <h2 class="section-title fade-in fade-in-delay-1">2026 / 2027 &middot; L'Annee Charniere</h2>
 
     <p class="annee-accroche fade-in fade-in-delay-2">
       "Cette annee n'est pas une pause. C'est l'annee la plus importante de ma trajectoire. Chaque decision, chaque heure investie, chaque contact noue sera une brique de ce que je construis."
     </p>
 
-    <div class="annee-grid">
+    <div class="annee-narrative">
 
-      <!-- A : Stage PE/IB -->
-      <div class="annee-card fade-in">
-        <div class="annee-card-header">
-          <span class="annee-card-label">A</span>
-          <h3 class="annee-card-title">Stage PE / IB Paris &middot; Sept. 2026 / Fev. 2027</h3>
-        </div>
-        <p class="annee-card-text">
-          Je recherche un stage de 6 mois a Paris au sein d'un fonds de Private Equity ou d'une banque d'investissement. Ce stage represente pour moi un changement de ville complet et un investissement total. Je ne viens pas a Paris pour observer, je viens pour contribuer, apprendre de l'interieur, me rendre indispensable, et construire un reseau parisien solide.
-        </p>
-      </div>
+      <span class="annee-sep fade-in">Le Stage</span>
+      <p class="annee-para fade-in">
+        Ce que j'attends de ce stage, c'est simple : comprendre comment la finance fonctionne vraiment, de l'interieur. Pas dans les livres, pas dans les cours. Sur le terrain, au contact de professionnels qui prennent de vraies decisions avec de vrais enjeux. Je veux integrer les mecanismes financiers que j'ai commences a apprendre theoriquement, comprendre comment une these d'investissement se construit et s'execute, comment on lit une entreprise au-dela de ses etats financiers, comment on negocie, comment on structure.
+      </p>
 
-      <!-- B : Certifications financieres -->
-      <div class="annee-card fade-in fade-in-delay-1">
-        <div class="annee-card-header">
-          <span class="annee-card-label">B</span>
-          <h3 class="annee-card-title">Certifications financieres</h3>
-        </div>
-        <div class="checklist">
-          <div class="check-item">
-            <div class="check-box"></div>
-            <span class="check-text">CFA Level 1 &middot; session decembre 2026</span>
-          </div>
-          <div class="check-item">
-            <div class="check-box"></div>
-            <span class="check-text">Bloomberg Market Concepts &middot; avant septembre 2026</span>
-          </div>
-          <div class="check-item">
-            <div class="check-box"></div>
-            <span class="check-text">Modelisation LBO / DCF avancee</span>
-          </div>
-        </div>
-      </div>
+      <span class="annee-sep fade-in">La Culture Financiere</span>
+      <p class="annee-para fade-in">
+        Je veux developper une vraie culture financiere. Pas une culture de facade, pas des mots places au bon moment, mais une comprehension profonde des dynamiques de marche, des logiques d'allocation de capital, des criteres qui font qu'on investit dans une societe plutot qu'une autre. C'est ce type de culture qu'on ne peut acquerir qu'en etant dans la salle, pas en lisant des rapports depuis un amphi.
+      </p>
 
-      <!-- C : Certifications IA -->
-      <div class="annee-card fade-in fade-in-delay-2">
-        <div class="annee-card-header">
-          <span class="annee-card-label">C</span>
-          <h3 class="annee-card-title">Certifications IA</h3>
-        </div>
-        <div class="checklist">
-          <div class="check-item">
-            <div class="check-box"></div>
-            <span class="check-text">Prompt Engineering Anthropic Claude</span>
-          </div>
-          <div class="check-item">
-            <div class="check-box"></div>
-            <span class="check-text">Python Pandas Finance</span>
-          </div>
-          <div class="check-item">
-            <div class="check-box"></div>
-            <span class="check-text">VBA Excel professionnel</span>
-          </div>
-        </div>
-      </div>
+      <span class="annee-sep fade-in">Le Reseau</span>
+      <p class="annee-para fade-in">
+        Je veux aussi construire un reseau. Un reseau parisien solide, construit dans la duree, fonde sur le travail et la confiance. Chaque collegue, chaque manager, chaque deal sur lequel j'interviendrai sera une connexion reelle. Je ne viens pas collecter des cartes de visite. Je viens nouer des relations professionnelles qui m'accompagneront tout au long de ma carriere.
+      </p>
 
-      <!-- D : TOEIC 900+ -->
-      <div class="annee-card fade-in fade-in-delay-3">
-        <div class="annee-card-header">
-          <span class="annee-card-label">D</span>
-          <h3 class="annee-card-title">TOEIC 900+</h3>
-        </div>
-        <p class="annee-card-text">
-          Preparation intensive. Financial Times quotidien, Global Exam, Bloomberg. Objectif avant septembre 2026.
-        </p>
-      </div>
+      <span class="annee-sep fade-in">L'Avance</span>
+      <p class="annee-para fade-in">
+        Et je veux prendre une longueur d'avance sur les autres candidats de ma promotion. Pendant que certains attendront d'etre diplomes pour commencer a reflechir a leur positionnement, moi j'aurai deja 6 mois d'experience operationnelle dans une structure de premier rang, un reseau constitue, et une vision claire de ce que je veux faire ensuite.
+      </p>
 
-      <!-- E : TAGE MAGE -->
-      <div class="annee-card fade-in fade-in-delay-4">
-        <div class="annee-card-header">
-          <span class="annee-card-label">E</span>
-          <h3 class="annee-card-title">TAGE MAGE 400+</h3>
-        </div>
-        <p class="annee-card-text">
-          Preparation en parallele si temps disponible.
-        </p>
-      </div>
+      <span class="annee-sep fade-in">Les Certifications</span>
+      <p class="annee-para fade-in">
+        En parallele de ce stage, parce que l'investissement ne s'arrete pas a 18h, je preparerai mes certifications : CFA Level 1 en decembre 2026, Bloomberg Market Concepts avant septembre, Python / Pandas applique a la finance, Prompt Engineering Anthropic. Ces certifications ne sont pas des cases a cocher. Ce sont des signaux concrets que j'envoie a Philippe Thomas et a tous les recruteurs que je croiserai : je travaille en permanence, je n'attends pas qu'on me le demande.
+      </p>
 
-      <!-- F : ESCP -->
-      <div class="annee-card fade-in fade-in-delay-5">
-        <div class="annee-card-header">
-          <span class="annee-card-label">F</span>
-          <h3 class="annee-card-title">MSc Finance ESCP &middot; Janvier 2027</h3>
-        </div>
-        <p class="annee-card-text">
-          L'ESCP Business School, elue n.1 mondial par le Financial Times 2025. Cette fois j'arriverai avec 6 mois d'experience PE / IB reelle, un TOEIC 900+, des certifications CFA et Bloomberg, et un projet professionnel irrefutable.
-        </p>
-      </div>
+      <span class="annee-sep fade-in">L'ESCP</span>
+      <p class="annee-para fade-in">
+        Je preparerai egalement mon TOEIC pour atteindre 900+ et mon TAGE MAGE pour les concours d'admission. Et surtout, je candidaterai au MSc Finance de l'ESCP Business School pour la session de janvier 2027, elue numero un mondial par le Financial Times. Cette fois, j'arriverai avec un dossier irrefutable : 6 mois d'experience PE / IB reelle, des certifications financieres et IA, un TOEIC 900+, et un projet professionnel que j'aurai commence a executer, pas seulement a raconter. Philippe Thomas ne se posera aucune question.
+      </p>
 
     </div>
   </section>
