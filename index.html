@@ -984,6 +984,153 @@
     }
 
     /* =============================================
+       EXPERIENCES SECTION
+    ============================================= */
+    .exp-entreprise {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.6rem, 3vw, 2.3rem);
+      font-weight: 400;
+      color: var(--gold);
+      text-decoration: none;
+      position: relative;
+      display: inline-block;
+    }
+
+    .exp-entreprise::after {
+      content: '';
+      position: absolute;
+      bottom: 1px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--gold);
+      transition: width 0.32s ease;
+    }
+
+    .exp-entreprise:hover::after { width: 100%; }
+
+    .exp-description {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(248, 245, 240, 0.45);
+      margin-top: 0.3rem;
+      line-height: 1.55;
+      max-width: 640px;
+    }
+
+    .exp-poste {
+      background: rgba(27, 42, 74, 0.45);
+      border: 1px solid var(--gold-dim);
+      border-radius: 3px;
+      padding: 1.2rem 1.5rem 1.1rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .exp-header-line {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.5rem 0.7rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .exp-contrat {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.6rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--navy);
+      background: var(--gold);
+      padding: 0.2rem 0.6rem;
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+
+    .exp-role {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .exp-periode {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 300;
+      color: rgba(248, 245, 240, 0.4);
+      letter-spacing: 0.03em;
+      margin-left: auto;
+    }
+
+    .exp-missions {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    .exp-missions li {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 300;
+      color: rgba(248, 245, 240, 0.65);
+      line-height: 1.65;
+      padding-left: 1.1rem;
+      position: relative;
+    }
+
+    .exp-missions li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.72em;
+      width: 5px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .exp-badge-diff {
+      margin-top: 0.9rem;
+      background: rgba(201, 168, 76, 0.05);
+      border: 1px solid rgba(201, 168, 76, 0.3);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 3px 3px 0;
+      padding: 0.85rem 1.15rem;
+    }
+
+    .exp-badge-diff p {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 400;
+      color: var(--gold);
+      line-height: 1.65;
+    }
+
+    .exp-badge-diff p::before {
+      content: '+ ';
+      font-weight: 600;
+      opacity: 0.7;
+    }
+
+    .exp-note {
+      margin-top: 1.2rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--gold-dim);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+      font-style: italic;
+      font-weight: 400;
+      color: rgba(248, 245, 240, 0.48);
+      line-height: 1.7;
+      max-width: 640px;
+    }
+
+    /* =============================================
        FOOTER / CONTACT
     ============================================= */
     #contact {
@@ -1407,8 +1554,112 @@
   <section id="experiences">
     <p class="section-label fade-in">03</p>
     <h2 class="section-title fade-in fade-in-delay-1">Experiences</h2>
-    <div class="timeline fade-in fade-in-delay-2">
-      <!-- timeline items injectees plus tard -->
+
+    <div class="timeline timeline--continu">
+
+      <!-- A) AVIZEO -->
+      <div class="timeline-item fade-in">
+        <div class="etude-header" style="margin-bottom:1.5rem">
+          <a href="https://www.avizeo.fr" class="exp-entreprise" target="_blank" rel="noopener">Avizeo</a>
+          <p class="exp-description">Cabinet d'expertise comptable et de conseil base a Lyon, specialise dans l'accompagnement de PME et groupes de societes.</p>
+        </div>
+
+        <!-- CDD 2025 -->
+        <div class="exp-poste fade-in">
+          <div class="exp-header-line">
+            <span class="exp-contrat">CDD</span>
+            <span class="exp-role">Collaborateur Comptable</span>
+            <span class="exp-periode">Mai &ndash; Juillet 2025 &middot; 39h / semaine</span>
+          </div>
+          <ul class="exp-missions">
+            <li>Operation de remontee de dividendes de plusieurs M euros au sein d'une holding dans le cadre d'une acquisition, analyse des SIG et bilans des filiales pour identifier les capacites distributives</li>
+            <li>Evaluation d'entreprises et analyse de patrimoine financier et immobilier</li>
+            <li>Restructuration de groupes de societes : volets juridiques, fiscaux, comptables</li>
+            <li>Construction de tableaux de bord, bilans consolides, SIG</li>
+            <li>Revision comptable : postes fiscaux, consolidation de comptes</li>
+          </ul>
+          <div class="exp-badge-diff">
+            <p>Automatisation du processus de controle TVA via macros Excel et IA (Claude, ChatGPT). Initiative personnelle non demandee. Reduction significative du temps de traitement et des erreurs.</p>
+          </div>
+        </div>
+
+        <!-- Stage Jan-Fev 2025 -->
+        <div class="exp-poste fade-in">
+          <div class="exp-header-line">
+            <span class="exp-contrat">Stage</span>
+            <span class="exp-role">Assistant Expert-Comptable</span>
+            <span class="exp-periode">Janvier &ndash; Fevrier 2025</span>
+          </div>
+          <ul class="exp-missions">
+            <li>Controle TVA renforce, declarations fiscales CA3 CA12 IS IR</li>
+            <li>Tenue dossiers clients, rapprochements bancaires</li>
+          </ul>
+        </div>
+
+        <!-- Stage Mai-Juil 2024 -->
+        <div class="exp-poste fade-in">
+          <div class="exp-header-line">
+            <span class="exp-contrat">Stage</span>
+            <span class="exp-role">Assistant Expert-Comptable</span>
+            <span class="exp-periode">Mai &ndash; Juillet 2024</span>
+          </div>
+          <ul class="exp-missions">
+            <li>Consolidation et analyse financiere : SIG, ratios</li>
+            <li>Suivi dossiers clients, tenue de comptes</li>
+          </ul>
+        </div>
+
+        <p class="exp-note fade-in">
+          "A chaque stage, j'ai cherche a prolonger la mission en CDD. Cette fidelite aux engagements est une valeur que je porte profondement."
+        </p>
+      </div>
+
+      <!-- B) RESTAURANT FOND ROSE - Institut Paul Bocuse -->
+      <div class="timeline-item fade-in">
+        <div class="etude-header" style="margin-bottom:1.5rem">
+          <a href="https://www.institutpaulbocuse.com" class="exp-entreprise" target="_blank" rel="noopener">Restaurant Fond Rose</a>
+          <p class="exp-description">L'Institut Paul Bocuse est une reference mondiale de la gastronomie et de l'hotellerie de luxe.</p>
+        </div>
+
+        <div class="exp-poste fade-in">
+          <div class="exp-header-line">
+            <span class="exp-contrat">CDI</span>
+            <span class="exp-role">Chef de Rang</span>
+            <span class="exp-periode">Avril 2023 &ndash; Present</span>
+          </div>
+          <ul class="exp-missions">
+            <li>Service gastronomique d'exception : sole meuniere, loup en croute, volaille en vessie, coquelet en crapaudine, dressage devant clientele exigeante</li>
+            <li>Conseil mets et vins, jusqu'a 280 couverts</li>
+            <li>Formation et encadrement des nouveaux collaborateurs</li>
+          </ul>
+          <div class="exp-badge-diff">
+            <p>Maintien de ce CDI en parallele du BTS puis de la Licence avec 39h par semaine chez Avizeo simultanement. Preuve concrete d'une capacite de travail hors norme.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- C) MARCHES DE BABYLONE -->
+      <div class="timeline-item fade-in">
+        <div class="etude-header" style="margin-bottom:1.5rem">
+          <a href="https://www.marchesdebabylone.fr" class="exp-entreprise" target="_blank" rel="noopener">Marches de Babylone</a>
+          <p class="exp-description">Reseau de marches bio et locaux lyonnais, acteur des circuits courts.</p>
+        </div>
+
+        <div class="exp-poste fade-in">
+          <div class="exp-header-line">
+            <span class="exp-contrat">CDD</span>
+            <span class="exp-role">Vendeur</span>
+            <span class="exp-periode">Septembre 2022 &ndash; Juillet 2024</span>
+          </div>
+          <ul class="exp-missions">
+            <li>Gestion des stands et approvisionnements</li>
+            <li>Relation client, valorisation des produits en circuits courts</li>
+            <li>Strategie d'ecoulement des stocks</li>
+            <li>Negociation fournisseurs</li>
+          </ul>
+        </div>
+      </div>
+
     </div>
   </section>
 
