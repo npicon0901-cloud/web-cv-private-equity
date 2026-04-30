@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nathan Picon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* =============================================
+       RESET & BASE
+    ============================================= */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg:       #0D1621;
+      --gold:     #C9A84C;
+      --gold-dim: rgba(201, 168, 76, 0.18);
+      --gold-glow:rgba(201, 168, 76, 0.45);
+      --text:     #F8F5F0;
+      --navy:     #1B2A4A;
+      --nav-h:    68px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      cursor: none;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* =============================================
+       CUSTOM CURSOR
+    ============================================= */
+    #cursor {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 12px;
+      height: 12px;
+      border: 1.5px solid var(--gold);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      transition: transform 0.08s ease, opacity 0.3s ease, width 0.25s ease, height 0.25s ease, background 0.25s ease;
+      will-change: top, left;
+    }
+
+    #cursor.hovering {
+      width: 28px;
+      height: 28px;
+      background: var(--gold-dim);
+    }
+
+    /* =============================================
+       NAVBAR
+    ============================================= */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5vw;
+      z-index: 500;
+      transition: background 0.4s ease, backdrop-filter 0.4s ease;
+    }
+
+    nav.scrolled {
+      background: rgba(13, 22, 33, 0.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--gold-dim);
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    /* hamburger */
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 26px;
+      height: 18px;
+      cursor: none;
+      background: none;
+      border: none;
+      padding: 0;
+      z-index: 601;
+    }
+
+    .hamburger span {
+      display: block;
+      height: 1.5px;
+      width: 100%;
+      background: var(--text);
+      border-radius: 2px;
+      transition: transform 0.35s ease, opacity 0.35s ease, background 0.35s ease;
+      transform-origin: center;
+    }
+
+    .hamburger.open span:nth-child(1) {
+      transform: translateY(8.25px) rotate(45deg);
+      background: var(--gold);
+    }
+
+    .hamburger.open span:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+
+    .hamburger.open span:nth-child(3) {
+      transform: translateY(-8.25px) rotate(-45deg);
+      background: var(--gold);
+    }
+
+    /* =============================================
+       MOBILE MENU OVERLAY
+    ============================================= */
+    .menu-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(13, 22, 33, 0.55);
+      backdrop-filter: blur(4px);
+      z-index: 580;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.35s ease;
+    }
+
+    .menu-overlay.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .menu-drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: min(320px, 85vw);
+      height: 100dvh;
+      background: var(--navy);
+      border-left: 1px solid var(--gold-dim);
+      z-index: 590;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 2rem 2.5rem;
+      transform: translateX(100%);
+      transition: transform 0.45s cubic-bezier(0.77, 0, 0.18, 1);
+    }
+
+    .menu-drawer.open {
+      transform: translateX(0);
+    }
+
+    .menu-drawer nav-link,
+    .menu-drawer a {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 400;
+      color: var(--text);
+      text-decoration: none;
+      padding: 0.55rem 0;
+      letter-spacing: 0.04em;
+      position: relative;
+      transition: color 0.25s ease;
+    }
+
+    .menu-drawer a::after {
+      content: '';
+      position: absolute;
+      bottom: 0.45rem;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--gold);
+      transition: width 0.3s ease;
+    }
+
+    .menu-drawer a:hover {
+      color: var(--gold);
+    }
+
+    .menu-drawer a:hover::after {
+      width: 100%;
+    }
+
+    /* =============================================
+       SECTIONS
+    ============================================= */
+    section {
+      min-height: 100vh;
+      padding: calc(var(--nav-h) + 5vh) 5vw 8vh;
+      position: relative;
+    }
+
+    section:not(#accueil) {
+      border-top: 1px solid var(--gold-dim);
+    }
+
+    /* =============================================
+       ACCUEIL - HERO
+    ============================================= */
+    #accueil {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: var(--nav-h);
+      overflow: hidden;
+    }
+
+    #canvas-particules {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-eyebrow {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.2rem;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.3s ease forwards;
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3.2rem, 8vw, 7.5rem);
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      color: var(--text);
+      margin-bottom: 1.4rem;
+      min-height: 1.1em;
+    }
+
+    .hero-title .glitch {
+      display: inline-block;
+      position: relative;
+    }
+
+    /* glitch keyframes */
+    @keyframes glitch-skew {
+      0%   { transform: skew(0deg); }
+      10%  { transform: skew(-2deg); }
+      20%  { transform: skew(0deg); }
+      30%  { transform: skew(1.5deg); }
+      40%  { transform: skew(0deg); }
+      100% { transform: skew(0deg); }
+    }
+
+    @keyframes glitch-clip1 {
+      0%   { clip-path: inset(40% 0 60% 0); transform: translate(-3px, 0); opacity: 0; }
+      10%  { clip-path: inset(10% 0 80% 0); transform: translate(3px, 0);  opacity: 1; }
+      20%  { clip-path: inset(60% 0 30% 0); transform: translate(-2px, 0); opacity: 1; }
+      30%  { opacity: 0; }
+      100% { opacity: 0; }
+    }
+
+    @keyframes glitch-clip2 {
+      0%   { clip-path: inset(70% 0 10% 0); transform: translate(3px, 0);  opacity: 0; }
+      10%  { clip-path: inset(20% 0 70% 0); transform: translate(-3px, 0); opacity: 1; }
+      20%  { clip-path: inset(50% 0 40% 0); transform: translate(2px, 0);  opacity: 1; }
+      30%  { opacity: 0; }
+      100% { opacity: 0; }
+    }
+
+    .glitch::before,
+    .glitch::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+    }
+
+    .glitch::before {
+      color: var(--gold);
+      animation: glitch-clip1 2.4s 0.5s ease-in-out forwards;
+    }
+
+    .glitch::after {
+      color: #4a90d9;
+      animation: glitch-clip2 2.4s 0.5s ease-in-out forwards;
+    }
+
+    .glitch {
+      animation: glitch-skew 2.4s 0.5s ease-in-out forwards;
+    }
+
+    .hero-sub {
+      font-family: 'DM Sans', sans-serif;
+      font-size: clamp(0.95rem, 2vw, 1.15rem);
+      font-weight: 300;
+      color: rgba(248, 245, 240, 0.65);
+      max-width: 520px;
+      margin-bottom: 2.8rem;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.9s ease forwards;
+    }
+
+    .hero-typewriter {
+      display: inline-block;
+      color: var(--gold);
+      border-right: 2px solid var(--gold);
+      white-space: nowrap;
+      overflow: hidden;
+      animation: blink-caret 0.75s step-end infinite;
+    }
+
+    @keyframes blink-caret {
+      50% { border-color: transparent; }
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.85rem 2.2rem;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+      transition: color 0.35s ease;
+      opacity: 0;
+      animation: fadeUp 0.8s 1.1s ease forwards;
+    }
+
+    .hero-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--gold);
+      transform: translateX(-105%);
+      transition: transform 0.38s cubic-bezier(0.77, 0, 0.18, 1);
+      z-index: 0;
+    }
+
+    .hero-cta:hover {
+      color: var(--bg);
+    }
+
+    .hero-cta:hover::before {
+      transform: translateX(0);
+    }
+
+    .hero-cta span {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* scroll indicator */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+      opacity: 0;
+      animation: fadeUp 0.8s 1.5s ease forwards;
+    }
+
+    .scroll-indicator span {
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(248, 245, 240, 0.4);
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 50px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+      animation: scrollLine 1.8s ease-in-out infinite;
+    }
+
+    @keyframes scrollLine {
+      0%   { transform: scaleY(0); transform-origin: top; opacity: 1; }
+      50%  { transform: scaleY(1); transform-origin: top; opacity: 1; }
+      51%  { transform: scaleY(1); transform-origin: bottom; }
+      100% { transform: scaleY(0); transform-origin: bottom; opacity: 0.2; }
+    }
+
+    /* =============================================
+       GENERIC SECTION PLACEHOLDER
+    ============================================= */
+    .section-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      font-weight: 300;
+      line-height: 1.1;
+      margin-bottom: 3rem;
+    }
+
+    /* =============================================
+       CARD COMPONENT (reusable)
+    ============================================= */
+    .card {
+      background: var(--navy);
+      border: 1px solid var(--gold-dim);
+      border-radius: 2px;
+      padding: 2rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: var(--gold);
+      box-shadow: 0 8px 40px rgba(201, 168, 76, 0.15), 0 0 0 1px var(--gold-dim);
+    }
+
+    /* =============================================
+       BADGE COMPONENT (reusable)
+    ============================================= */
+    .badge {
+      display: inline-block;
+      padding: 0.3rem 0.85rem;
+      border: 1px solid var(--gold-dim);
+      border-radius: 100px;
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+      color: rgba(248, 245, 240, 0.75);
+      transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+    }
+
+    .badge:hover {
+      background: var(--gold);
+      color: var(--navy);
+      border-color: var(--gold);
+    }
+
+    /* =============================================
+       TIMELINE COMPONENT (reusable)
+    ============================================= */
+    .timeline {
+      position: relative;
+      padding-left: 1.8rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.5rem;
+      bottom: 0.5rem;
+      width: 1px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-bottom: 2.5rem;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -1.8rem;
+      top: 0.55rem;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--gold);
+      border: 2px solid var(--bg);
+      box-shadow: 0 0 0 1px var(--gold);
+    }
+
+    /* =============================================
+       PROGRESS BAR (langues)
+    ============================================= */
+    .progress-bar-wrap {
+      background: var(--navy);
+      border-radius: 100px;
+      height: 4px;
+      overflow: hidden;
+      margin-top: 0.5rem;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      border-radius: 100px;
+      background: linear-gradient(90deg, var(--gold), #e8c97a);
+      width: 0;
+      transition: width 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    /* =============================================
+       FADE-IN SCROLL ANIMATION
+    ============================================= */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .fade-in-delay-1 { transition-delay: 0.1s; }
+    .fade-in-delay-2 { transition-delay: 0.2s; }
+    .fade-in-delay-3 { transition-delay: 0.3s; }
+    .fade-in-delay-4 { transition-delay: 0.4s; }
+    .fade-in-delay-5 { transition-delay: 0.5s; }
+
+    /* =============================================
+       SECTION TRANSITION OVERLAY
+    ============================================= */
+    .section-transition-overlay {
+      position: fixed;
+      inset: 0;
+      background: var(--bg);
+      pointer-events: none;
+      z-index: 450;
+      opacity: 0;
+      transition: opacity 0.35s ease;
+    }
+
+    /* =============================================
+       FOOTER / CONTACT
+    ============================================= */
+    #contact {
+      min-height: 60vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* =============================================
+       KEYFRAMES UTILS
+    ============================================= */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0);    }
+    }
+
+    /* =============================================
+       RESPONSIVE
+    ============================================= */
+    @media (max-width: 768px) {
+      section {
+        padding: calc(var(--nav-h) + 4vh) 6vw 6vh;
+      }
+
+      .hero-title {
+        font-size: clamp(2.8rem, 12vw, 4.5rem);
+      }
+    }
+
+    @media (max-width: 480px) {
+      :root {
+        --nav-h: 58px;
+      }
+    }
+
+    /* scrollbar */
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+  </style>
+</head>
+<body>
+
+  <!-- CURSOR -->
+  <div id="cursor"></div>
+
+  <!-- SECTION TRANSITION OVERLAY -->
+  <div class="section-transition-overlay" id="transition-overlay"></div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <a href="#accueil" class="nav-logo">NP</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- MENU OVERLAY + DRAWER -->
+  <div class="menu-overlay" id="menu-overlay"></div>
+  <div class="menu-drawer" id="menu-drawer">
+    <a href="#accueil"     data-section="Accueil">Accueil</a>
+    <a href="#projet"      data-section="Projet">Projet</a>
+    <a href="#etudes"      data-section="Etudes">Etudes</a>
+    <a href="#experiences" data-section="Experiences">Experiences</a>
+    <a href="#skills"      data-section="Skills">Skills</a>
+    <a href="#langues"     data-section="Langues">Langues</a>
+    <a href="#annee2027"   data-section="2027">2027</a>
+    <a href="#contact"     data-section="Contact">Contact</a>
+  </div>
+
+  <!-- ============================================================
+       SECTIONS
+  ============================================================= -->
+
+  <!-- ACCUEIL -->
+  <section id="accueil">
+    <canvas id="canvas-particules"></canvas>
+    <div class="hero-content">
+      <p class="hero-eyebrow">CV Interactif</p>
+      <h1 class="hero-title">
+        <span class="glitch" data-text="Nathan Picon">Nathan Picon</span>
+      </h1>
+      <p class="hero-sub">
+        <span class="hero-typewriter" id="typewriter"></span>
+      </p>
+      <a href="#projet" class="hero-cta">
+        <span>Decouvrir</span>
+      </a>
+    </div>
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- PROJET -->
+  <section id="projet">
+    <p class="section-label fade-in">01</p>
+    <h2 class="section-title fade-in fade-in-delay-1">Projet</h2>
+  </section>
+
+  <!-- ETUDES -->
+  <section id="etudes">
+    <p class="section-label fade-in">02</p>
+    <h2 class="section-title fade-in fade-in-delay-1">Etudes</h2>
+    <div class="timeline fade-in fade-in-delay-2">
+      <!-- timeline items injectees plus tard -->
+    </div>
+  </section>
+
+  <!-- EXPERIENCES -->
+  <section id="experiences">
+    <p class="section-label fade-in">03</p>
+    <h2 class="section-title fade-in fade-in-delay-1">Experiences</h2>
+    <div class="timeline fade-in fade-in-delay-2">
+      <!-- timeline items injectees plus tard -->
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <p class="section-label fade-in">04</p>
+    <h2 class="section-title fade-in fade-in-delay-1">Skills</h2>
+    <div class="skills-grid fade-in fade-in-delay-2">
+      <!-- cartes skills injectees plus tard -->
+    </div>
+  </section>
+
+  <!-- LANGUES -->
+  <section id="langues">
+    <p class="section-label fade-in">05</p>
+    <h2 class="section-title fade-in fade-in-delay-1">Langues</h2>
+    <!-- barres de progression injectees plus tard -->
+  </section>
+
+  <!-- ANNEE 2027 -->
+  <section id="annee2027">
+    <p class="section-label fade-in">06</p>
+    <h2 class="section-title fade-in fade-in-delay-1">2027</h2>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <p class="section-label fade-in">07</p>
+    <h2 class="section-title fade-in fade-in-delay-1">Contact</h2>
+  </section>
+
+  <!-- ============================================================
+       JAVASCRIPT
+  ============================================================= -->
+  <script>
+    /* ---- CURSOR ---- */
+    const cursor = document.getElementById('cursor');
+    let mx = -100, my = -100;
+
+    document.addEventListener('mousemove', e => {
+      mx = e.clientX;
+      my = e.clientY;
+      cursor.style.left = mx + 'px';
+      cursor.style.top  = my + 'px';
+    });
+
+    document.addEventListener('mouseleave', () => { cursor.style.opacity = '0'; });
+    document.addEventListener('mouseenter', () => { cursor.style.opacity = '1'; });
+
+    document.querySelectorAll('a, button, .card, .badge').forEach(el => {
+      el.addEventListener('mouseenter', () => cursor.classList.add('hovering'));
+      el.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
+    });
+
+    /* ---- NAVBAR SCROLL ---- */
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    /* ---- HAMBURGER / DRAWER ---- */
+    const hamburger    = document.getElementById('hamburger');
+    const menuOverlay  = document.getElementById('menu-overlay');
+    const menuDrawer   = document.getElementById('menu-drawer');
+
+    function closeMenu() {
+      hamburger.classList.remove('open');
+      menuOverlay.classList.remove('open');
+      menuDrawer.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = hamburger.classList.toggle('open');
+      menuOverlay.classList.toggle('open', isOpen);
+      menuDrawer.classList.toggle('open', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+
+    menuOverlay.addEventListener('click', closeMenu);
+
+    menuDrawer.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        closeMenu();
+      });
+    });
+
+    /* ---- SMOOTH SCROLL (complement pour vieux navigateurs) ---- */
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', e => {
+        const target = document.querySelector(anchor.getAttribute('href'));
+        if (!target) return;
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+
+    /* ---- INTERSECTION OBSERVER (fade-in) ---- */
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    fadeEls.forEach(el => io.observe(el));
+
+    /* ---- TYPEWRITER ---- */
+    const phrases = [
+      'Finance & Private Equity',
+      'Analyse Financiere',
+      'Investissement',
+    ];
+    let pIndex = 0, cIndex = 0, deleting = false;
+    const tw = document.getElementById('typewriter');
+
+    function typeLoop() {
+      const current = phrases[pIndex];
+      if (!deleting) {
+        tw.textContent = current.slice(0, ++cIndex);
+        if (cIndex === current.length) {
+          deleting = true;
+          setTimeout(typeLoop, 1800);
+          return;
+        }
+      } else {
+        tw.textContent = current.slice(0, --cIndex);
+        if (cIndex === 0) {
+          deleting = false;
+          pIndex = (pIndex + 1) % phrases.length;
+        }
+      }
+      setTimeout(typeLoop, deleting ? 45 : 90);
+    }
+
+    setTimeout(typeLoop, 1400);
+
+    /* ---- CANVAS PARTICULES ---- */
+    (function initParticules() {
+      const canvas = document.getElementById('canvas-particules');
+      const ctx    = canvas.getContext('2d');
+      let W, H, particles;
+
+      function resize() {
+        const section = document.getElementById('accueil');
+        W = canvas.width  = section.offsetWidth;
+        H = canvas.height = section.offsetHeight;
+      }
+
+      function createParticles(n) {
+        return Array.from({ length: n }, () => ({
+          x:    Math.random() * W,
+          y:    Math.random() * H,
+          r:    Math.random() * 1.4 + 0.4,
+          dx:   (Math.random() - 0.5) * 0.35,
+          dy:   -(Math.random() * 0.4 + 0.1),
+          a:    Math.random(),
+          da:   (Math.random() - 0.5) * 0.004,
+        }));
+      }
+
+      function draw() {
+        ctx.clearRect(0, 0, W, H);
+        particles.forEach(p => {
+          p.x  += p.dx;
+          p.y  += p.dy;
+          p.a  += p.da;
+          if (p.a <= 0 || p.a >= 1) p.da *= -1;
+          if (p.y < -10) { p.y = H + 10; p.x = Math.random() * W; }
+          if (p.x < -10) p.x = W + 10;
+          if (p.x > W + 10) p.x = -10;
+
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(201, 168, 76, ${p.a * 0.7})`;
+          ctx.fill();
+        });
+        requestAnimationFrame(draw);
+      }
+
+      resize();
+      particles = createParticles(90);
+      draw();
+
+      window.addEventListener('resize', () => {
+        resize();
+        particles = createParticles(90);
+      });
+    })();
+
+    /* ---- PROGRESS BARS au scroll ---- */
+    const progressObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.querySelectorAll('.progress-bar-fill').forEach(bar => {
+            bar.style.width = bar.dataset.width || '0%';
+          });
+          progressObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    const languesSection = document.getElementById('langues');
+    if (languesSection) progressObserver.observe(languesSection);
+  </script>
+
+</body>
+</html>
