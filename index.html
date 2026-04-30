@@ -47,8 +47,8 @@
     ============================================= */
     #cursor {
       position: fixed;
-      top: 0;
-      left: 0;
+      top: -100px;
+      left: -100px;
       width: 12px;
       height: 12px;
       border: 1.5px solid var(--gold);
@@ -233,7 +233,7 @@
       justify-content: center;
       align-items: flex-start;
       padding-top: var(--nav-h);
-      overflow: hidden;
+      overflow-x: hidden;
     }
 
     #canvas-particules {
@@ -996,6 +996,8 @@
       display: inline-block;
     }
 
+    .exp-card .etude-header { margin-bottom: 1.5rem; }
+
     .exp-entreprise::after {
       content: '';
       position: absolute;
@@ -1657,12 +1659,47 @@
       .hero-title {
         font-size: clamp(2.8rem, 12vw, 4.5rem);
       }
+
+      .hero-stats {
+        gap: 0 1.8rem;
+      }
+
+      .exp-periode {
+        margin-left: 0;
+        width: 100%;
+      }
+
+      .langue-objectif-marker {
+        display: none;
+      }
     }
 
     @media (max-width: 480px) {
       :root {
         --nav-h: 58px;
       }
+
+      .hero-body {
+        font-size: 0.88rem;
+      }
+
+      .annee-card,
+      .skill-card {
+        padding: 1.2rem 1.3rem;
+      }
+    }
+
+    /* Touch devices : restore default cursor */
+    @media (hover: none), (pointer: coarse) {
+      html { cursor: auto; }
+      #cursor { display: none; }
+    }
+
+    /* Contact section heading alignment */
+    #contact .section-label,
+    #contact .section-title {
+      text-align: center;
+      width: 100%;
     }
 
     /* scrollbar */
@@ -2057,7 +2094,7 @@
 
       <!-- A) AVIZEO -->
       <div class="timeline-item fade-in">
-        <div class="etude-header" style="margin-bottom:1.5rem">
+        <div class="etude-header">
           <a href="https://www.avizeo.fr" class="exp-entreprise" target="_blank" rel="noopener">Avizeo</a>
           <p class="exp-description">Cabinet d'expertise comptable et de conseil base a Lyon, specialise dans l'accompagnement de PME et groupes de societes.</p>
         </div>
@@ -2114,7 +2151,7 @@
 
       <!-- B) RESTAURANT FOND ROSE - Institut Paul Bocuse -->
       <div class="timeline-item fade-in">
-        <div class="etude-header" style="margin-bottom:1.5rem">
+        <div class="etude-header">
           <a href="https://www.institutpaulbocuse.com" class="exp-entreprise" target="_blank" rel="noopener">Restaurant Fond Rose</a>
           <p class="exp-description">L'Institut Paul Bocuse est une reference mondiale de la gastronomie et de l'hotellerie de luxe.</p>
         </div>
@@ -2138,7 +2175,7 @@
 
       <!-- C) MARCHES DE BABYLONE -->
       <div class="timeline-item fade-in">
-        <div class="etude-header" style="margin-bottom:1.5rem">
+        <div class="etude-header">
           <a href="https://www.marchesdebabylone.fr" class="exp-entreprise" target="_blank" rel="noopener">Marches de Babylone</a>
           <p class="exp-description">Reseau de marches bio et locaux lyonnais, acteur des circuits courts.</p>
         </div>
@@ -2329,7 +2366,7 @@
       <div class="annee-card fade-in">
         <div class="annee-card-header">
           <span class="annee-card-label">A</span>
-          <h3 class="annee-card-title">Stage PE / IB Paris &mdash; Sept. 2026 / Fev. 2027</h3>
+          <h3 class="annee-card-title">Stage PE / IB Paris &middot; Sept. 2026 / Fev. 2027</h3>
         </div>
         <p class="annee-card-text">
           Je recherche un stage de 6 mois a Paris au sein d'un fonds de Private Equity ou d'une banque d'investissement. Ce stage represente pour moi un changement de ville complet et un investissement total. Je ne viens pas a Paris pour observer, je viens pour contribuer, apprendre de l'interieur, me rendre indispensable, et construire un reseau parisien solide.
@@ -2345,11 +2382,11 @@
         <div class="checklist">
           <div class="check-item">
             <div class="check-box"></div>
-            <span class="check-text">CFA Level 1 &mdash; session decembre 2026</span>
+            <span class="check-text">CFA Level 1 &middot; session decembre 2026</span>
           </div>
           <div class="check-item">
             <div class="check-box"></div>
-            <span class="check-text">Bloomberg Market Concepts &mdash; avant septembre 2026</span>
+            <span class="check-text">Bloomberg Market Concepts &middot; avant septembre 2026</span>
           </div>
           <div class="check-item">
             <div class="check-box"></div>
@@ -2406,7 +2443,7 @@
       <div class="annee-card fade-in fade-in-delay-5">
         <div class="annee-card-header">
           <span class="annee-card-label">F</span>
-          <h3 class="annee-card-title">MSc Finance ESCP &mdash; Janvier 2027</h3>
+          <h3 class="annee-card-title">MSc Finance ESCP &middot; Janvier 2027</h3>
         </div>
         <p class="annee-card-text">
           L'ESCP Business School, elue n.1 mondial par le Financial Times 2025. Cette fois j'arriverai avec 6 mois d'experience PE / IB reelle, un TOEIC 900+, des certifications CFA et Bloomberg, et un projet professionnel irrefutable.
@@ -2418,8 +2455,8 @@
 
   <!-- CONTACT -->
   <section id="contact">
-    <p class="section-label fade-in" style="text-align:center">07</p>
-    <h2 class="section-title fade-in fade-in-delay-1" style="text-align:center">Contact</h2>
+    <p class="section-label fade-in">07</p>
+    <h2 class="section-title fade-in fade-in-delay-1">Contact</h2>
 
     <p class="contact-accroche fade-in fade-in-delay-2">
       "Vous savez mieux que quiconque qu'un bon investissement, c'est d'abord une conviction sur le potentiel, pas uniquement sur le passe."
@@ -2455,7 +2492,7 @@
         <div class="contact-icon">&#x25CE;</div>
         <div class="contact-info">
           <span class="contact-label">Localisation</span>
-          <span class="contact-value">Lyon &mdash; Disponible Paris, septembre 2026</span>
+          <span class="contact-value">Lyon &middot; Disponible Paris, septembre 2026</span>
         </div>
       </div>
 
