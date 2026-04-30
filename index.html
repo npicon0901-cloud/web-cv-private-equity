@@ -818,6 +818,172 @@
     }
 
     /* =============================================
+       ETUDES SECTION
+    ============================================= */
+    .timeline--continu::before {
+      background: var(--gold);
+      opacity: 0.55;
+    }
+
+    .etude-card {
+      padding-bottom: 0.5rem;
+    }
+
+    .etude-header {
+      margin-bottom: 1.2rem;
+    }
+
+    .etude-diplome {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.3rem, 2.5vw, 1.75rem);
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.25;
+      margin-bottom: 0.3rem;
+    }
+
+    .etude-mention {
+      display: inline-block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--navy);
+      background: var(--gold);
+      padding: 0.18rem 0.6rem;
+      border-radius: 2px;
+      vertical-align: middle;
+      margin-left: 0.6rem;
+      position: relative;
+      top: -2px;
+    }
+
+    .etude-score {
+      display: inline-block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      border: 1px solid var(--gold-dim);
+      padding: 0.18rem 0.6rem;
+      border-radius: 2px;
+      vertical-align: middle;
+      margin-left: 0.45rem;
+      position: relative;
+      top: -2px;
+    }
+
+    .etude-etablissement {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      color: rgba(248, 245, 240, 0.55);
+      margin-bottom: 0.1rem;
+    }
+
+    .etude-specialites {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1.3rem;
+    }
+
+    .etude-texte {
+      font-family: 'DM Sans', sans-serif;
+      font-size: clamp(0.88rem, 1.5vw, 0.96rem);
+      font-weight: 300;
+      line-height: 1.9;
+      color: rgba(248, 245, 240, 0.68);
+      max-width: 740px;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Notes remarquables */
+    .etude-notes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .etude-note {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      background: rgba(27, 42, 74, 0.6);
+      border: 1px solid var(--gold-dim);
+      border-radius: 3px;
+      padding: 0.5rem 0.9rem;
+      transition: border-color 0.25s ease;
+    }
+
+    .etude-note:hover {
+      border-color: var(--gold);
+    }
+
+    .note-score {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--gold);
+      white-space: nowrap;
+    }
+
+    .note-matiere {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 300;
+      color: rgba(248, 245, 240, 0.65);
+      line-height: 1.3;
+    }
+
+    /* Programme matieres */
+    .etude-programme {
+      margin-bottom: 1.5rem;
+    }
+
+    .etude-semestre {
+      margin-bottom: 1.2rem;
+    }
+
+    .semestre-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.6rem;
+      opacity: 0.8;
+    }
+
+    .matieres-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .matiere-tag {
+      display: inline-block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 300;
+      padding: 0.25rem 0.7rem;
+      border: 1px solid rgba(201, 168, 76, 0.2);
+      border-radius: 2px;
+      color: rgba(248, 245, 240, 0.6);
+      transition: border-color 0.22s ease, color 0.22s ease;
+    }
+
+    .matiere-tag:hover {
+      border-color: var(--gold);
+      color: var(--text);
+    }
+
+    /* =============================================
        FOOTER / CONTACT
     ============================================= */
     #contact {
@@ -1100,8 +1266,140 @@
   <section id="etudes">
     <p class="section-label fade-in">02</p>
     <h2 class="section-title fade-in fade-in-delay-1">Etudes</h2>
-    <div class="timeline fade-in fade-in-delay-2">
-      <!-- timeline items injectees plus tard -->
+
+    <div class="timeline timeline--continu">
+
+      <!-- A) LYCEE -->
+      <div class="timeline-item fade-in">
+        <div class="etude-card">
+          <div class="etude-header">
+            <span class="tl-date">2022 - 2023</span>
+            <p class="etude-diplome">
+              Baccalaureat General
+              <span class="etude-mention">Mention Bien</span>
+            </p>
+            <p class="etude-etablissement">Lycee Saint-Marie Lyon &middot; Groupe Mariste</p>
+          </div>
+
+          <div class="etude-specialites">
+            <span class="badge">SES</span>
+            <span class="badge">Geopolitique</span>
+            <span class="badge">Mathematiques</span>
+          </div>
+
+          <p class="etude-texte">
+            Etablissement prive catholique reconnu pour sa rigueur academique et ses valeurs maristes : travail, discipline, respect, aide aux autres. A l'arrivee de chaque professeur, nous nous levions en silence et attendions son autorisation de nous asseoir. Les Peres Maristes nous ont transmis la rigueur, le travail continu et une discipline qui se perd de nos jours. C'est une fondation que je retrouve dans tout ce que je construis.
+          </p>
+        </div>
+      </div>
+
+      <!-- B) BTS -->
+      <div class="timeline-item fade-in">
+        <div class="etude-card">
+          <div class="etude-header">
+            <span class="tl-date">2023 - 2025</span>
+            <p class="etude-diplome">
+              BTS Comptabilite &amp; Gestion
+              <span class="etude-mention">Mention Bien</span>
+              <span class="etude-score">15,12 / 20</span>
+            </p>
+            <p class="etude-etablissement">Made In Sainte-Marie Lyon</p>
+          </div>
+
+          <div class="etude-notes fade-in">
+            <div class="etude-note">
+              <span class="note-score">20/20</span>
+              <span class="note-matiere">Parcours de professionnalisation</span>
+            </div>
+            <div class="etude-note">
+              <span class="note-score">16/20</span>
+              <span class="note-matiere">Controle de gestion et analyse financiere</span>
+            </div>
+            <div class="etude-note">
+              <span class="note-score">17/20</span>
+              <span class="note-matiere">Anglais epreuve finale</span>
+            </div>
+          </div>
+
+          <div class="etude-programme fade-in">
+            <div class="etude-semestre">
+              <p class="semestre-label">Programme complet</p>
+              <div class="matieres-list">
+                <span class="matiere-tag">Culture Generale et Expression</span>
+                <span class="matiere-tag">Anglais</span>
+                <span class="matiere-tag">Mathematiques appliquees</span>
+                <span class="matiere-tag">CEJM</span>
+                <span class="matiere-tag">CEJM applicable aux processus</span>
+                <span class="matiere-tag">P1+P2 Operations comptables et info financiere</span>
+                <span class="matiere-tag">P3 Gestion des obligations fiscales (TVA IS IR CA3 CA12)</span>
+                <span class="matiere-tag">P4 Gestion des relations sociales</span>
+                <span class="matiere-tag">P5+P6 Analyse et prevision financiere</span>
+                <span class="matiere-tag">P7 Fiabilisation SI comptable</span>
+                <span class="matiere-tag">Ateliers Professionnels</span>
+                <span class="matiere-tag">LV2 Espagnol</span>
+              </div>
+            </div>
+          </div>
+
+          <p class="etude-texte">
+            J'ai choisi ce BTS avec une conviction claire : la comptabilite est le point de depart de toute comprehension d'une entreprise. Le bilan, le compte de resultat, les flux de tresorerie, les SIG, ce sont les constantes vitales d'une entreprise. Maitriser leur lecture, c'est ne plus avoir de secrets sur la sante d'une structure.
+          </p>
+        </div>
+      </div>
+
+      <!-- C) LICENCE -->
+      <div class="timeline-item fade-in">
+        <div class="etude-card">
+          <div class="etude-header">
+            <span class="tl-date">2025 - 2026</span>
+            <p class="etude-diplome">Licence 3 Gestion &amp; Management</p>
+            <p class="etude-etablissement">IAE Lyon &middot; Universite Jean Moulin Lyon 3</p>
+          </div>
+
+          <div class="etude-programme fade-in">
+            <div class="etude-semestre">
+              <p class="semestre-label">S1 · Majeure UE Fondamentale</p>
+              <div class="matieres-list">
+                <span class="matiere-tag">Droit des societes</span>
+                <span class="matiere-tag">Fondamentaux de l'entrepreneuriat</span>
+                <span class="matiere-tag">Fondamentaux de la finance</span>
+                <span class="matiere-tag">Systeme d'information et bases de donnees</span>
+              </div>
+            </div>
+            <div class="etude-semestre">
+              <p class="semestre-label">S1 · Majeure UE Transversale</p>
+              <div class="matieres-list">
+                <span class="matiere-tag">Seminaire international</span>
+                <span class="matiere-tag">Business English</span>
+                <span class="matiere-tag">PPP et certificat Voltaire</span>
+              </div>
+            </div>
+            <div class="etude-semestre">
+              <p class="semestre-label">S1 · Mineure Finance Audit Controle et Banque</p>
+              <div class="matieres-list">
+                <span class="matiere-tag">Environnement bancaire</span>
+                <span class="matiere-tag">Audit interne et audit financier</span>
+              </div>
+            </div>
+            <div class="etude-semestre">
+              <p class="semestre-label">S2</p>
+              <div class="matieres-list">
+                <span class="matiere-tag">Analyse de donnees (series temporelles, ACP, classification)</span>
+                <span class="matiere-tag">Interculturalite (Hofstede, Bennett, Erin Meyer)</span>
+                <span class="matiere-tag">Controle de gestion</span>
+                <span class="matiere-tag">Marches financiers (indices boursiers, Fama, fixing, Euronext)</span>
+                <span class="matiere-tag">Communication</span>
+                <span class="matiere-tag">Droit social</span>
+              </div>
+            </div>
+          </div>
+
+          <p class="etude-texte">
+            L'IAE Lyon 3 m'a permis d'aborder des matieres directement applicables au monde de la finance. En Marches financiers, j'ai travaille sur les indices boursiers, la theorie de Fama, les mecanismes de fixing et les compartiments Euronext. Le Controle de gestion m'a appris a piloter la performance d'une organisation par les chiffres. L'Analyse de donnees m'a initie aux methodes quantitatives appliquees a la decision financiere.
+          </p>
+        </div>
+      </div>
+
     </div>
   </section>
 
