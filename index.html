@@ -1619,6 +1619,68 @@
       width: 100%;
     }
 
+    /* =============================================
+       UNIVERS & VALEURS
+    ============================================= */
+    .univers-subtitle {
+      font-family: 'DM Sans', sans-serif;
+      font-size: clamp(0.82rem, 1.5vw, 0.95rem);
+      font-weight: 300;
+      color: rgba(248, 245, 240, 0.55);
+      font-style: italic;
+      margin-bottom: 3.5rem;
+      max-width: 620px;
+    }
+
+    .univers-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.8rem;
+    }
+
+    @media (max-width: 820px) {
+      .univers-grid { grid-template-columns: 1fr; }
+    }
+
+    .univers-card {
+      background: rgba(13, 22, 33, 0.82);
+      border: 1px solid var(--gold-dim);
+      border-radius: 2px;
+      padding: 2.2rem 2rem 2rem;
+      position: relative;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    }
+
+    .univers-card:hover {
+      border-color: var(--gold);
+      box-shadow: 0 8px 40px rgba(201, 168, 76, 0.12), 0 0 0 1px var(--gold-dim);
+      transform: translateY(-4px);
+    }
+
+    .univers-icon {
+      font-size: 1.3rem;
+      margin-bottom: 1.1rem;
+      display: block;
+      opacity: 0.85;
+    }
+
+    .univers-card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-weight: 400;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      letter-spacing: 0.02em;
+    }
+
+    .univers-card-body {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 300;
+      line-height: 1.85;
+      color: rgba(248, 245, 240, 0.72);
+    }
+
     /* scrollbar */
     ::-webkit-scrollbar { width: 5px; }
     ::-webkit-scrollbar-track { background: var(--bg); }
@@ -1648,6 +1710,7 @@
   <div class="menu-overlay" id="menu-overlay"></div>
   <div class="menu-drawer" id="menu-drawer">
     <a href="#accueil"     data-section="Accueil">Accueil</a>
+    <a href="#univers"     data-section="Univers">Univers &amp; Valeurs</a>
     <a href="#projet"      data-section="Projet">Projet</a>
     <a href="#etudes"      data-section="Etudes">Etudes</a>
     <a href="#experiences" data-section="Experiences">Experiences</a>
@@ -1729,6 +1792,41 @@
     <div class="scroll-indicator">
       <div class="scroll-line"></div>
       <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- UNIVERS & VALEURS -->
+  <section id="univers">
+    <p class="section-label fade-in">00</p>
+    <h2 class="section-title fade-in fade-in-delay-1">Univers &amp; Valeurs</h2>
+    <p class="univers-subtitle fade-in fade-in-delay-2">Ce que les expériences m'ont appris sur qui je suis</p>
+
+    <div class="univers-grid">
+
+      <div class="univers-card fade-in">
+        <span class="univers-icon">🌍</span>
+        <p class="univers-card-title">Les voyages comme école de pensée</p>
+        <p class="univers-card-body">Voyager ne m'a jamais simplement dépaysé. Cela m'a appris à me voir autrement, à comprendre comment le monde perçoit ce que je suis et d'où je viens. En Jamaïque, j'ai compris la chance que représente le simple fait d'être né là où nous sommes nés. Dubaï m'a enseigné quelque chose que j'applique directement à la finance : distinguer la valeur affichée de la valeur réelle, la façade du fond, l'apparence de la substance. Ce qui brille n'est pas toujours ce qui vaut. Le Maroc et Israël, pays dont est originaire la famille de ma mère, m'ont appris ce que signifie vraiment le partage et l'hospitalité — des valeurs que je porte au cœur de ma vision entrepreneuriale.</p>
+      </div>
+
+      <div class="univers-card fade-in fade-in-delay-1">
+        <span class="univers-icon">🔥</span>
+        <p class="univers-card-title">La cuisine comme discipline</p>
+        <p class="univers-card-body">Lorsque je réalise une recette, je ne me contente jamais de faire mes courses en grande surface et de suivre une recette à la lettre. Je commence par me renseigner auprès des cuisiniers du groupe Bocuse, je recherche comment les plus grands chefs du monde abordent ce plat, et je synthétise tout cela pour construire ma propre version. Cette exigence s'étend au choix des produits : je refuse les produits industriels sans âme et vais chercher des producteurs qui travaillent avec passion. La cuisine est pour moi une discipline à part entière qui mobilise la même rigueur et la même quête de perfection que j'applique dans mon travail.</p>
+      </div>
+
+      <div class="univers-card fade-in fade-in-delay-2">
+        <span class="univers-icon">❤️</span>
+        <p class="univers-card-title">Engagement et collectif</p>
+        <p class="univers-card-body">Je participe bénévolement à des inventaires pour le Médipole de Lyon, aux côtés des aides-soignants, aussi bien dans les services généraux que dans les blocs opératoires. Ce que j'en retiens avant tout : s'intégrer rapidement dans une équipe constituée, s'adapter à des codes et des contraintes qui ne sont pas les siens, et contribuer efficacement à un objectif commun dans un environnement où la rigueur est non négociable. Je pratique également le futsal au sein de l'OL Vallée, structure rattachée à l'Olympique Lyonnais. J'ai aussi pratiqué l'équitation avec participation à des concours de saut d'obstacles dans le cadre d'Equita Lyon — une discipline qui m'a enseigné la précision, le sang-froid et la construction d'une relation de confiance dans la durée.</p>
+      </div>
+
+      <div class="univers-card fade-in fade-in-delay-3">
+        <span class="univers-icon">🚗</span>
+        <p class="univers-card-title">Porsche comme philosophie</p>
+        <p class="univers-card-body">Ce qui me fascine chez Porsche va bien au-delà des véhicules qu'ils produisent. C'est leur capacité à fidéliser une clientèle qui se transmet de père en fils, à traverser les époques en restant fidèles à leur ADN malgré les crises. Je vis cette passion avec mon père, en visitant des ateliers et en participant à des événements Porsche. Elle nourrit directement ma vision entrepreneuriale : racheter des entreprises qui ont une histoire et une clientèle fidèle, identifier ce qui a fragilisé leur trajectoire, le corriger sans trahir leur identité, et les élever. Une entreprise bien aimée, même fragilisée, porte en elle les ressources de son propre redressement.</p>
+      </div>
+
     </div>
   </section>
 
