@@ -1681,6 +1681,10 @@
       color: rgba(248, 245, 240, 0.72);
     }
 
+    /* ---- SECTION VISIBILITY ---- */
+    section { display: none; }
+    #accueil { display: flex; }
+
     /* scrollbar */
     ::-webkit-scrollbar { width: 5px; }
     ::-webkit-scrollbar-track { background: var(--bg); }
@@ -1712,8 +1716,8 @@
     <a href="#accueil"     data-section="Accueil">Accueil</a>
     <a href="#univers"     data-section="Univers">Univers &amp; Valeurs</a>
     <a href="#projet"      data-section="Projet">Projet</a>
-    <a href="#etudes"      data-section="Etudes">Etudes</a>
-    <a href="#experiences" data-section="Experiences">Experiences</a>
+    <a href="#etudes"      data-section="Etudes">Études</a>
+    <a href="#experiences" data-section="Experiences">Expériences</a>
     <a href="#skills"      data-section="Skills">Skills</a>
     <a href="#langues"     data-section="Langues">Langues</a>
     <a href="#annee2027"   data-section="2027">2027</a>
@@ -1735,7 +1739,7 @@
       </h1>
 
       <p class="hero-sous-titre">
-        Etudiant Licence IAE Lyon 3
+        Étudiant Licence IAE Lyon 3
         <span>·</span>
         Candidat MSc Finance ESCP Janvier 2027
         <span>·</span>
@@ -1743,7 +1747,7 @@
       </p>
 
       <p class="hero-body fade-in fade-in-delay-2">
-        Je ne suis pas le produit standard d'une grande ecole parisienne. Mon parcours s'est construit autrement, par le travail, la curiosite, et une conviction profonde sur ce que je veux construire. Trois experiences chez Avizeo, cabinet d'expertise comptable a Lyon, m'ont expose a des missions de restructuration financiere (~10 M euros), consolidation de holding et valorisation d'actifs que beaucoup n'abordent qu'en Master. En parallele, je travaille chaque soir et chaque week-end en salle au restaurant de l'Institut Paul Bocuse, parce que la charge de travail est pour moi une source de motivation, pas une contrainte. Ce qui me differencie, c'est que je n'attends pas qu'on me dise quoi faire. Je prends des initiatives, j'apprends vite, et j'ai une vision claire de la ou je vais. Vous savez mieux que quiconque qu'un bon investissement, c'est d'abord une conviction sur le potentiel, pas uniquement sur le passe.
+        Je ne suis pas le produit standard d'une grande école parisienne. Mon parcours s'est construit autrement, par le travail, la curiosité, et une conviction profonde sur ce que je veux construire. Trois expériences chez Avizeo, cabinet d'expertise comptable à Lyon, m'ont exposé à des missions de restructuration financière (~10 M euros), consolidation de holding et valorisation d'actifs que beaucoup n'abordent qu'en Master. En parallèle, je travaille chaque soir et chaque week-end en salle au restaurant de l'Institut Paul Bocuse, parce que la charge de travail est pour moi une source de motivation, pas une contrainte. Ce qui me différencie, c'est que je n'attends pas qu'on me dise quoi faire. Je prends des initiatives, j'apprends vite, et j'ai une vision claire de là où je vais. Vous savez mieux que quiconque qu'un bon investissement, c'est d'abord une conviction sur le potentiel, pas uniquement sur le passé.
       </p>
 
       <div class="hero-badges fade-in fade-in-delay-3">
@@ -1751,8 +1755,8 @@
         <span class="badge">Initiative</span>
         <span class="badge">Ambition</span>
         <span class="badge">Excellence</span>
-        <span class="badge">Curiosite</span>
-        <span class="badge">Loyaute</span>
+        <span class="badge">Curiosité</span>
+        <span class="badge">Loyauté</span>
       </div>
 
       <div class="hero-stats fade-in fade-in-delay-4" id="hero-stats">
@@ -1761,13 +1765,13 @@
             <span class="stat-value" data-target="10" data-prefix="" data-suffix="">0</span>
             <span class="stat-unit">M euros</span>
           </div>
-          <p class="stat-label">Restructuration financiere</p>
+          <p class="stat-label">Restructuration financière</p>
         </div>
         <div class="stat-item">
           <div class="stat-value-wrap">
             <span class="stat-value" data-target="8" data-prefix="" data-suffix="">0</span>
           </div>
-          <p class="stat-label">Filiales consolidees</p>
+          <p class="stat-label">Filiales consolidées</p>
         </div>
         <div class="stat-item">
           <div class="stat-value-wrap">
@@ -1785,8 +1789,8 @@
         </div>
       </div>
 
-      <a href="#projet" class="hero-cta fade-in fade-in-delay-5">
-        <span>Decouvrir mon parcours</span>
+      <a href="#projet" class="hero-cta fade-in fade-in-delay-5" id="cta-projet">
+        <span>Découvrir mon parcours</span>
       </a>
     </div>
     <div class="scroll-indicator">
@@ -1838,34 +1842,34 @@
     <div class="projet-content">
 
       <p class="projet-para fade-in">
-        Mon projet professionnel ne s'est pas construit du jour au lendemain. Il est le fruit d'annees d'observations, d'experiences et de passions qui, mises bout a bout, dessinent une vision coherente et profondement ancree dans ce que je suis. A court terme, mon objectif est de rejoindre une banque ou un fonds d'investissement de premier rang pour y developper une vraie culture du deal et une expertise solide en M&A et corporate finance.
+        Mon projet professionnel ne s'est pas construit du jour au lendemain. Il est le fruit d'années d'observations, d'expériences et de passions qui, mises bout à bout, dessinent une vision cohérente et profondément ancrée dans ce que je suis. À court terme, mon objectif est de rejoindre une banque ou un fonds d'investissement de premier rang pour y développer une vraie culture du deal et une expertise solide en M&A et corporate finance.
       </p>
 
       <p class="projet-para fade-in">
-        A long terme, mon projet est entrepreneurial et je le construis depuis plusieurs annees deja. Il est ne d'une double influence : celle de mon pere, Philippe Picon, qui a fonde et developpe plusieurs structures dans le secteur des telecommunications et des services, et celle de ma passion pour Porsche. Observer mon pere prendre des decisions difficiles, arbitrer entre croissance et stabilite, gerer des equipes et traverser des crises m'a donne tres tot une comprehension intuitive de ce que signifie vraiment creer et piloter une entreprise.
+        À long terme, mon projet est entrepreneurial et je le construis depuis plusieurs années déjà. Il est né d'une double influence : celle de mon père, Philippe Picon, qui a fondé et développé plusieurs structures dans le secteur des télécommunications et des services, et celle de ma passion pour Porsche. Observer mon père prendre des décisions difficiles, arbitrer entre croissance et stabilité, gérer des équipes et traverser des crises m'a donné très tôt une compréhension intuitive de ce que signifie vraiment créer et piloter une entreprise.
       </p>
 
       <p class="projet-para fade-in">
-        Creer et piloter une holding d'acquisition et de restructuration de PME francaises sous-optimisees. Non pas des entreprises sans ame a depecer pour en extraire de la valeur financiere, mais des societes qui ont une histoire, un savoir-faire, une clientele fidele qui les affectionne et des employes qui les font vivre. Des entreprises fragilisees par des problemes de gouvernance, de financement ou de gestion operationnelle, mais dont l'identite est intacte. Mon role sera d'identifier ce qui a fragilise leur trajectoire, de le corriger sans trahir ce qui les rend uniques, et de les elever.
+        Créer et piloter une holding d'acquisition et de restructuration de PME françaises sous-optimisées. Non pas des entreprises sans âme à dépecer pour en extraire de la valeur financière, mais des sociétés qui ont une histoire, un savoir-faire, une clientèle fidèle qui les affectionne et des employés qui les font vivre. Des entreprises fragilisées par des problèmes de gouvernance, de financement ou de gestion opérationnelle, mais dont l'identité est intacte. Mon rôle sera d'identifier ce qui a fragilisé leur trajectoire, de le corriger sans trahir ce qui les rend uniques, et de les élever.
       </p>
 
       <div class="data-card fade-in">
-        <p class="data-value">5 000+ PME francaises cherchent un repreneur chaque annee.</p>
+        <p class="data-value">5 000+ PME françaises cherchent un repreneur chaque année.</p>
         <p class="data-source">BPI France, Observatoire de la transmission d'entreprises, 2024</p>
       </div>
 
       <p class="projet-para fade-in">
-        Porsche m'a appris que la valeur la plus durable n'est pas celle qu'on cree ex nihilo, c'est celle qu'on preserve, qu'on eleve et qu'on transmet. Avoir ete l'un des premiers constructeurs a produire une supercar hybride avec la 918 Spyder, developper un biocarburant de synthese pour preserver les moteurs thermiques, puis savoir reconnaitre ses erreurs face au tout-electrique et se relever, c'est une lecon de strategie industrielle permanente. Je vis cette passion avec mon pere, en visitant des ateliers et en participant a des evenements Porsche, et elle nourrit directement ma vision entrepreneuriale.
+        Porsche m'a appris que la valeur la plus durable n'est pas celle qu'on crée ex nihilo, c'est celle qu'on préserve, qu'on élève et qu'on transmet. Avoir été l'un des premiers constructeurs à produire une supercar hybride avec la 918 Spyder, développer un biocarburant de synthèse pour préserver les moteurs thermiques, puis savoir reconnaître ses erreurs face au tout-électrique et se relever, c'est une leçon de stratégie industrielle permanente. Je vis cette passion avec mon père, en visitant des ateliers et en participant à des événements Porsche, et elle nourrit directement ma vision entrepreneuriale.
       </p>
 
       <p class="projet-para fade-in">
-        Dominique Senequier et Ardian restent pour moi la reference absolue de ce qu'il est possible de construire lorsqu'on conjugue rigueur financiere, vision de long terme et respect profond de ce qu'on acquiert. C'est le cap que je me suis fixe, et je n'ai pas l'intention d'en devier.
+        Dominique Sénéquier et Ardian restent pour moi la référence absolue de ce qu'il est possible de construire lorsqu'on conjugue rigueur financière, vision de long terme et respect profond de ce qu'on acquiert. C'est le cap que je me suis fixé, et je n'ai pas l'intention d'en dévier.
       </p>
 
       <blockquote class="blockquote-cite fade-in">
         <p>"Nous n'investissons pas dans des entreprises pour les transformer en autre chose. Nous les aidons a devenir la meilleure version d'elles-memes."</p>
         <cite>
-          <strong>Dominique Senequier</strong>, fondatrice Ardian
+          <strong>Dominique Sénéquier</strong>, fondatrice Ardian
           <span class="cite-source">Interview Les Echos, 2022</span>
         </cite>
       </blockquote>
@@ -1876,7 +1880,7 @@
       </div>
 
       <p class="projet-para fade-in">
-        Le marche evolue. L'intelligence artificielle transforme en profondeur les metiers de la finance : analyse de donnees, modelisation, sourcing de cibles, automatisation des processus de due diligence. Je prepare des certifications IA avancees car je suis convaincu que les financiers de demain seront ceux qui maitrisent ces outils aujourd'hui. J'integre deja l'IA dans mon quotidien professionnel : automatisation du controle TVA chez Avizeo via Excel et Claude, analyse de dossiers, optimisation de processus.
+        Le marché évolue. L'intelligence artificielle transforme en profondeur les métiers de la finance : analyse de données, modélisation, sourcing de cibles, automatisation des processus de due diligence. Je prépare des certifications IA avancées car je suis convaincu que les financiers de demain seront ceux qui maîtrisent ces outils aujourd'hui. J'intègre déjà l'IA dans mon quotidien professionnel : automatisation du contrôle TVA chez Avizeo via Excel et Claude, analyse de dossiers, optimisation de processus.
       </p>
 
       <blockquote class="blockquote-cite fade-in">
@@ -1893,7 +1897,7 @@
       </div>
 
       <p class="projet-para fade-in">
-        Je suis conscient qu'un tel projet ne se construit pas seul. La reussite la plus solide est toujours collective. Je veux m'entourer de personnes qui partagent cette vision, qui apportent des competences complementaires aux miennes, et avec qui construire quelque chose qui dure.
+        Je suis conscient qu'un tel projet ne se construit pas seul. La réussite la plus solide est toujours collective. Je veux m'entourer de personnes qui partagent cette vision, qui apportent des compétences complémentaires aux miennes, et avec qui construire quelque chose qui dure.
       </p>
 
       <blockquote class="blockquote-cite fade-in">
@@ -1905,7 +1909,7 @@
       </blockquote>
 
       <div class="data-card fade-in">
-        <p class="data-value">Le Private Equity genere en moyenne un TRI de 14,7% sur 10 ans, contre 8,9% pour les marches cotes.</p>
+        <p class="data-value">Le Private Equity génère en moyenne un TRI de 14,7% sur 10 ans, contre 8,9% pour les marchés cotés.</p>
         <p class="data-source">France Invest / EY, 2023</p>
       </div>
 
@@ -1916,12 +1920,12 @@
 
           <div class="timeline-item fade-in">
             <span class="tl-date">2022 - 2025</span>
-            <p class="tl-event">BTS Comptabilite &amp; Gestion</p>
+            <p class="tl-event">BTS Comptabilité &amp; Gestion</p>
           </div>
 
           <div class="timeline-item fade-in">
             <span class="tl-date">2024 - 2025</span>
-            <p class="tl-event">3 experiences chez Avizeo</p>
+            <p class="tl-event">3 expériences chez Avizeo</p>
           </div>
 
           <div class="timeline-item fade-in">
@@ -1949,7 +1953,7 @@
 
           <div class="timeline-item fade-in">
             <span class="tl-date">2030+</span>
-            <p class="tl-event">Creation holding PME francaises</p>
+            <p class="tl-event">Création holding PME françaises</p>
             <span class="tl-milestone">Vision</span>
           </div>
 
@@ -1962,7 +1966,7 @@
   <!-- ETUDES -->
   <section id="etudes">
     <p class="section-label fade-in">02</p>
-    <h2 class="section-title fade-in fade-in-delay-1">Etudes</h2>
+    <h2 class="section-title fade-in fade-in-delay-1">Études</h2>
 
     <div class="timeline timeline--continu">
 
@@ -1972,10 +1976,10 @@
           <div class="etude-header">
             <span class="tl-date">2022 - 2023</span>
             <p class="etude-diplome">
-              Baccalaureat General
+              Baccalauréat Général
               <span class="etude-mention">Mention Bien</span>
             </p>
-            <p class="etude-etablissement">Lycee Saint-Marie Lyon &middot; Groupe Mariste</p>
+            <p class="etude-etablissement">Lycée Saint-Marie Lyon &middot; Groupe Mariste</p>
           </div>
 
           <div class="etude-specialites">
@@ -1985,7 +1989,7 @@
           </div>
 
           <p class="etude-texte">
-            Etablissement prive catholique reconnu pour sa rigueur academique et ses valeurs maristes : travail, discipline, respect, aide aux autres. A l'arrivee de chaque professeur, nous nous levions en silence et attendions son autorisation de nous asseoir. Les Peres Maristes nous ont transmis la rigueur, le travail continu et une discipline qui se perd de nos jours. C'est une fondation que je retrouve dans tout ce que je construis.
+            Établissement privé catholique reconnu pour sa rigueur académique et ses valeurs maristes : travail, discipline, respect, aide aux autres. À l'arrivée de chaque professeur, nous nous levions en silence et attendions son autorisation de nous asseoir. Les Pères Maristes nous ont transmis la rigueur, le travail continu et une discipline qui se perd de nos jours. C'est une fondation que je retrouve dans tout ce que je construis.
           </p>
         </div>
       </div>
@@ -1996,7 +2000,7 @@
           <div class="etude-header">
             <span class="tl-date">2023 - 2025</span>
             <p class="etude-diplome">
-              BTS Comptabilite &amp; Gestion
+              BTS Comptabilité &amp; Gestion
               <span class="etude-mention">Mention Bien</span>
               <span class="etude-score">15,12 / 20</span>
             </p>
@@ -2010,11 +2014,11 @@
             </div>
             <div class="etude-note">
               <span class="note-score">16/20</span>
-              <span class="note-matiere">Controle de gestion et analyse financiere</span>
+              <span class="note-matiere">Contrôle de gestion et analyse financière</span>
             </div>
             <div class="etude-note">
               <span class="note-score">17/20</span>
-              <span class="note-matiere">Anglais epreuve finale</span>
+              <span class="note-matiere">Anglais épreuve finale</span>
             </div>
           </div>
 
@@ -2022,15 +2026,15 @@
             <div class="etude-semestre">
               <p class="semestre-label">Programme complet</p>
               <div class="matieres-list">
-                <span class="matiere-tag">Culture Generale et Expression</span>
+                <span class="matiere-tag">Culture Générale et Expression</span>
                 <span class="matiere-tag">Anglais</span>
-                <span class="matiere-tag">Mathematiques appliquees</span>
+                <span class="matiere-tag">Mathématiques appliquées</span>
                 <span class="matiere-tag">CEJM</span>
                 <span class="matiere-tag">CEJM applicable aux processus</span>
                 <span class="matiere-tag">P1+P2 Operations comptables et info financiere</span>
                 <span class="matiere-tag">P3 Gestion des obligations fiscales (TVA IS IR CA3 CA12)</span>
                 <span class="matiere-tag">P4 Gestion des relations sociales</span>
-                <span class="matiere-tag">P5+P6 Analyse et prevision financiere</span>
+                <span class="matiere-tag">P5+P6 Analyse et prévision financière</span>
                 <span class="matiere-tag">P7 Fiabilisation SI comptable</span>
                 <span class="matiere-tag">Ateliers Professionnels</span>
                 <span class="matiere-tag">LV2 Espagnol</span>
@@ -2039,7 +2043,7 @@
           </div>
 
           <p class="etude-texte">
-            J'ai choisi ce BTS avec une conviction claire : la comptabilite est le point de depart de toute comprehension d'une entreprise. Le bilan, le compte de resultat, les flux de tresorerie, les SIG, ce sont les constantes vitales d'une entreprise. Maitriser leur lecture, c'est ne plus avoir de secrets sur la sante d'une structure.
+            J'ai choisi ce BTS avec une conviction claire : la comptabilité est le point de départ de toute compréhension d'une entreprise. Le bilan, le compte de résultat, les flux de trésorerie, les SIG, ce sont les constantes vitales d'une entreprise. Maîtriser leur lecture, c'est ne plus avoir de secrets sur la santé d'une structure.
           </p>
         </div>
       </div>
@@ -2050,7 +2054,7 @@
           <div class="etude-header">
             <span class="tl-date">2025 - 2026</span>
             <p class="etude-diplome">Licence 3 Gestion &amp; Management</p>
-            <p class="etude-etablissement">IAE Lyon &middot; Universite Jean Moulin Lyon 3</p>
+            <p class="etude-etablissement">IAE Lyon &middot; Université Jean Moulin Lyon 3</p>
           </div>
 
           <div class="etude-programme fade-in">
@@ -2060,13 +2064,13 @@
                 <span class="matiere-tag">Droit des societes</span>
                 <span class="matiere-tag">Fondamentaux de l'entrepreneuriat</span>
                 <span class="matiere-tag">Fondamentaux de la finance</span>
-                <span class="matiere-tag">Systeme d'information et bases de donnees</span>
+                <span class="matiere-tag">Système d'information et bases de données</span>
               </div>
             </div>
             <div class="etude-semestre">
               <p class="semestre-label">S1 · Majeure UE Transversale</p>
               <div class="matieres-list">
-                <span class="matiere-tag">Seminaire international</span>
+                <span class="matiere-tag">Séminaire international</span>
                 <span class="matiere-tag">Business English</span>
                 <span class="matiere-tag">PPP et certificat Voltaire</span>
               </div>
@@ -2081,10 +2085,10 @@
             <div class="etude-semestre">
               <p class="semestre-label">S2</p>
               <div class="matieres-list">
-                <span class="matiere-tag">Analyse de donnees (series temporelles, ACP, classification)</span>
-                <span class="matiere-tag">Interculturalite (Hofstede, Bennett, Erin Meyer)</span>
+                <span class="matiere-tag">Analyse de données (séries temporelles, ACP, classification)</span>
+                <span class="matiere-tag">Interculturalité (Hofstede, Bennett, Erin Meyer)</span>
                 <span class="matiere-tag">Controle de gestion</span>
-                <span class="matiere-tag">Marches financiers (indices boursiers, Fama, fixing, Euronext)</span>
+                <span class="matiere-tag">Marchés financiers (indices boursiers, Fama, fixing, Euronext)</span>
                 <span class="matiere-tag">Communication</span>
                 <span class="matiere-tag">Droit social</span>
               </div>
@@ -2092,7 +2096,7 @@
           </div>
 
           <p class="etude-texte">
-            L'IAE Lyon 3 m'a permis d'aborder des matieres directement applicables au monde de la finance. En Marches financiers, j'ai travaille sur les indices boursiers, la theorie de Fama, les mecanismes de fixing et les compartiments Euronext. Le Controle de gestion m'a appris a piloter la performance d'une organisation par les chiffres. L'Analyse de donnees m'a initie aux methodes quantitatives appliquees a la decision financiere.
+            L'IAE Lyon 3 m'a permis d'aborder des matières directement applicables au monde de la finance. En Marchés financiers, j'ai travaillé sur les indices boursiers, la théorie de Fama, les mécanismes de fixing et les compartiments Euronext. Le Contrôle de gestion m'a appris à piloter la performance d'une organisation par les chiffres. L'Analyse de données m'a initié aux méthodes quantitatives appliquées à la décision financière.
           </p>
         </div>
       </div>
@@ -2103,15 +2107,15 @@
   <!-- EXPERIENCES -->
   <section id="experiences">
     <p class="section-label fade-in">03</p>
-    <h2 class="section-title fade-in fade-in-delay-1">Experiences</h2>
+    <h2 class="section-title fade-in fade-in-delay-1">Expériences</h2>
 
     <div class="timeline timeline--continu">
 
       <!-- A) AVIZEO -->
       <div class="timeline-item fade-in">
         <div class="etude-header">
-          <a href="https://www.avizeo.fr" class="exp-entreprise" target="_blank" rel="noopener">Avizeo</a>
-          <p class="exp-description">Cabinet d'expertise comptable et de conseil base a Lyon, specialise dans l'accompagnement de PME et groupes de societes.</p>
+          <a href="https://www.avizeo.eu/" class="exp-entreprise" target="_blank" rel="noopener">Avizeo</a>
+          <p class="exp-description">Cabinet d'expertise comptable et de conseil basé à Lyon, spécialisé dans l'accompagnement de PME et groupes de sociétés.</p>
         </div>
 
         <!-- CDD 2025 -->
@@ -2122,14 +2126,14 @@
             <span class="exp-periode">Mai &ndash; Juillet 2025 &middot; 39h / semaine</span>
           </div>
           <ul class="exp-missions">
-            <li>Operation de remontee de dividendes de plusieurs M euros au sein d'une holding dans le cadre d'une acquisition, analyse des SIG et bilans des filiales pour identifier les capacites distributives</li>
-            <li>Evaluation d'entreprises et analyse de patrimoine financier et immobilier</li>
-            <li>Restructuration de groupes de societes : volets juridiques, fiscaux, comptables</li>
-            <li>Construction de tableaux de bord, bilans consolides, SIG</li>
-            <li>Revision comptable : postes fiscaux, consolidation de comptes</li>
+            <li>Opération de remontée de dividendes de plusieurs M euros au sein d'une holding dans le cadre d'une acquisition, analyse des SIG et bilans des filiales pour identifier les capacités distributives</li>
+            <li>Évaluation d'entreprises et analyse de patrimoine financier et immobilier</li>
+            <li>Restructuration de groupes de sociétés : volets juridiques, fiscaux, comptables</li>
+            <li>Construction de tableaux de bord, bilans consolidés, SIG</li>
+            <li>Révision comptable : postes fiscaux, consolidation de comptes</li>
           </ul>
           <div class="exp-badge-diff">
-            <p>Automatisation du processus de controle TVA via macros Excel et IA (Claude, ChatGPT). Initiative personnelle non demandee. Reduction significative du temps de traitement et des erreurs.</p>
+            <p>Automatisation du processus de contrôle TVA via macros Excel et IA (Claude, ChatGPT). Initiative personnelle non demandée. Réduction significative du temps de traitement et des erreurs.</p>
           </div>
         </div>
 
@@ -2138,10 +2142,10 @@
           <div class="exp-header-line">
             <span class="exp-contrat">Stage</span>
             <span class="exp-role">Assistant Expert-Comptable</span>
-            <span class="exp-periode">Janvier &ndash; Fevrier 2025</span>
+            <span class="exp-periode">Janvier &ndash; Février 2025</span>
           </div>
           <ul class="exp-missions">
-            <li>Controle TVA renforce, declarations fiscales CA3 CA12 IS IR</li>
+            <li>Contrôle TVA renforcé, déclarations fiscales CA3 CA12 IS IR</li>
             <li>Tenue dossiers clients, rapprochements bancaires</li>
           </ul>
         </div>
@@ -2154,36 +2158,36 @@
             <span class="exp-periode">Mai &ndash; Juillet 2024</span>
           </div>
           <ul class="exp-missions">
-            <li>Consolidation et analyse financiere : SIG, ratios</li>
+            <li>Consolidation et analyse financière : SIG, ratios</li>
             <li>Suivi dossiers clients, tenue de comptes</li>
           </ul>
         </div>
 
         <p class="exp-note fade-in">
-          "A chaque stage, j'ai cherche a prolonger la mission en CDD. Cette fidelite aux engagements est une valeur que je porte profondement."
+          "À chaque stage, j'ai cherché à prolonger la mission en CDD. Cette fidélité aux engagements est une valeur que je porte profondément."
         </p>
       </div>
 
       <!-- B) RESTAURANT FOND ROSE - Institut Paul Bocuse -->
       <div class="timeline-item fade-in">
         <div class="etude-header">
-          <a href="https://www.institutpaulbocuse.com" class="exp-entreprise" target="_blank" rel="noopener">Restaurant Fond Rose</a>
-          <p class="exp-description">L'Institut Paul Bocuse est une reference mondiale de la gastronomie et de l'hotellerie de luxe.</p>
+          <a href="https://bocuse.fr/fr/" class="exp-entreprise" target="_blank" rel="noopener">Restaurant Fond Rose</a>
+          <p class="exp-description">L'Institut Paul Bocuse est une référence mondiale de la gastronomie et de l'hôtellerie de luxe.</p>
         </div>
 
         <div class="exp-poste fade-in">
           <div class="exp-header-line">
             <span class="exp-contrat">CDI</span>
             <span class="exp-role">Chef de Rang</span>
-            <span class="exp-periode">Avril 2023 &ndash; Present</span>
+            <span class="exp-periode">Avril 2023 &ndash; Présent</span>
           </div>
           <ul class="exp-missions">
-            <li>Service gastronomique d'exception : sole meuniere, loup en croute, volaille en vessie, coquelet en crapaudine, dressage devant clientele exigeante</li>
-            <li>Conseil mets et vins, jusqu'a 280 couverts</li>
+            <li>Service gastronomique d'exception : sole meunière, loup en croûte, volaille en vessie, coquelet en crapaudine, dressage devant clientele exigeante</li>
+            <li>Conseil mets et vins, jusqu'à 280 couverts</li>
             <li>Formation et encadrement des nouveaux collaborateurs</li>
           </ul>
           <div class="exp-badge-diff">
-            <p>Maintien de ce CDI en parallele du BTS puis de la Licence avec 39h par semaine chez Avizeo simultanement. Preuve concrete d'une capacite de travail hors norme.</p>
+            <p>Maintien de ce CDI en parallèle du BTS puis de la Licence avec 39h par semaine chez Avizeo simultanément. Preuve concrète d'une capacité de travail hors norme.</p>
           </div>
         </div>
       </div>
@@ -2191,8 +2195,8 @@
       <!-- C) MARCHES DE BABYLONE -->
       <div class="timeline-item fade-in">
         <div class="etude-header">
-          <a href="https://www.marchesdebabylone.fr" class="exp-entreprise" target="_blank" rel="noopener">Marches de Babylone</a>
-          <p class="exp-description">Reseau de marches bio et locaux lyonnais, acteur des circuits courts.</p>
+          <span class="exp-entreprise">Marchés de Babylone</span>
+          <p class="exp-description">Réseau de marchés bio et locaux lyonnais, acteur des circuits courts.</p>
         </div>
 
         <div class="exp-poste fade-in">
@@ -2227,12 +2231,12 @@
           <h3 class="skill-cat-title">Finance &amp; Analyse</h3>
         </div>
         <div class="skill-tags">
-          <span class="skill-tag">Evaluation d'entreprises</span>
+          <span class="skill-tag">Évaluation d'entreprises</span>
           <span class="skill-tag">LBO</span>
           <span class="skill-tag">M&amp;A</span>
           <span class="skill-tag">DCF</span>
           <span class="skill-tag">EV/EBITDA</span>
-          <span class="skill-tag">Modelisation financiere</span>
+          <span class="skill-tag">Modélisation financière</span>
           <span class="skill-tag">SIG</span>
           <span class="skill-tag">Analyse de bilan</span>
           <span class="skill-tag">Restructuring holding</span>
@@ -2244,7 +2248,7 @@
       <div class="skill-card fade-in fade-in-delay-1">
         <div class="skill-cat-header">
           <div class="skill-cat-icon">C</div>
-          <h3 class="skill-cat-title">Comptabilite</h3>
+          <h3 class="skill-cat-title">Comptabilité</h3>
         </div>
         <div class="skill-tags">
           <span class="skill-tag">Consolidation</span>
@@ -2265,7 +2269,7 @@
           <h3 class="skill-cat-title">Outils &amp; Tech</h3>
         </div>
         <div class="skill-tags">
-          <span class="skill-tag">Excel avance macros VBA</span>
+          <span class="skill-tag">Excel avancé macros VBA</span>
           <span class="skill-tag">Cegid</span>
           <span class="skill-tag">Quadratus</span>
           <span class="skill-tag">Xlstat</span>
@@ -2284,13 +2288,13 @@
         </div>
         <div class="skill-tags">
           <span class="skill-tag">Rigueur analytique &middot; 3 ans Avizeo</span>
-          <span class="skill-tag">Resistance a la pression &middot; Paul Bocuse 280 couverts</span>
+          <span class="skill-tag">Résistance à la pression &middot; Paul Bocuse 280 couverts</span>
           <span class="skill-tag">Initiative autonome &middot; TVA non demandee</span>
           <span class="skill-tag">Leadership &amp; ecoute</span>
           <span class="skill-tag">Apprentissage rapide</span>
           <span class="skill-tag">Vision long terme</span>
-          <span class="skill-tag">Loyaute &amp; fidelite aux engagements</span>
-          <span class="skill-tag">Curiosite permanente</span>
+          <span class="skill-tag">Loyauté &amp; fidélité aux engagements</span>
+          <span class="skill-tag">Curiosité permanente</span>
         </div>
       </div>
 
@@ -2321,7 +2325,7 @@
       <!-- Francais -->
       <div class="fade-in">
         <div class="langue-header">
-          <span class="langue-nom">Francais</span>
+          <span class="langue-nom">Français</span>
           <div class="langue-badges">
             <span class="langue-badge">Langue natale</span>
             <span class="langue-pct">100%</span>
@@ -2351,7 +2355,7 @@
         </div>
 
         <div class="langue-demarche fade-in">
-          <p class="langue-demarche-title">Demarche active</p>
+          <p class="langue-demarche-title">Démarche active</p>
           <div class="langue-demarche-items">
             <span class="langue-demarche-item">Lecture Financial Times quotidienne</span>
             <span class="langue-demarche-item">Series et films en version originale anglaise</span>
@@ -2369,42 +2373,42 @@
   <!-- ANNEE 2026 / 2027 -->
   <section id="annee2027">
     <p class="section-label fade-in">06</p>
-    <h2 class="section-title fade-in fade-in-delay-1">2026 / 2027 &middot; L'Annee Charniere</h2>
+    <h2 class="section-title fade-in fade-in-delay-1">2026 / 2027 &middot; L'Année Charnière</h2>
 
     <p class="annee-accroche fade-in fade-in-delay-2">
-      "Cette annee n'est pas une pause. C'est l'annee la plus importante de ma trajectoire. Chaque decision, chaque heure investie, chaque contact noue sera une brique de ce que je construis."
+      "Cette année n'est pas une pause. C'est l'année la plus importante de ma trajectoire. Chaque décision, chaque heure investie, chaque contact noué sera une brique de ce que je construis."
     </p>
 
     <div class="annee-narrative">
 
       <span class="annee-sep fade-in">Le Stage</span>
       <p class="annee-para fade-in">
-        Ce que j'attends de ce stage, c'est simple : comprendre comment la finance fonctionne vraiment, de l'interieur. Pas dans les livres, pas dans les cours. Sur le terrain, au contact de professionnels qui prennent de vraies decisions avec de vrais enjeux. Je veux integrer les mecanismes financiers que j'ai commences a apprendre theoriquement, comprendre comment une these d'investissement se construit et s'execute, comment on lit une entreprise au-dela de ses etats financiers, comment on negocie, comment on structure.
+        Ce que j'attends de ce stage, c'est simple : comprendre comment la finance fonctionne vraiment, de l'intérieur. Pas dans les livres, pas dans les cours. Sur le terrain, au contact de professionnels qui prennent de vraies décisions avec de vrais enjeux. Je veux intégrer les mécanismes financiers que j'ai commencés à apprendre théoriquement, comprendre comment une thèse d'investissement se construit et s'exécute, comment on lit une entreprise au-delà de ses états financiers, comment on négocie, comment on structure.
       </p>
 
       <span class="annee-sep fade-in">La Culture Financiere</span>
       <p class="annee-para fade-in">
-        Je veux developper une vraie culture financiere. Pas une culture de facade, pas des mots places au bon moment, mais une comprehension profonde des dynamiques de marche, des logiques d'allocation de capital, des criteres qui font qu'on investit dans une societe plutot qu'une autre. C'est ce type de culture qu'on ne peut acquerir qu'en etant dans la salle, pas en lisant des rapports depuis un amphi.
+        Je veux développer une vraie culture financière. Pas une culture de façade, pas des mots placés au bon moment, mais une compréhension profonde des dynamiques de marché, des logiques d'allocation de capital, des critères qui font qu'on investit dans une société plutôt qu'une autre. C'est ce type de culture qu'on ne peut acquérir qu'en étant dans la salle, pas en lisant des rapports depuis un amphi.
       </p>
 
       <span class="annee-sep fade-in">Le Reseau</span>
       <p class="annee-para fade-in">
-        Je veux aussi construire un reseau. Un reseau parisien solide, construit dans la duree, fonde sur le travail et la confiance. Chaque collegue, chaque manager, chaque deal sur lequel j'interviendrai sera une connexion reelle. Je ne viens pas collecter des cartes de visite. Je viens nouer des relations professionnelles qui m'accompagneront tout au long de ma carriere.
+        Je veux aussi construire un réseau. Un réseau parisien solide, construit dans la durée, fondé sur le travail et la confiance. Chaque collègue, chaque manager, chaque deal sur lequel j'interviendrai sera une connexion réelle. Je ne viens pas collecter des cartes de visite. Je viens nouer des relations professionnelles qui m'accompagneront tout au long de ma carrière.
       </p>
 
       <span class="annee-sep fade-in">L'Avance</span>
       <p class="annee-para fade-in">
-        Et je veux prendre une longueur d'avance sur les autres candidats de ma promotion. Pendant que certains attendront d'etre diplomes pour commencer a reflechir a leur positionnement, moi j'aurai deja 6 mois d'experience operationnelle dans une structure de premier rang, un reseau constitue, et une vision claire de ce que je veux faire ensuite.
+        Et je veux prendre une longueur d'avance sur les autres candidats de ma promotion. Pendant que certains attendront d'être diplômés pour commencer à réfléchir à leur positionnement, moi j'aurai déjà 6 mois d'expérience opérationnelle dans une structure de premier rang, un réseau constitué, et une vision claire de ce que je veux faire ensuite.
       </p>
 
       <span class="annee-sep fade-in">Les Certifications</span>
       <p class="annee-para fade-in">
-        En parallele de ce stage, parce que l'investissement ne s'arrete pas a 18h, je preparerai mes certifications : CFA Level 1 en decembre 2026, Bloomberg Market Concepts avant septembre, Python / Pandas applique a la finance, Prompt Engineering Anthropic. Ces certifications ne sont pas des cases a cocher. Ce sont des signaux concrets que j'envoie a Philippe Thomas et a tous les recruteurs que je croiserai : je travaille en permanence, je n'attends pas qu'on me le demande.
+        En parallèle de ce stage, parce que l'investissement ne s'arrête pas à 18h, je préparerai mes certifications : CFA Level 1 en décembre 2026, Bloomberg Market Concepts avant septembre, Python / Pandas appliqué à la finance, Prompt Engineering Anthropic. Ces certifications ne sont pas des cases à cocher. Ce sont des signaux concrets que j'envoie à Philippe Thomas et à tous les recruteurs que je croiserai : je travaille en permanence, je n'attends pas qu'on me le demande.
       </p>
 
       <span class="annee-sep fade-in">L'ESCP</span>
       <p class="annee-para fade-in">
-        Je preparerai egalement mon TOEIC pour atteindre 900+ et mon TAGE MAGE pour les concours d'admission. Et surtout, je candidaterai au MSc Finance de l'ESCP Business School pour la session de janvier 2027, elue numero un mondial par le Financial Times. Cette fois, j'arriverai avec un dossier irrefutable : 6 mois d'experience PE / IB reelle, des certifications financieres et IA, un TOEIC 900+, et un projet professionnel que j'aurai commence a executer, pas seulement a raconter. Philippe Thomas ne se posera aucune question.
+        Je préparerai également mon TOEIC pour atteindre 900+ et mon TAGE MAGE pour les concours d'admission. Et surtout, je candidaterai au MSc Finance de l'ESCP Business School pour la session de janvier 2027, élue numéro un mondial par le Financial Times. Cette fois, j'arriverai avec un dossier irréfutable : 6 mois d'expérience PE / IB réelle, des certifications financières et IA, un TOEIC 900+, et un projet professionnel que j'aurai commencé à exécuter, pas seulement à raconter. Philippe Thomas ne se posera aucune question.
       </p>
 
     </div>
@@ -2424,7 +2428,7 @@
       <div class="contact-item">
         <div class="contact-icon">T</div>
         <div class="contact-info">
-          <span class="contact-label">Telephone</span>
+          <span class="contact-label">Téléphone</span>
           <a href="tel:+33610189215" class="contact-value contact-link">+33 6 10 18 92 15</a>
         </div>
       </div>
@@ -2512,19 +2516,37 @@
     menuOverlay.addEventListener('click', closeMenu);
 
     menuDrawer.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href').replace('#', '');
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+          document.querySelectorAll('section').forEach(s => { s.style.display = 'none'; });
+          const isAccueil = targetId === 'accueil';
+          targetSection.style.display = isAccueil ? 'flex' : 'block';
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
         closeMenu();
       });
     });
 
-    /* ---- SMOOTH SCROLL (complement pour vieux navigateurs) ---- */
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', e => {
-        const target = document.querySelector(anchor.getAttribute('href'));
-        if (!target) return;
+    /* CTA hero → projet */
+    const ctaProjet = document.getElementById('cta-projet');
+    if (ctaProjet) {
+      ctaProjet.addEventListener('click', e => {
         e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        document.querySelectorAll('section').forEach(s => { s.style.display = 'none'; });
+        document.getElementById('projet').style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       });
+    }
+
+    /* Logo NP → retour accueil */
+    document.querySelector('.nav-logo').addEventListener('click', e => {
+      e.preventDefault();
+      document.querySelectorAll('section').forEach(s => { s.style.display = 'none'; });
+      document.getElementById('accueil').style.display = 'flex';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
     /* ---- INTERSECTION OBSERVER (fade-in) ---- */
