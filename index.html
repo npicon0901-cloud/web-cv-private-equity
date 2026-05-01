@@ -33,8 +33,16 @@
       cursor: none;
     }
 
+    @keyframes bgPulse {
+      0%   { background-position: 0% 50%; }
+      50%  { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
     body {
-      background-color: var(--bg);
+      background: linear-gradient(135deg, #0D1621 0%, #1B2A4A 50%, #0D1621 100%);
+      background-size: 400% 400%;
+      animation: bgPulse 18s ease infinite;
       color: var(--text);
       font-family: 'DM Sans', sans-serif;
       font-weight: 300;
@@ -222,6 +230,8 @@
 
     section:not(#accueil) {
       border-top: 1px solid var(--gold-dim);
+      padding-left:  max(5vw, calc((100% - 800px) / 2));
+      padding-right: max(5vw, calc((100% - 800px) / 2));
     }
 
     /* =============================================
@@ -657,8 +667,9 @@
     ============================================= */
     .fade-in {
       opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
+      transform: translateY(24px);
+      transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
     .fade-in.visible {
@@ -666,11 +677,11 @@
       transform: translateY(0);
     }
 
-    .fade-in-delay-1 { transition-delay: 0.1s; }
-    .fade-in-delay-2 { transition-delay: 0.2s; }
-    .fade-in-delay-3 { transition-delay: 0.3s; }
-    .fade-in-delay-4 { transition-delay: 0.4s; }
-    .fade-in-delay-5 { transition-delay: 0.5s; }
+    .fade-in-delay-1 { transition-delay: 0.08s; }
+    .fade-in-delay-2 { transition-delay: 0.16s; }
+    .fade-in-delay-3 { transition-delay: 0.24s; }
+    .fade-in-delay-4 { transition-delay: 0.32s; }
+    .fade-in-delay-5 { transition-delay: 0.40s; }
 
     /* =============================================
        SECTION TRANSITION OVERLAY
@@ -1130,6 +1141,21 @@
       color: rgba(248, 245, 240, 0.48);
       line-height: 1.7;
       max-width: 640px;
+    }
+
+    .exp-divider {
+      border: none;
+      border-top: 1px solid var(--gold-dim);
+      margin: 1.4rem 0 1.2rem;
+    }
+
+    .exp-narrative {
+      font-family: 'DM Sans', sans-serif;
+      font-size: clamp(0.82rem, 1.4vw, 0.9rem);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.95;
+      color: rgba(248, 245, 240, 0.68);
     }
 
     /* =============================================
@@ -2163,8 +2189,9 @@
           </ul>
         </div>
 
-        <p class="exp-note fade-in">
-          "À chaque stage, j'ai cherché à prolonger la mission en CDD. Cette fidélité aux engagements est une valeur que je porte profondément."
+        <hr class="exp-divider">
+        <p class="exp-narrative fade-in">
+          Chez Avizeo, j'ai eu la chance d'être exposé très tôt à des missions que beaucoup n'abordent qu'en Master. Ce qui m'a le plus marqué dans cette expérience : j'ai automatisé le processus de contrôle TVA via des macros Excel et des outils IA — une initiative personnelle, non demandée, qui a réduit significativement le temps de traitement et les erreurs. À chaque stage, j'ai cherché à prolonger la mission en CDD pour aller au bout de ce que j'avais commencé. La qualité de mon travail m'a valu d'être réembauché pour prendre en charge des missions sensiblement plus complexes : évaluation d'entreprises, analyse de patrimoine financier et immobilier, construction de tableaux de bord, et restructuration de groupes de sociétés dans leurs dimensions juridique, fiscale et comptable. Parmi ces missions, j'ai notamment participé à une opération de remontée de plusieurs millions d'euros au sein d'une holding dans le but d'acquérir une nouvelle société. L'enjeu était précis : analyser les SIG et les bilans des filiales afin d'identifier les capacités distributives de chacune sans pénaliser leur activité créatrice de valeur, puis orchestrer la remontée de dividendes vers la société mère. C'est ce type de mission, à la croisée de la stratégie financière et de l'analyse opérationnelle, qui a définitivement orienté mon projet vers le haut de bilan et le private equity. Cette continuité, cette fidélité aux engagements et aux personnes, est une valeur que je porte profondément.
         </p>
       </div>
 
@@ -2182,7 +2209,7 @@
             <span class="exp-periode">Avril 2023 &ndash; Présent</span>
           </div>
           <ul class="exp-missions">
-            <li>Service gastronomique d'exception : sole meunière, loup en croûte, volaille en vessie, coquelet en crapaudine, dressage devant clientele exigeante</li>
+            <li>Service gastronomique d'exception : sole meunière, loup en croûte, volaille en vessie, coquelet en crapaudine, dressage devant clientèle exigeante</li>
             <li>Conseil mets et vins, jusqu'à 280 couverts</li>
             <li>Formation et encadrement des nouveaux collaborateurs</li>
           </ul>
@@ -2190,6 +2217,10 @@
             <p>Maintien de ce CDI en parallèle du BTS puis de la Licence avec 39h par semaine chez Avizeo simultanément. Preuve concrète d'une capacité de travail hors norme.</p>
           </div>
         </div>
+        <hr class="exp-divider">
+        <p class="exp-narrative fade-in">
+          Le Restaurant Fond Rose du Groupe Institut Paul Bocuse m'a appris une chose fondamentale : l'excellence ne s'improvise pas, elle se construit dans le détail et la répétition d'un standard élevé. Travailler en salle gastronomique jusqu'à 280 couverts, dresser des plats devant une clientèle exigeante — sole meunière, loup en croûte, volaille en vessie, coquelet en crapaudine — conseiller sur les accords mets-vins, former les nouveaux collaborateurs aux standards de la maison, tout cela dans un environnement où l'à-peu-près n'existe tout simplement pas. Cette philosophie, je la transpose naturellement à tout ce que j'entreprends, y compris dans mon travail en finance. Ce que je retiens surtout : j'ai maintenu ce CDI en parallèle de mon BTS puis de ma Licence, avec 39h par semaine chez Avizeo en CDD simultanément. Ce n'est pas de la résistance, c'est mon mode de fonctionnement.
+        </p>
       </div>
 
       <!-- C) MARCHES DE BABYLONE -->
@@ -2208,10 +2239,14 @@
           <ul class="exp-missions">
             <li>Gestion des stands et approvisionnements</li>
             <li>Relation client, valorisation des produits en circuits courts</li>
-            <li>Strategie d'ecoulement des stocks</li>
-            <li>Negociation fournisseurs</li>
+            <li>Stratégie d'écoulement des stocks pour limiter les pertes en fin de marché</li>
+            <li>Négociation fournisseurs</li>
           </ul>
         </div>
+        <hr class="exp-divider">
+        <p class="exp-narrative fade-in">
+          Sur les marchés bio de Lyon, j'ai découvert les réalités opérationnelles du commerce direct : gestion de la mise en place des stands, relation client, valorisation de produits de saison issus de circuits courts, développement d'une stratégie d'écoulement des stocks pour limiter les pertes en fin de marché. Autant de réalités opérationnelles qui m'ont donné une compréhension intuitive des dynamiques commerciales et de la gestion à flux tendus.
+        </p>
       </div>
 
     </div>
@@ -2240,7 +2275,7 @@
           <span class="skill-tag">SIG</span>
           <span class="skill-tag">Analyse de bilan</span>
           <span class="skill-tag">Restructuring holding</span>
-          <span class="skill-tag">Marches financiers</span>
+          <span class="skill-tag">Marchés financiers</span>
         </div>
       </div>
 
@@ -2515,17 +2550,21 @@
 
     menuOverlay.addEventListener('click', closeMenu);
 
+    function showSection(targetId) {
+      const targetSection = document.getElementById(targetId);
+      if (!targetSection) return;
+      document.querySelectorAll('section').forEach(s => { s.style.display = 'none'; });
+      const isAccueil = targetId === 'accueil';
+      targetSection.style.display = isAccueil ? 'flex' : 'block';
+      window.scrollTo({ top: 0, behavior: 'instant' });
+      observeSection(targetSection);
+    }
+
     menuDrawer.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', e => {
         e.preventDefault();
         const targetId = link.getAttribute('href').replace('#', '');
-        const targetSection = document.getElementById(targetId);
-        if (targetSection) {
-          document.querySelectorAll('section').forEach(s => { s.style.display = 'none'; });
-          const isAccueil = targetId === 'accueil';
-          targetSection.style.display = isAccueil ? 'flex' : 'block';
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+        showSection(targetId);
         closeMenu();
       });
     });
@@ -2535,22 +2574,17 @@
     if (ctaProjet) {
       ctaProjet.addEventListener('click', e => {
         e.preventDefault();
-        document.querySelectorAll('section').forEach(s => { s.style.display = 'none'; });
-        document.getElementById('projet').style.display = 'block';
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        showSection('projet');
       });
     }
 
     /* Logo NP → retour accueil */
     document.querySelector('.nav-logo').addEventListener('click', e => {
       e.preventDefault();
-      document.querySelectorAll('section').forEach(s => { s.style.display = 'none'; });
-      document.getElementById('accueil').style.display = 'flex';
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      showSection('accueil');
     });
 
     /* ---- INTERSECTION OBSERVER (fade-in) ---- */
-    const fadeEls = document.querySelectorAll('.fade-in');
     const io = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -2558,9 +2592,17 @@
           io.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.15 });
+    }, { threshold: 0.08 });
 
-    fadeEls.forEach(el => io.observe(el));
+    function observeSection(section) {
+      section.querySelectorAll('.fade-in:not(.visible)').forEach((el, i) => {
+        el.style.transitionDelay = Math.min(i * 0.055, 0.55) + 's';
+        io.observe(el);
+      });
+    }
+
+    /* Observer accueil immédiatement */
+    observeSection(document.getElementById('accueil'));
 
     /* ---- TYPEWRITER ---- */
     const phrases = [
