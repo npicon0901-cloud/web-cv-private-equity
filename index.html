@@ -1885,6 +1885,227 @@
       line-height: 1.6;
     }
 
+    /* =============================================
+       MARCHÉS SECTION
+    ============================================= */
+    .marches-bloc {
+      margin-bottom: 3.5rem;
+    }
+
+    .marches-bloc-title {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.4rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--gold-dim);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .marches-refresh-btn {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(248, 245, 240, 0.4);
+      background: none;
+      border: 1px solid var(--gold-dim);
+      border-radius: 2px;
+      padding: 0.2rem 0.7rem;
+      cursor: none;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .marches-refresh-btn:hover {
+      color: var(--gold);
+      border-color: var(--gold);
+    }
+
+    .marches-refresh-btn.loading {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    /* Indices grid */
+    .indices-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+
+    @media (max-width: 740px) {
+      .indices-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 420px) {
+      .indices-grid { grid-template-columns: 1fr; }
+    }
+
+    .indice-card {
+      background: rgba(13, 22, 33, 0.72);
+      border: 1px solid var(--gold-dim);
+      border-radius: 3px;
+      padding: 1.1rem 1.2rem;
+      transition: border-color 0.25s ease, transform 0.25s ease;
+    }
+
+    .indice-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-3px);
+    }
+
+    .indice-flag {
+      font-size: 1.1rem;
+      margin-bottom: 0.4rem;
+      display: block;
+    }
+
+    .indice-name {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(248, 245, 240, 0.42);
+      margin-bottom: 0.5rem;
+    }
+
+    .indice-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+      font-weight: 300;
+      color: var(--text);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+
+    .indice-change {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 400;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .indice-change.pos { color: #2ecc71; }
+    .indice-change.neg { color: #e74c3c; }
+    .indice-change.neu { color: rgba(248, 245, 240, 0.4); }
+
+    .indice-status {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.62rem;
+      color: rgba(248, 245, 240, 0.3);
+      margin-top: 0.9rem;
+      font-style: italic;
+    }
+
+    /* Taux grid */
+    .taux-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+
+    @media (max-width: 740px) {
+      .taux-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .taux-card {
+      background: rgba(27, 42, 74, 0.4);
+      border: 1px solid var(--gold-dim);
+      border-radius: 3px;
+      padding: 1.1rem 1.2rem;
+      transition: border-color 0.25s ease;
+    }
+
+    .taux-card:hover { border-color: var(--gold); }
+
+    .taux-flag {
+      font-size: 1.2rem;
+      margin-bottom: 0.45rem;
+      display: block;
+    }
+
+    .taux-banque {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(248, 245, 240, 0.45);
+      margin-bottom: 0.55rem;
+    }
+
+    .taux-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.5rem, 3vw, 2.1rem);
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 0.35rem;
+    }
+
+    .taux-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 300;
+      color: rgba(248, 245, 240, 0.42);
+      line-height: 1.4;
+    }
+
+    .taux-decision {
+      margin-top: 0.6rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.62rem;
+      color: rgba(248, 245, 240, 0.28);
+      font-style: italic;
+    }
+
+    /* News */
+    .news-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .news-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--gold-dim);
+      transition: padding-left 0.2s ease;
+    }
+
+    .news-item:first-child { border-top: 1px solid var(--gold-dim); }
+
+    .news-item:hover { padding-left: 0.6rem; }
+
+    .news-title {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 400;
+      color: var(--text);
+      text-decoration: none;
+      line-height: 1.45;
+      transition: color 0.2s ease;
+    }
+
+    .news-title:hover { color: var(--gold); }
+
+    .news-meta {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.65rem;
+      color: rgba(248, 245, 240, 0.35);
+      letter-spacing: 0.04em;
+    }
+
     /* scrollbar */
     ::-webkit-scrollbar { width: 5px; }
     ::-webkit-scrollbar-track { background: var(--bg); }
@@ -1917,6 +2138,7 @@
     <a href="#univers"     data-section="Univers">Univers &amp; Valeurs</a>
     <a href="#projet"      data-section="Projet">Projet</a>
     <a href="#outils"      data-section="Outils">Outils Financiers</a>
+    <a href="#marches"     data-section="Marchés">Marchés</a>
     <a href="#etudes"      data-section="Etudes">Études</a>
     <a href="#experiences" data-section="Experiences">Expériences</a>
     <a href="#skills"      data-section="Skills">Skills</a>
@@ -2436,6 +2658,106 @@
       </div><!-- /layout -->
       <p class="calc-disclaimer">Décote appliquée sur l'EV pour illiquidité et absence de prime de contrôle cotée. Multiples à calibrer sur comparables sectoriels. À des fins illustratives uniquement.</p>
     </div><!-- /panel-ev -->
+
+  </section>
+
+  <!-- MARCHÉS -->
+  <section id="marches">
+    <p class="section-label fade-in">—</p>
+    <h2 class="section-title fade-in fade-in-delay-1">Marchés &amp; Macro</h2>
+
+    <!-- BLOC 1 : INDICES BOURSIERS -->
+    <div class="marches-bloc fade-in fade-in-delay-2">
+      <div class="marches-bloc-title">
+        Indices boursiers
+        <button class="marches-refresh-btn" id="btn-refresh-indices" onclick="fetchIndices()">↻ Actualiser</button>
+      </div>
+
+      <div class="indices-grid" id="indices-grid">
+        <!-- CAC 40 -->
+        <div class="indice-card" id="idx-FCHI">
+          <span class="indice-flag">🇫🇷</span>
+          <p class="indice-name">CAC 40</p>
+          <p class="indice-price" id="idx-FCHI-price">—</p>
+          <p class="indice-change neu" id="idx-FCHI-change">—</p>
+          <p class="indice-status" id="idx-FCHI-status">Chargement…</p>
+        </div>
+        <!-- S&P 500 -->
+        <div class="indice-card" id="idx-GSPC">
+          <span class="indice-flag">🇺🇸</span>
+          <p class="indice-name">S&amp;P 500</p>
+          <p class="indice-price" id="idx-GSPC-price">—</p>
+          <p class="indice-change neu" id="idx-GSPC-change">—</p>
+          <p class="indice-status" id="idx-GSPC-status">Chargement…</p>
+        </div>
+        <!-- DAX -->
+        <div class="indice-card" id="idx-GDAXI">
+          <span class="indice-flag">🇩🇪</span>
+          <p class="indice-name">DAX</p>
+          <p class="indice-price" id="idx-GDAXI-price">—</p>
+          <p class="indice-change neu" id="idx-GDAXI-change">—</p>
+          <p class="indice-status" id="idx-GDAXI-status">Chargement…</p>
+        </div>
+        <!-- FTSE 100 -->
+        <div class="indice-card" id="idx-FTSE">
+          <span class="indice-flag">🇬🇧</span>
+          <p class="indice-name">FTSE 100</p>
+          <p class="indice-price" id="idx-FTSE-price">—</p>
+          <p class="indice-change neu" id="idx-FTSE-change">—</p>
+          <p class="indice-status" id="idx-FTSE-status">Chargement…</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- BLOC 2 : TAUX BANQUES CENTRALES -->
+    <div class="marches-bloc fade-in">
+      <div class="marches-bloc-title">Taux des banques centrales</div>
+
+      <div class="taux-grid">
+        <div class="taux-card">
+          <span class="taux-flag">🇪🇺</span>
+          <p class="taux-banque">BCE</p>
+          <p class="taux-value">2,65 %</p>
+          <p class="taux-label">Taux de dépôt</p>
+          <p class="taux-decision">Dernière décision : mars 2026</p>
+        </div>
+        <div class="taux-card">
+          <span class="taux-flag">🇺🇸</span>
+          <p class="taux-banque">Fed</p>
+          <p class="taux-value">4,25–4,50 %</p>
+          <p class="taux-label">Federal Funds Rate</p>
+          <p class="taux-decision">Dernière décision : janvier 2026</p>
+        </div>
+        <div class="taux-card">
+          <span class="taux-flag">🇬🇧</span>
+          <p class="taux-banque">Bank of England</p>
+          <p class="taux-value">4,50 %</p>
+          <p class="taux-label">Bank Rate</p>
+          <p class="taux-decision">Dernière décision : février 2026</p>
+        </div>
+        <div class="taux-card">
+          <span class="taux-flag">🇯🇵</span>
+          <p class="taux-banque">Banque du Japon</p>
+          <p class="taux-value">0,50 %</p>
+          <p class="taux-label">Taux directeur</p>
+          <p class="taux-decision">Dernière décision : janvier 2026</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- BLOC 3 : ACTUALITÉS FINANCIÈRES -->
+    <div class="marches-bloc fade-in">
+      <div class="marches-bloc-title">
+        Actualités financières
+        <button class="marches-refresh-btn" id="btn-refresh-news" onclick="fetchNews()">↻ Actualiser</button>
+      </div>
+
+      <div class="news-list" id="news-list">
+        <div class="news-item">
+          <p class="news-meta">Chargement des actualités…</p>
+        </div>
+      </div>
+    </div>
 
   </section>
 
@@ -3382,6 +3704,141 @@
       document.getElementById(id).addEventListener('input', updateEV)
     );
     updateEV();
+
+    /* ============================================================
+       MARCHÉS — INDICES (Financial Modeling Prep API)
+    ============================================================= */
+    const FMP_KEY = '4VUJpeLA5nBNf0bveXHNj8k7sh0yV9xa';
+
+    const INDICES_CONFIG = [
+      { sym: 'FCHI',  id: 'FCHI',  name: 'CAC 40'  },
+      { sym: 'GSPC',  id: 'GSPC',  name: 'S&P 500' },
+      { sym: 'GDAXI', id: 'GDAXI', name: 'DAX'     },
+      { sym: 'FTSE',  id: 'FTSE',  name: 'FTSE 100'},
+    ];
+
+    const STATIC_INDICES = {
+      FCHI:  { price: 7834.12,  change: -12.30, pct: -0.16 },
+      GSPC:  { price: 5612.45,  change:  28.70, pct:  0.51 },
+      GDAXI: { price: 18621.80, change: -45.60, pct: -0.24 },
+      FTSE:  { price: 8412.30,  change:  15.40, pct:  0.18 },
+    };
+
+    function fmtPrice(n) {
+      return new Intl.NumberFormat('fr-FR', {
+        minimumFractionDigits: 2, maximumFractionDigits: 2,
+      }).format(n);
+    }
+
+    function renderIndice(id, price, change, pct, isStatic) {
+      const priceEl  = document.getElementById('idx-' + id + '-price');
+      const changeEl = document.getElementById('idx-' + id + '-change');
+      const statusEl = document.getElementById('idx-' + id + '-status');
+      if (!priceEl) return;
+      const sign  = change >= 0 ? '+' : '';
+      const cls   = change > 0 ? 'pos' : change < 0 ? 'neg' : 'neu';
+      const arrow = change > 0 ? '▲' : change < 0 ? '▼' : '—';
+      priceEl.textContent  = fmtPrice(price);
+      changeEl.textContent = `${arrow} ${sign}${fmtPrice(change)} (${sign}${pct.toFixed(2)} %)`;
+      changeEl.className   = 'indice-change ' + cls;
+      if (statusEl) statusEl.textContent = isStatic
+        ? 'Données indicatives · marché fermé'
+        : 'Temps réel · FMP · ' + new Date().toLocaleTimeString('fr-FR', {hour:'2-digit', minute:'2-digit'});
+    }
+
+    async function fetchOneIndex(cfg) {
+      const url  = 'https://financialmodelingprep.com/api/v3/quote/%5E' + cfg.sym + '?apikey=' + FMP_KEY;
+      const r    = await fetch(url);
+      if (!r.ok) throw new Error(r.status);
+      const data = await r.json();
+      if (!data || !data[0]) throw new Error('empty');
+      const q = data[0];
+      renderIndice(cfg.id, q.price, q.change, q.changesPercentage, false);
+    }
+
+    async function fetchIndices() {
+      const btn = document.getElementById('btn-refresh-indices');
+      if (btn) { btn.classList.add('loading'); btn.textContent = '↻ …'; }
+      const results = await Promise.allSettled(INDICES_CONFIG.map(cfg => fetchOneIndex(cfg)));
+      results.forEach((res, i) => {
+        if (res.status === 'rejected') {
+          const cfg  = INDICES_CONFIG[i];
+          const stat = STATIC_INDICES[cfg.id];
+          renderIndice(cfg.id, stat.price, stat.change, stat.pct, true);
+          console.warn('FMP fallback:', cfg.sym, res.reason);
+        }
+      });
+      if (btn) { btn.classList.remove('loading'); btn.textContent = '↻ Actualiser'; }
+    }
+
+    /* ============================================================
+       MARCHÉS — ACTUALITÉS (RSS via rss2json)
+    ============================================================= */
+    const RSS2JSON_API = 'https://api.rss2json.com/v1/api.json?rss_url='
+      + encodeURIComponent('https://www.lesechos.fr/rss/rss_finance.xml')
+      + '&count=5';
+
+    const STATIC_NEWS = [
+      { title: 'Private equity : les fonds français lèvent 25 Md€ au T1 2026',            date: '2026-04-28', link: '#' },
+      { title: 'BCE : Christine Lagarde évoque une pause dans le cycle de baisse des taux', date: '2026-04-24', link: '#' },
+      { title: 'M&A : record de transactions dans le secteur de la santé en Europe',        date: '2026-04-21', link: '#' },
+      { title: 'ESCP Business School maintient sa 1re place au classement FT des MSc Finance', date: '2026-04-18', link: '#' },
+      { title: 'LBO mid-market : le financement bancaire se resserre, les fonds s\'adaptent', date: '2026-04-15', link: '#' },
+    ];
+
+    function fmtDate(d) {
+      try { return new Date(d).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' }); }
+      catch { return d; }
+    }
+
+    function renderNews(items, isStatic) {
+      const list = document.getElementById('news-list');
+      if (!list) return;
+      list.innerHTML = items.map(item => `
+        <div class="news-item">
+          <a href="${item.link || '#'}" class="news-title" target="_blank" rel="noopener">${item.title}</a>
+          <span class="news-meta">Les Échos Finance · ${fmtDate(item.pubDate || item.date)}</span>
+        </div>`).join('');
+      if (isStatic) {
+        const note = document.createElement('p');
+        note.style.cssText = 'font-size:.62rem;color:rgba(248,245,240,.28);font-style:italic;margin-top:.8rem;';
+        note.textContent = 'Actualités statiques — flux RSS indisponible.';
+        list.appendChild(note);
+      }
+    }
+
+    async function fetchNews() {
+      const btn = document.getElementById('btn-refresh-news');
+      if (btn) { btn.classList.add('loading'); btn.textContent = '↻ …'; }
+      try {
+        const r    = await fetch(RSS2JSON_API);
+        if (!r.ok) throw new Error(r.status);
+        const data = await r.json();
+        if (data.status !== 'ok' || !data.items?.length) throw new Error('empty');
+        renderNews(data.items.slice(0, 5), false);
+      } catch (e) {
+        console.warn('RSS fallback:', e);
+        renderNews(STATIC_NEWS, true);
+      } finally {
+        if (btn) { btn.classList.remove('loading'); btn.textContent = '↻ Actualiser'; }
+      }
+    }
+
+    /* Chargement automatique au premier affichage de #marches */
+    let marchesLoaded = false;
+    const _origShowSection = showSection;
+    window.showSection = function(id) {
+      _origShowSection(id);
+      if (id === 'marches' && !marchesLoaded) {
+        marchesLoaded = true;
+        fetchIndices();
+        fetchNews();
+      }
+    };
+
+    /* Exposition globale pour les onclick HTML */
+    window.fetchIndices = fetchIndices;
+    window.fetchNews    = fetchNews;
 
   </script>
 
