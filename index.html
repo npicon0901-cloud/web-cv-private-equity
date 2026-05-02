@@ -219,6 +219,37 @@
       width: 100%;
     }
 
+    .menu-group {
+      width: 100%;
+    }
+
+    .menu-group-label {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 400;
+      color: var(--gold);
+      padding: 0.55rem 0 0.05rem;
+      letter-spacing: 0.04em;
+      cursor: default;
+    }
+
+    .menu-sub-items {
+      padding-left: 1.1rem;
+      border-left: 1px solid var(--gold-dim);
+      margin-bottom: 0.3rem;
+    }
+
+    .menu-drawer .menu-sub-items a {
+      font-size: 1.3rem;
+      padding: 0.2rem 0;
+      color: rgba(248, 245, 240, 0.65);
+    }
+
+    .menu-drawer .menu-sub-items a:hover {
+      color: var(--gold);
+    }
+
     /* =============================================
        SECTIONS
     ============================================= */
@@ -469,6 +500,16 @@
       .stat-item:last-child {
         border-bottom: none;
       }
+    }
+
+    .hero-photo {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--gold);
+      margin-bottom: 1.6rem;
+      display: block;
     }
 
     .hero-cta {
@@ -2134,17 +2175,30 @@
   <!-- MENU OVERLAY + DRAWER -->
   <div class="menu-overlay" id="menu-overlay"></div>
   <div class="menu-drawer" id="menu-drawer">
-    <a href="#accueil"     data-section="Accueil">Accueil</a>
-    <a href="#univers"     data-section="Univers">Univers &amp; Valeurs</a>
-    <a href="#projet"      data-section="Projet">Projet</a>
-    <a href="#outils"      data-section="Outils">Outils Financiers</a>
-    <a href="#marches"     data-section="Marchés">Marchés</a>
-    <a href="#etudes"      data-section="Etudes">Études</a>
-    <a href="#experiences" data-section="Experiences">Expériences</a>
-    <a href="#skills"      data-section="Skills">Skills</a>
-    <a href="#langues"     data-section="Langues">Langues</a>
-    <a href="#annee2027"   data-section="2027">2027</a>
-    <a href="#contact"     data-section="Contact">Contact</a>
+    <a href="#accueil" data-section="Accueil">Accueil</a>
+
+    <div class="menu-group">
+      <span class="menu-group-label">Profil</span>
+      <div class="menu-sub-items">
+        <a href="#etudes"      data-section="Études">Études</a>
+        <a href="#experiences" data-section="Expériences">Expériences</a>
+        <a href="#skills"      data-section="Skills">Skills</a>
+        <a href="#langues"     data-section="Langues">Langues</a>
+      </div>
+    </div>
+
+    <div class="menu-group">
+      <span class="menu-group-label">Projet</span>
+      <div class="menu-sub-items">
+        <a href="#projet"  data-section="Vision">Vision</a>
+        <a href="#univers" data-section="Univers">Univers &amp; Valeurs</a>
+      </div>
+    </div>
+
+    <a href="#marches"   data-section="Marchés">Marchés</a>
+    <a href="#outils"    data-section="Outils">Outils</a>
+    <a href="#annee2027" data-section="2027">2026 / 2027</a>
+    <a href="#contact"   data-section="Contact">Contact</a>
   </div>
 
   <!-- ============================================================
@@ -2155,6 +2209,7 @@
   <section id="accueil">
     <canvas id="canvas-particules"></canvas>
     <div class="hero-content">
+      <img src="photo.jpg" class="hero-photo fade-in" alt="Nathan Picon">
       <p class="hero-eyebrow">CV Interactif</p>
 
       <h1 class="hero-title">
@@ -2782,7 +2837,7 @@
 
           <div class="etude-specialites">
             <span class="badge">SES</span>
-            <span class="badge">Geopolitique</span>
+            <span class="badge">Géopolitique</span>
             <span class="badge">Mathematiques</span>
           </div>
 
@@ -2859,7 +2914,7 @@
             <div class="etude-semestre">
               <p class="semestre-label">S1 · Majeure UE Fondamentale</p>
               <div class="matieres-list">
-                <span class="matiere-tag">Droit des societes</span>
+                <span class="matiere-tag">Droit des sociétés</span>
                 <span class="matiere-tag">Fondamentaux de l'entrepreneuriat</span>
                 <span class="matiere-tag">Fondamentaux de la finance</span>
                 <span class="matiere-tag">Système d'information et bases de données</span>
@@ -2885,7 +2940,7 @@
               <div class="matieres-list">
                 <span class="matiere-tag">Analyse de données (séries temporelles, ACP, classification)</span>
                 <span class="matiere-tag">Interculturalité (Hofstede, Bennett, Erin Meyer)</span>
-                <span class="matiere-tag">Controle de gestion</span>
+                <span class="matiere-tag">Contrôle de gestion</span>
                 <span class="matiere-tag">Marchés financiers (indices boursiers, Fama, fixing, Euronext)</span>
                 <span class="matiere-tag">Communication</span>
                 <span class="matiere-tag">Droit social</span>
@@ -3059,13 +3114,13 @@
         </div>
         <div class="skill-tags">
           <span class="skill-tag">Consolidation</span>
-          <span class="skill-tag">Revision comptable</span>
+          <span class="skill-tag">Révision comptable</span>
           <span class="skill-tag">TVA</span>
           <span class="skill-tag">IS</span>
           <span class="skill-tag">IR</span>
           <span class="skill-tag">CA3 / CA12</span>
           <span class="skill-tag">Liasse fiscale</span>
-          <span class="skill-tag">Droit des societes</span>
+          <span class="skill-tag">Droit des sociétés</span>
         </div>
       </div>
 
@@ -3096,8 +3151,8 @@
         <div class="skill-tags">
           <span class="skill-tag">Rigueur analytique &middot; 3 ans Avizeo</span>
           <span class="skill-tag">Résistance à la pression &middot; Paul Bocuse 280 couverts</span>
-          <span class="skill-tag">Initiative autonome &middot; TVA non demandee</span>
-          <span class="skill-tag">Leadership &amp; ecoute</span>
+          <span class="skill-tag">Initiative autonome &middot; TVA non demandée</span>
+          <span class="skill-tag">Leadership &amp; écoute</span>
           <span class="skill-tag">Apprentissage rapide</span>
           <span class="skill-tag">Vision long terme</span>
           <span class="skill-tag">Loyauté &amp; fidélité aux engagements</span>
@@ -3165,10 +3220,10 @@
           <p class="langue-demarche-title">Démarche active</p>
           <div class="langue-demarche-items">
             <span class="langue-demarche-item">Lecture Financial Times quotidienne</span>
-            <span class="langue-demarche-item">Series et films en version originale anglaise</span>
+            <span class="langue-demarche-item">Séries et films en version originale anglaise</span>
             <span class="langue-demarche-item">Preparation Global Exam TOEIC</span>
             <span class="langue-demarche-item">Bloomberg, Financial Times, Wall Street Journal</span>
-            <span class="langue-demarche-item">Maitrise du vocabulaire financier : LBO, DCF, EBITDA, covenant, equity bridge...</span>
+            <span class="langue-demarche-item">Maîtrise du vocabulaire financier : LBO, DCF, EBITDA, covenant, equity bridge...</span>
             <span class="langue-demarche-item">Objectif 900+ avant septembre 2026</span>
           </div>
         </div>
@@ -3330,6 +3385,12 @@
       targetSection.style.display = isAccueil ? 'flex' : 'block';
       window.scrollTo({ top: 0, behavior: 'instant' });
       observeSection(targetSection);
+      if (targetId === 'marches' && !window._marchesLoaded) {
+        window._marchesLoaded = true; fetchIndices(); fetchNews();
+      }
+      if (targetId === 'outils' && !window._outilsLoaded) {
+        window._outilsLoaded = true; updateLBO(); updateDCF(); updateEV();
+      }
     }
 
     menuDrawer.querySelectorAll('a').forEach(link => {
@@ -3429,17 +3490,20 @@
       requestAnimationFrame(step);
     }
 
+    const heroStats = document.getElementById('hero-stats');
+    let _statsDone = false;
+    function _runCounters() {
+      if (_statsDone || !heroStats) return;
+      _statsDone = true;
+      heroStats.querySelectorAll('.stat-value').forEach(animateCounter);
+    }
     const statsObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.querySelectorAll('.stat-value').forEach(animateCounter);
-          statsObserver.unobserve(entry.target);
-        }
+        if (entry.isIntersecting) { _runCounters(); statsObserver.unobserve(entry.target); }
       });
-    }, { threshold: 0.4 });
-
-    const heroStats = document.getElementById('hero-stats');
+    }, { threshold: 0.1 });
     if (heroStats) statsObserver.observe(heroStats);
+    setTimeout(_runCounters, 600);
 
     /* ---- CANVAS PARTICULES ---- */
     (function initParticules() {
@@ -3604,7 +3668,6 @@
     lboSliders.forEach(id =>
       document.getElementById(id).addEventListener('input', updateLBO)
     );
-    updateLBO();
 
     /* --- DCF --- */
     const dcfSliders = ['dcf-fcf1', 'dcf-gfcf', 'dcf-wacc', 'dcf-gterm', 'dcf-dette'];
@@ -3659,7 +3722,6 @@
     dcfSliders.forEach(id =>
       document.getElementById(id).addEventListener('input', updateDCF)
     );
-    updateDCF();
 
     /* --- EV/EBITDA --- */
     const evSliders = ['ev-ebitda', 'ev-mbas', 'ev-mmed', 'ev-mhaut', 'ev-dette', 'ev-decote'];
@@ -3703,7 +3765,6 @@
     evSliders.forEach(id =>
       document.getElementById(id).addEventListener('input', updateEV)
     );
-    updateEV();
 
     /* ============================================================
        MARCHÉS — INDICES (Financial Modeling Prep API)
@@ -3718,10 +3779,10 @@
     ];
 
     const STATIC_INDICES = {
-      FCHI:  { price: 7834.12,  change: -12.30, pct: -0.16 },
-      GSPC:  { price: 5612.45,  change:  28.70, pct:  0.51 },
-      GDAXI: { price: 18621.80, change: -45.60, pct: -0.24 },
-      FTSE:  { price: 8412.30,  change:  15.40, pct:  0.18 },
+      FCHI:  { price: 7842.15,  change:  26.65, pct:  0.34 },
+      GSPC:  { price: 5611.85,  change:  10.10, pct:  0.18 },
+      GDAXI: { price: 18134.27, change:  94.30, pct:  0.52 },
+      FTSE:  { price: 8287.49,  change:  -9.94, pct: -0.12 },
     };
 
     function fmtPrice(n) {
@@ -3746,29 +3807,35 @@
         : 'Temps réel · FMP · ' + new Date().toLocaleTimeString('fr-FR', {hour:'2-digit', minute:'2-digit'});
     }
 
-    async function fetchOneIndex(cfg) {
-      const url  = 'https://financialmodelingprep.com/api/v3/quote/%5E' + cfg.sym + '?apikey=' + FMP_KEY;
-      const r    = await fetch(url);
-      if (!r.ok) throw new Error(r.status);
-      const data = await r.json();
-      if (!data || !data[0]) throw new Error('empty');
-      const q = data[0];
-      renderIndice(cfg.id, q.price, q.change, q.changesPercentage, false);
-    }
-
     async function fetchIndices() {
       const btn = document.getElementById('btn-refresh-indices');
       if (btn) { btn.classList.add('loading'); btn.textContent = '↻ …'; }
-      const results = await Promise.allSettled(INDICES_CONFIG.map(cfg => fetchOneIndex(cfg)));
-      results.forEach((res, i) => {
-        if (res.status === 'rejected') {
-          const cfg  = INDICES_CONFIG[i];
-          const stat = STATIC_INDICES[cfg.id];
-          renderIndice(cfg.id, stat.price, stat.change, stat.pct, true);
-          console.warn('FMP fallback:', cfg.sym, res.reason);
-        }
-      });
-      if (btn) { btn.classList.remove('loading'); btn.textContent = '↻ Actualiser'; }
+      try {
+        const syms = INDICES_CONFIG.map(c => '%5E' + c.sym).join(',');
+        const url  = 'https://financialmodelingprep.com/api/v3/quote/' + syms + '?apikey=' + FMP_KEY;
+        const r    = await fetch(url);
+        if (!r.ok) throw new Error(r.status);
+        const data = await r.json();
+        if (!Array.isArray(data) || !data.length) throw new Error('empty');
+        data.forEach(q => {
+          const sym = q.symbol.replace('^', '');
+          renderIndice(sym, q.price, q.change, q.changesPercentage, false);
+        });
+        INDICES_CONFIG.forEach(cfg => {
+          if (!data.some(q => q.symbol.replace('^', '') === cfg.sym)) {
+            const s = STATIC_INDICES[cfg.id];
+            renderIndice(cfg.id, s.price, s.change, s.pct, true);
+          }
+        });
+      } catch (e) {
+        console.warn('FMP batch fallback:', e);
+        INDICES_CONFIG.forEach(cfg => {
+          const s = STATIC_INDICES[cfg.id];
+          renderIndice(cfg.id, s.price, s.change, s.pct, true);
+        });
+      } finally {
+        if (btn) { btn.classList.remove('loading'); btn.textContent = '↻ Actualiser'; }
+      }
     }
 
     /* ============================================================
@@ -3823,18 +3890,6 @@
         if (btn) { btn.classList.remove('loading'); btn.textContent = '↻ Actualiser'; }
       }
     }
-
-    /* Chargement automatique au premier affichage de #marches */
-    let marchesLoaded = false;
-    const _origShowSection = showSection;
-    window.showSection = function(id) {
-      _origShowSection(id);
-      if (id === 'marches' && !marchesLoaded) {
-        marchesLoaded = true;
-        fetchIndices();
-        fetchNews();
-      }
-    };
 
     /* Exposition globale pour les onclick HTML */
     window.fetchIndices = fetchIndices;
