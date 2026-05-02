@@ -1711,6 +1711,180 @@
     section { display: none; }
     #accueil { display: flex; }
 
+    /* =============================================
+       OUTILS FINANCIERS
+    ============================================= */
+    .outils-tabs {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 2.5rem;
+      border-bottom: 1px solid var(--gold-dim);
+      padding-bottom: 0;
+    }
+
+    .outils-tab-btn {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(248, 245, 240, 0.42);
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      padding: 0.65rem 1.2rem 0.8rem;
+      cursor: none;
+      transition: color 0.25s ease, border-color 0.25s ease;
+      margin-bottom: -1px;
+    }
+
+    .outils-tab-btn:hover  { color: rgba(248, 245, 240, 0.75); }
+    .outils-tab-btn.active { color: var(--gold); border-bottom-color: var(--gold); }
+
+    .outils-panel { display: none; }
+    .outils-panel.active { display: block; }
+
+    .calc-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    @media (max-width: 680px) {
+      .calc-layout { grid-template-columns: 1fr; }
+      .outils-tabs { flex-wrap: wrap; }
+      .outils-tab-btn { font-size: 0.68rem; padding: 0.5rem 0.8rem 0.65rem; }
+    }
+
+    .calc-inputs-block {
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+    }
+
+    .slider-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+
+    .slider-label-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .slider-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      color: rgba(248, 245, 240, 0.55);
+    }
+
+    .slider-val {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--gold);
+    }
+
+    .slider-input {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 2px;
+      border-radius: 1px;
+      outline: none;
+      cursor: pointer;
+      background: rgba(201, 168, 76, 0.15);
+    }
+
+    .slider-input::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 14px;
+      height: 14px;
+      background: var(--gold);
+      border-radius: 50%;
+      border: 2px solid var(--bg);
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .slider-input::-webkit-slider-thumb:hover {
+      transform: scale(1.3);
+      box-shadow: 0 0 0 4px var(--gold-dim);
+    }
+
+    .slider-input::-moz-range-thumb {
+      width: 14px;
+      height: 14px;
+      background: var(--gold);
+      border-radius: 50%;
+      border: 2px solid var(--bg);
+      cursor: pointer;
+    }
+
+    .calc-results-block {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .calc-results-title {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(248, 245, 240, 0.38);
+      margin-bottom: 0.3rem;
+    }
+
+    .metric-card {
+      background: rgba(13, 22, 33, 0.7);
+      border: 1px solid var(--gold-dim);
+      border-radius: 3px;
+      padding: 1rem 1.2rem;
+      transition: border-color 0.25s ease;
+    }
+
+    .metric-card.good  { border-color: rgba(46, 204, 113, 0.5); background: rgba(46, 204, 113, 0.06); }
+    .metric-card.mid   { border-color: rgba(201, 168, 76, 0.5); background: rgba(201, 168, 76, 0.05); }
+    .metric-card.bad   { border-color: rgba(231, 76,  60, 0.5); background: rgba(231, 76,  60, 0.06); }
+
+    .metric-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 300;
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+
+    .metric-card.good  .metric-value { color: #2ecc71; }
+    .metric-card.mid   .metric-value { color: var(--gold); }
+    .metric-card.bad   .metric-value { color: #e74c3c; }
+    .metric-card:not(.good):not(.mid):not(.bad) .metric-value { color: var(--text); }
+
+    .metric-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      color: rgba(248, 245, 240, 0.42);
+    }
+
+    .calc-disclaimer {
+      margin-top: 1.8rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.7rem;
+      font-style: italic;
+      color: rgba(248, 245, 240, 0.28);
+      line-height: 1.6;
+    }
+
     /* scrollbar */
     ::-webkit-scrollbar { width: 5px; }
     ::-webkit-scrollbar-track { background: var(--bg); }
@@ -1742,6 +1916,7 @@
     <a href="#accueil"     data-section="Accueil">Accueil</a>
     <a href="#univers"     data-section="Univers">Univers &amp; Valeurs</a>
     <a href="#projet"      data-section="Projet">Projet</a>
+    <a href="#outils"      data-section="Outils">Outils Financiers</a>
     <a href="#etudes"      data-section="Etudes">Études</a>
     <a href="#experiences" data-section="Experiences">Expériences</a>
     <a href="#skills"      data-section="Skills">Skills</a>
@@ -1987,6 +2162,281 @@
       </div>
 
     </div>
+  </section>
+
+  <!-- OUTILS FINANCIERS -->
+  <section id="outils">
+    <p class="section-label fade-in">—</p>
+    <h2 class="section-title fade-in fade-in-delay-1">Outils Financiers</h2>
+
+    <!-- ONGLETS -->
+    <div class="outils-tabs fade-in fade-in-delay-2">
+      <button class="outils-tab-btn active" data-tab="lbo">LBO</button>
+      <button class="outils-tab-btn"        data-tab="dcf">DCF</button>
+      <button class="outils-tab-btn"        data-tab="ev">EV / EBITDA</button>
+    </div>
+
+    <!-- ======= PANNEAU LBO ======= -->
+    <div class="outils-panel active" id="panel-lbo">
+      <div class="calc-layout">
+
+        <div class="calc-inputs-block">
+
+          <div class="slider-group">
+            <div class="slider-label-row">
+              <span class="slider-label">Prix d'acquisition</span>
+              <span class="slider-val" id="lbo-v-prix">10,0 M€</span>
+            </div>
+            <input type="range" class="slider-input" id="lbo-prix"
+              min="2" max="100" step="0.5" value="10">
+          </div>
+
+          <div class="slider-group">
+            <div class="slider-label-row">
+              <span class="slider-label">Levier dette</span>
+              <span class="slider-val" id="lbo-v-levier">60 %</span>
+            </div>
+            <input type="range" class="slider-input" id="lbo-levier"
+              min="20" max="80" step="1" value="60">
+          </div>
+
+          <div class="slider-group">
+            <div class="slider-label-row">
+              <span class="slider-label">EBITDA entrée</span>
+              <span class="slider-val" id="lbo-v-ebitda">2,0 M€</span>
+            </div>
+            <input type="range" class="slider-input" id="lbo-ebitda"
+              min="0.5" max="20" step="0.1" value="2">
+          </div>
+
+          <div class="slider-group">
+            <div class="slider-label-row">
+              <span class="slider-label">Croissance EBITDA / an</span>
+              <span class="slider-val" id="lbo-v-growth">8 %</span>
+            </div>
+            <input type="range" class="slider-input" id="lbo-growth"
+              min="0" max="25" step="0.5" value="8">
+          </div>
+
+          <div class="slider-group">
+            <div class="slider-label-row">
+              <span class="slider-label">Multiple de sortie</span>
+              <span class="slider-val" id="lbo-v-mult">7,0 x</span>
+            </div>
+            <input type="range" class="slider-input" id="lbo-mult"
+              min="4" max="15" step="0.5" value="7">
+          </div>
+
+          <div class="slider-group">
+            <div class="slider-label-row">
+              <span class="slider-label">Durée hold</span>
+              <span class="slider-val" id="lbo-v-hold">5 ans</span>
+            </div>
+            <input type="range" class="slider-input" id="lbo-hold"
+              min="3" max="10" step="1" value="5">
+          </div>
+
+        </div><!-- /inputs -->
+
+        <div class="calc-results-block">
+          <p class="calc-results-title">Résultats</p>
+
+          <div class="metric-card mid" id="lbo-r-equity">
+            <div class="metric-value" id="lbo-equity-val">4,0 M€</div>
+            <div class="metric-label">Equity investie</div>
+          </div>
+
+          <div class="metric-card" id="lbo-r-sortie">
+            <div class="metric-value" id="lbo-sortie-val">—</div>
+            <div class="metric-label">Valeur de sortie (EV)</div>
+          </div>
+
+          <div class="metric-card" id="lbo-r-mom">
+            <div class="metric-value" id="lbo-mom-val">—</div>
+            <div class="metric-label">Multiple of Money (MoM)</div>
+          </div>
+
+          <div class="metric-card" id="lbo-r-tri">
+            <div class="metric-value" id="lbo-tri-val">—</div>
+            <div class="metric-label">TRI estimé</div>
+          </div>
+        </div><!-- /results -->
+
+      </div><!-- /layout -->
+      <p class="calc-disclaimer">Modèle simplifié : taux d'intérêt 6 %, remboursement dette = 40 % EBITDA après intérêts, cap à la dette initiale. À des fins illustratives uniquement.</p>
+    </div><!-- /panel-lbo -->
+
+    <!-- ======= PANNEAU DCF ======= -->
+    <div class="outils-panel" id="panel-dcf">
+      <div class="calc-layout">
+
+        <div class="calc-inputs-block">
+
+          <div class="slider-group">
+            <div class="slider-label-row">
+              <span class="slider-label">Free Cash Flow — Année 1</span>
+              <span class="slider-val" id="dcf-v-fcf1">1,5 M€</span>
+            </div>
+            <input type="range" class="slider-input" id="dcf-fcf1"
+              min="0.1" max="20" step="0.1" value="1.5">
+          </div>
+
+          <div class="slider-group">
+            <div class="slider-label-row">
+              <span class="slider-label">Croissance FCF (5 ans)</span>
+              <span class="slider-val" id="dcf-v-gfcf">10 %</span>
+            </div>
+            <input type="range" class="slider-input" id="dcf-gfcf"
+              min="0" max="30" step="0.5" value="10">
+          </div>
+
+          <div class="slider-group">
+            <div class="slider-label-row">
+              <span class="slider-label">WACC</span>
+              <span class="slider-val" id="dcf-v-wacc">12 %</span>
+            </div>
+            <input type="range" class="slider-input" id="dcf-wacc"
+              min="6" max="25" step="0.5" value="12">
+          </div>
+
+          <div class="slider-group">
+            <div class="slider-label-row">
+              <span class="slider-label">Croissance terminale</span>
+              <span class="slider-val" id="dcf-v-gterm">2,0 %</span>
+            </div>
+            <input type="range" class="slider-input" id="dcf-gterm"
+              min="0" max="5" step="0.1" value="2">
+          </div>
+
+          <div class="slider-group">
+            <div class="slider-label-row">
+              <span class="slider-label">Dette nette</span>
+              <span class="slider-val" id="dcf-v-dette">5,0 M€</span>
+            </div>
+            <input type="range" class="slider-input" id="dcf-dette"
+              min="0" max="50" step="0.5" value="5">
+          </div>
+
+        </div><!-- /inputs -->
+
+        <div class="calc-results-block">
+          <p class="calc-results-title">Résultats</p>
+
+          <div class="metric-card" id="dcf-r-pvfcf">
+            <div class="metric-value" id="dcf-pvfcf-val">—</div>
+            <div class="metric-label">PV des FCF (5 ans)</div>
+          </div>
+
+          <div class="metric-card" id="dcf-r-pvtv">
+            <div class="metric-value" id="dcf-pvtv-val">—</div>
+            <div class="metric-label">Valeur terminale actualisée</div>
+          </div>
+
+          <div class="metric-card mid" id="dcf-r-ev">
+            <div class="metric-value" id="dcf-ev-val">—</div>
+            <div class="metric-label">EV totale</div>
+          </div>
+
+          <div class="metric-card" id="dcf-r-eq">
+            <div class="metric-value" id="dcf-eq-val">—</div>
+            <div class="metric-label">Equity Value</div>
+          </div>
+        </div><!-- /results -->
+
+      </div><!-- /layout -->
+      <p class="calc-disclaimer">Modèle Gordon-Shapiro à 5 ans d'horizon explicite. Valeur terminale sensible au spread WACC–g. À des fins illustratives uniquement.</p>
+    </div><!-- /panel-dcf -->
+
+    <!-- ======= PANNEAU EV/EBITDA ======= -->
+    <div class="outils-panel" id="panel-ev">
+      <div class="calc-layout">
+
+        <div class="calc-inputs-block">
+
+          <div class="slider-group">
+            <div class="slider-label-row">
+              <span class="slider-label">EBITDA cible</span>
+              <span class="slider-val" id="ev-v-ebitda">3,0 M€</span>
+            </div>
+            <input type="range" class="slider-input" id="ev-ebitda"
+              min="0.5" max="30" step="0.1" value="3">
+          </div>
+
+          <div class="slider-group">
+            <div class="slider-label-row">
+              <span class="slider-label">Multiple bas</span>
+              <span class="slider-val" id="ev-v-mbas">5,0 x</span>
+            </div>
+            <input type="range" class="slider-input" id="ev-mbas"
+              min="2" max="12" step="0.5" value="5">
+          </div>
+
+          <div class="slider-group">
+            <div class="slider-label-row">
+              <span class="slider-label">Multiple médian</span>
+              <span class="slider-val" id="ev-v-mmed">7,0 x</span>
+            </div>
+            <input type="range" class="slider-input" id="ev-mmed"
+              min="3" max="16" step="0.5" value="7">
+          </div>
+
+          <div class="slider-group">
+            <div class="slider-label-row">
+              <span class="slider-label">Multiple haut</span>
+              <span class="slider-val" id="ev-v-mhaut">9,0 x</span>
+            </div>
+            <input type="range" class="slider-input" id="ev-mhaut"
+              min="4" max="22" step="0.5" value="9">
+          </div>
+
+          <div class="slider-group">
+            <div class="slider-label-row">
+              <span class="slider-label">Dette nette</span>
+              <span class="slider-val" id="ev-v-dette">8,0 M€</span>
+            </div>
+            <input type="range" class="slider-input" id="ev-dette"
+              min="0" max="50" step="0.5" value="8">
+          </div>
+
+          <div class="slider-group">
+            <div class="slider-label-row">
+              <span class="slider-label">Décote PME non cotée</span>
+              <span class="slider-val" id="ev-v-decote">20 %</span>
+            </div>
+            <input type="range" class="slider-input" id="ev-decote"
+              min="0" max="40" step="1" value="20">
+          </div>
+
+        </div><!-- /inputs -->
+
+        <div class="calc-results-block">
+          <p class="calc-results-title">Résultats</p>
+
+          <div class="metric-card" id="ev-r-bas">
+            <div class="metric-value" id="ev-bas-val">—</div>
+            <div class="metric-label">EV basse</div>
+          </div>
+
+          <div class="metric-card mid" id="ev-r-med">
+            <div class="metric-value" id="ev-med-val">—</div>
+            <div class="metric-label">EV médiane</div>
+          </div>
+
+          <div class="metric-card" id="ev-r-haut">
+            <div class="metric-value" id="ev-haut-val">—</div>
+            <div class="metric-label">EV haute</div>
+          </div>
+
+          <div class="metric-card" id="ev-r-eq">
+            <div class="metric-value" id="ev-eq-val">—</div>
+            <div class="metric-label">Equity Value médiane</div>
+          </div>
+        </div><!-- /results -->
+
+      </div><!-- /layout -->
+      <p class="calc-disclaimer">Décote appliquée sur l'EV pour illiquidité et absence de prime de contrôle cotée. Multiples à calibrer sur comparables sectoriels. À des fins illustratives uniquement.</p>
+    </div><!-- /panel-ev -->
+
   </section>
 
   <!-- ETUDES -->
@@ -2736,6 +3186,203 @@
 
     const languesSection = document.getElementById('langues');
     if (languesSection) progressObserver.observe(languesSection);
+
+    /* ============================================================
+       OUTILS FINANCIERS — TABS + CALCULATEURS
+    ============================================================= */
+
+    /* --- Onglets --- */
+    document.querySelectorAll('.outils-tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.outils-tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.outils-panel').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById('panel-' + btn.dataset.tab).classList.add('active');
+      });
+    });
+
+    /* --- Helpers --- */
+    const fmt = (n, decimals = 1) =>
+      new Intl.NumberFormat('fr-FR', { minimumFractionDigits: decimals, maximumFractionDigits: decimals }).format(n);
+
+    function fmtM(n) {
+      if (Math.abs(n) >= 1000) return fmt(n / 1000, 1) + ' Md€';
+      return fmt(n, 1) + ' M€';
+    }
+
+    function sliderFill(sl) {
+      const pct = ((sl.value - sl.min) / (sl.max - sl.min)) * 100;
+      sl.style.background = `linear-gradient(90deg, var(--gold) ${pct}%, rgba(201,168,76,0.15) ${pct}%)`;
+    }
+
+    function colorClass(tri) {
+      if (tri >= 20) return 'good';
+      if (tri >= 10) return 'mid';
+      return 'bad';
+    }
+
+    function setCard(id, cls) {
+      const el = document.getElementById(id);
+      el.classList.remove('good', 'mid', 'bad');
+      if (cls) el.classList.add(cls);
+    }
+
+    /* --- LBO --- */
+    const lboSliders = ['lbo-prix', 'lbo-levier', 'lbo-ebitda', 'lbo-growth', 'lbo-mult', 'lbo-hold'];
+
+    function calcLBO() {
+      const prix   = +document.getElementById('lbo-prix').value;
+      const levier = +document.getElementById('lbo-levier').value / 100;
+      const ebitda = +document.getElementById('lbo-ebitda').value;
+      const growth = +document.getElementById('lbo-growth').value / 100;
+      const mult   = +document.getElementById('lbo-mult').value;
+      const hold   = +document.getElementById('lbo-hold').value;
+
+      const equityEntry = prix * (1 - levier);
+      const debtEntry   = prix * levier;
+      const RATE        = 0.06;
+
+      /* Modélisation annuelle de la dette */
+      let debt = debtEntry;
+      for (let t = 1; t <= hold; t++) {
+        const ebitdaT   = ebitda * Math.pow(1 + growth, t);
+        const interest  = debt * RATE;
+        const repayment = Math.max(0, ebitdaT * 0.40 - interest);
+        debt = Math.max(0, debt - repayment);
+      }
+
+      const ebitdaExit  = ebitda * Math.pow(1 + growth, hold);
+      const evExit      = ebitdaExit * mult;
+      const equityExit  = Math.max(0, evExit - debt);
+      const mom         = equityEntry > 0 ? equityExit / equityEntry : 0;
+      const tri         = mom > 0 ? (Math.pow(mom, 1 / hold) - 1) * 100 : 0;
+
+      document.getElementById('lbo-equity-val').textContent = fmtM(equityEntry);
+      document.getElementById('lbo-sortie-val').textContent = fmtM(evExit);
+      document.getElementById('lbo-mom-val').textContent    = fmt(mom, 2) + ' x';
+      document.getElementById('lbo-tri-val').textContent    = fmt(tri, 1) + ' %';
+
+      const cls = colorClass(tri);
+      setCard('lbo-r-sortie', null);
+      setCard('lbo-r-mom',    tri >= 2.0 ? null : 'bad');
+      setCard('lbo-r-tri',    cls);
+    }
+
+    function updateLBO() {
+      document.getElementById('lbo-v-prix').textContent   = fmt(+document.getElementById('lbo-prix').value, 1) + ' M€';
+      document.getElementById('lbo-v-levier').textContent = +document.getElementById('lbo-levier').value + ' %';
+      document.getElementById('lbo-v-ebitda').textContent = fmt(+document.getElementById('lbo-ebitda').value, 1) + ' M€';
+      document.getElementById('lbo-v-growth').textContent = +document.getElementById('lbo-growth').value + ' %';
+      document.getElementById('lbo-v-mult').textContent   = fmt(+document.getElementById('lbo-mult').value, 1) + ' x';
+      document.getElementById('lbo-v-hold').textContent   = +document.getElementById('lbo-hold').value + ' ans';
+      lboSliders.forEach(id => sliderFill(document.getElementById(id)));
+      calcLBO();
+    }
+
+    lboSliders.forEach(id =>
+      document.getElementById(id).addEventListener('input', updateLBO)
+    );
+    updateLBO();
+
+    /* --- DCF --- */
+    const dcfSliders = ['dcf-fcf1', 'dcf-gfcf', 'dcf-wacc', 'dcf-gterm', 'dcf-dette'];
+
+    function calcDCF() {
+      const fcf1  = +document.getElementById('dcf-fcf1').value;
+      const gfcf  = +document.getElementById('dcf-gfcf').value / 100;
+      const wacc  = +document.getElementById('dcf-wacc').value / 100;
+      const gterm = +document.getElementById('dcf-gterm').value / 100;
+      const dette = +document.getElementById('dcf-dette').value;
+
+      /* PV des FCF sur 5 ans */
+      let pvFCF = 0;
+      let fcfT  = fcf1;
+      for (let t = 1; t <= 5; t++) {
+        pvFCF += fcfT / Math.pow(1 + wacc, t);
+        fcfT  *= (1 + gfcf);
+      }
+
+      /* Valeur terminale Gordon–Shapiro */
+      const fcf5    = fcf1 * Math.pow(1 + gfcf, 4);   /* FCF de l'année 5 */
+      const fcf6    = fcf5 * (1 + gterm);
+      const spread  = wacc - gterm;
+      const tv      = spread > 0.001 ? fcf6 / spread : 0;
+      const pvTV    = tv / Math.pow(1 + wacc, 5);
+
+      const ev      = pvFCF + pvTV;
+      const equity  = ev - dette;
+
+      document.getElementById('dcf-pvfcf-val').textContent = fmtM(pvFCF);
+      document.getElementById('dcf-pvtv-val').textContent  = fmtM(pvTV);
+      document.getElementById('dcf-ev-val').textContent    = fmtM(ev);
+      document.getElementById('dcf-eq-val').textContent    = fmtM(equity);
+
+      setCard('dcf-r-pvfcf', null);
+      setCard('dcf-r-pvtv',  null);
+      const tvShare = ev > 0 ? pvTV / ev : 0;
+      setCard('dcf-r-ev', 'mid');
+      setCard('dcf-r-eq', equity > 0 ? 'mid' : 'bad');
+    }
+
+    function updateDCF() {
+      document.getElementById('dcf-v-fcf1').textContent  = fmt(+document.getElementById('dcf-fcf1').value, 1) + ' M€';
+      document.getElementById('dcf-v-gfcf').textContent  = +document.getElementById('dcf-gfcf').value + ' %';
+      document.getElementById('dcf-v-wacc').textContent  = +document.getElementById('dcf-wacc').value + ' %';
+      document.getElementById('dcf-v-gterm').textContent = fmt(+document.getElementById('dcf-gterm').value, 1) + ' %';
+      document.getElementById('dcf-v-dette').textContent = fmt(+document.getElementById('dcf-dette').value, 1) + ' M€';
+      dcfSliders.forEach(id => sliderFill(document.getElementById(id)));
+      calcDCF();
+    }
+
+    dcfSliders.forEach(id =>
+      document.getElementById(id).addEventListener('input', updateDCF)
+    );
+    updateDCF();
+
+    /* --- EV/EBITDA --- */
+    const evSliders = ['ev-ebitda', 'ev-mbas', 'ev-mmed', 'ev-mhaut', 'ev-dette', 'ev-decote'];
+
+    function calcEV() {
+      const ebitda = +document.getElementById('ev-ebitda').value;
+      const mbas   = +document.getElementById('ev-mbas').value;
+      const mmed   = +document.getElementById('ev-mmed').value;
+      const mhaut  = +document.getElementById('ev-mhaut').value;
+      const dette  = +document.getElementById('ev-dette').value;
+      const decote = +document.getElementById('ev-decote').value / 100;
+
+      const factor = 1 - decote;
+      const evBas  = ebitda * mbas  * factor;
+      const evMed  = ebitda * mmed  * factor;
+      const evHaut = ebitda * mhaut * factor;
+      const eqMed  = evMed - dette;
+
+      document.getElementById('ev-bas-val').textContent  = fmtM(evBas);
+      document.getElementById('ev-med-val').textContent  = fmtM(evMed);
+      document.getElementById('ev-haut-val').textContent = fmtM(evHaut);
+      document.getElementById('ev-eq-val').textContent   = fmtM(eqMed);
+
+      setCard('ev-r-bas',  null);
+      setCard('ev-r-med',  'mid');
+      setCard('ev-r-haut', null);
+      setCard('ev-r-eq',   eqMed > 0 ? 'mid' : 'bad');
+    }
+
+    function updateEV() {
+      document.getElementById('ev-v-ebitda').textContent = fmt(+document.getElementById('ev-ebitda').value, 1) + ' M€';
+      document.getElementById('ev-v-mbas').textContent   = fmt(+document.getElementById('ev-mbas').value, 1) + ' x';
+      document.getElementById('ev-v-mmed').textContent   = fmt(+document.getElementById('ev-mmed').value, 1) + ' x';
+      document.getElementById('ev-v-mhaut').textContent  = fmt(+document.getElementById('ev-mhaut').value, 1) + ' x';
+      document.getElementById('ev-v-dette').textContent  = fmt(+document.getElementById('ev-dette').value, 1) + ' M€';
+      document.getElementById('ev-v-decote').textContent = +document.getElementById('ev-decote').value + ' %';
+      evSliders.forEach(id => sliderFill(document.getElementById(id)));
+      calcEV();
+    }
+
+    evSliders.forEach(id =>
+      document.getElementById(id).addEventListener('input', updateEV)
+    );
+    updateEV();
+
   </script>
 
 </body>
