@@ -523,6 +523,14 @@
       display: block;
     }
 
+    .hero-photo--fallback {
+      align-items: center;
+      justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      color: var(--gold);
+    }
+
     .hero-cta {
       display: inline-flex;
       align-items: center;
@@ -2176,7 +2184,10 @@
   <!-- NAVBAR -->
   <nav id="navbar">
     <a href="#accueil" class="nav-logo">
-      <img src="photo.jpg" style="width:120px;height:120px;border-radius:50%;object-fit:cover;border:2px solid #C9A84C;">
+      <img src="photo.jpg" alt="Nathan Picon"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+           style="width:120px;height:120px;border-radius:50%;object-fit:cover;border:2px solid #C9A84C;">
+      <span class="nav-logo-fallback" style="display:none">NP</span>
     </a>
     <button class="hamburger" id="hamburger" aria-label="Menu">
       <span></span>
@@ -2222,7 +2233,9 @@
   <section id="accueil">
     <canvas id="canvas-particules"></canvas>
     <div class="hero-content">
-      <img src="photo.jpg" class="hero-photo fade-in" alt="Nathan Picon">
+      <img src="photo.jpg" class="hero-photo" alt="Nathan Picon"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+      <span class="hero-photo hero-photo--fallback" style="display:none">NP</span>
       <p class="hero-eyebrow">CV Interactif</p>
 
       <h1 class="hero-title">
