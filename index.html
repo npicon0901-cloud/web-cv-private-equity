@@ -104,6 +104,17 @@
       letter-spacing: 0.08em;
       color: var(--gold);
       text-decoration: none;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-logo img {
+      width: 44px !important;
+      height: 44px !important;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #C9A84C;
+      display: block;
     }
 
     /* hamburger */
@@ -2164,7 +2175,9 @@
 
   <!-- NAVBAR -->
   <nav id="navbar">
-    <a href="#accueil" class="nav-logo">NP</a>
+    <a href="#accueil" class="nav-logo">
+      <img src="photo.jpg" style="width:120px;height:120px;border-radius:50%;object-fit:cover;border:2px solid #C9A84C;">
+    </a>
     <button class="hamburger" id="hamburger" aria-label="Menu">
       <span></span>
       <span></span>
