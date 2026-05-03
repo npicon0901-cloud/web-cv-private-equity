@@ -522,6 +522,28 @@
       color: var(--gold);
     }
 
+    .btn-cv {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 2rem;
+      background: var(--gold);
+      color: var(--navy);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      border-radius: 2px;
+      margin-top: 1.2rem;
+      transition: background 0.25s ease, transform 0.2s ease;
+    }
+
+    .btn-cv:hover {
+      background: #e0bc66;
+      transform: translateY(-2px);
+    }
+
     .hero-cta {
       display: inline-flex;
       align-items: center;
@@ -2255,7 +2277,9 @@
         <span class="badge">Loyauté</span>
       </div>
 
-      <div class="hero-stats fade-in fade-in-delay-4" id="hero-stats">
+      <a href="cv.pdf" download class="btn-cv fade-in fade-in-delay-4">Télécharger mon CV ↓</a>
+
+      <div class="hero-stats fade-in fade-in-delay-5" id="hero-stats">
         <div class="stat-item">
           <div class="stat-value-wrap">
             <span class="stat-value" data-target="10" data-prefix="" data-suffix="">0</span>
