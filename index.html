@@ -33,10 +33,6 @@
       cursor: none;
     }
 
-    p {
-      letter-spacing: 0.05em;
-    }
-
     @keyframes bgPulse {
       0%   { background-position: 0% 50%; }
       50%  { background-position: 100% 50%; }
@@ -93,7 +89,6 @@
       padding: 0 5vw;
       z-index: 500;
       transition: background 0.4s ease, backdrop-filter 0.4s ease;
-      box-shadow: 0 1px 20px rgba(0,0,0,0.3);
     }
 
     nav.scrolled {
@@ -204,7 +199,7 @@
       padding: 0.55rem 0;
       letter-spacing: 0.04em;
       position: relative;
-      transition: all 0.3s ease;
+      transition: color 0.25s ease;
     }
 
     .menu-drawer a::after {
@@ -262,7 +257,7 @@
     ============================================= */
     section {
       min-height: 100vh;
-      padding: max(5rem, calc(var(--nav-h) + 5vh)) 5vw max(5rem, 8vh);
+      padding: calc(var(--nav-h) + 5vh) 5vw 8vh;
       position: relative;
     }
 
@@ -277,12 +272,12 @@
     ============================================= */
     #accueil {
       position: relative;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding: 80px 40px 40px 40px;
-      box-sizing: border-box;
       overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: var(--nav-h);
     }
 
     #canvas-particules {
@@ -311,7 +306,7 @@
 
     .hero-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.56rem, 6.4vw, 6rem);
+      font-size: clamp(3.2rem, 8vw, 7.5rem);
       font-weight: 300;
       line-height: 1.05;
       letter-spacing: -0.01em;
@@ -406,9 +401,9 @@
 
     .hero-body {
       font-family: 'DM Sans', sans-serif;
-      font-size: 14px;
+      font-size: clamp(0.88rem, 1.6vw, 0.97rem);
       font-weight: 300;
-      line-height: 1.6;
+      line-height: 1.85;
       color: rgba(248, 245, 240, 0.72);
       max-width: 680px;
       margin-bottom: 2.2rem;
@@ -2190,169 +2185,9 @@
     ::-webkit-scrollbar-track { background: var(--bg); }
     ::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 4px; }
     ::-webkit-scrollbar-thumb:hover { background: var(--gold); }
-
-    /* =============================================
-       POURQUOI CE SITE
-    ============================================= */
-    .accueil-bg-img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0.08;
-      z-index: 0;
-      pointer-events: none;
-    }
-
-    .pourquoi-body {
-      font-size: 0.97rem;
-      line-height: 1.85;
-      color: rgba(248,245,240,0.88);
-      margin-bottom: 1.2rem;
-    }
-
-    .pourquoi-quote {
-      border-left: 2px solid var(--gold);
-      padding: 0.8rem 1.4rem;
-      margin: 1.8rem 0;
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 1.12rem;
-      color: var(--gold);
-      background: rgba(201,168,76,0.06);
-      border-radius: 0 4px 4px 0;
-    }
-
-    .pourquoi-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-      margin-top: 2.2rem;
-    }
-
-    .pourquoi-card {
-      background: rgba(13,22,33,0.82);
-      border: 1px solid var(--gold-dim);
-      border-radius: 4px;
-      padding: 1.4rem 1.2rem;
-      transition: border-color 0.25s ease, transform 0.25s ease;
-    }
-
-    .pourquoi-card:hover {
-      border-color: var(--gold);
-      transform: translateY(-3px);
-    }
-
-    .pourquoi-card-icon {
-      font-size: 1.4rem;
-      margin-bottom: 0.7rem;
-      display: block;
-    }
-
-    .pourquoi-card-text {
-      font-size: 0.82rem;
-      line-height: 1.6;
-      color: rgba(248,245,240,0.75);
-    }
-
-    /* =============================================
-       VEILLE & ANALYSE
-    ============================================= */
-    .veille-subtitle {
-      font-size: 0.88rem;
-      letter-spacing: 0.08em;
-      color: rgba(201,168,76,0.75);
-      text-transform: uppercase;
-      margin-bottom: 2rem;
-    }
-
-    .veille-list {
-      display: flex;
-      flex-direction: column;
-      gap: 1.6rem;
-    }
-
-    .veille-item {
-      border-left: 2px solid var(--gold-dim);
-      padding: 1.2rem 1.4rem;
-      background: rgba(13,22,33,0.6);
-      border-radius: 0 4px 4px 0;
-      transition: border-color 0.25s ease;
-    }
-
-    .veille-item:hover {
-      border-color: var(--gold);
-    }
-
-    .veille-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.15rem;
-      font-weight: 500;
-      color: var(--text);
-      text-decoration: none;
-      display: block;
-      margin-bottom: 0.25rem;
-      transition: color 0.2s ease;
-    }
-
-    .veille-title:hover { color: var(--gold); }
-
-    .veille-meta {
-      font-size: 0.72rem;
-      letter-spacing: 0.06em;
-      color: rgba(248,245,240,0.4);
-      text-transform: uppercase;
-      margin-bottom: 0.8rem;
-    }
-
-    .veille-analyse {
-      font-size: 0.88rem;
-      font-style: italic;
-      line-height: 1.75;
-      color: rgba(248,245,240,0.72);
-      border-top: 1px solid var(--gold-dim);
-      padding-top: 0.7rem;
-      margin-top: 0.5rem;
-    }
-
-    /* Image projet */
-    .section-fig {
-      margin: 1.5rem 0;
-    }
-
-    .section-fig-caption {
-      font-style: italic;
-      font-size: 12px;
-      color: rgba(248,245,240,0.5);
-      text-align: center;
-      margin-top: 0.45rem;
-      display: block;
-    }
-
-    /* =============================================
-       SECTION IMAGES (Unsplash)
-    ============================================= */
-    .section-img {
-      width: 100%;
-      max-height: 250px;
-      object-fit: cover;
-      border-radius: 8px;
-      opacity: 0.8;
-      display: block;
-      margin: 0;
-    }
   </style>
 </head>
 <body>
-
-  <!-- DISCLAIMER BANNER -->
-  <div id="bandeau" style="background:#1B2A4A;color:rgba(255,255,255,0.6);font-size:11px;text-align:center;padding:6px 20px;letter-spacing:0.08em;width:100%;box-sizing:border-box;">
-    Projet personnel de candidature — Ce site n'est pas affilié à une entreprise citée et reflète uniquement le parcours et la vision de Nathan Picon.
-  </div>
-
-  <!-- SCROLL PROGRESS BAR -->
-  <div id="scroll-bar" style="position:fixed;top:0;left:0;height:2px;width:0%;background:linear-gradient(90deg,#C9A84C,#E8D5A0);z-index:9999;transition:width 0.05s linear;pointer-events:none;"></div>
 
   <!-- CURSOR -->
   <div id="cursor"></div>
@@ -2393,14 +2228,12 @@
     <div class="menu-group">
       <span class="menu-group-label">Projet</span>
       <div class="menu-sub-items">
-        <a href="#projet"   data-section="Vision">Vision</a>
-        <a href="#univers"  data-section="Univers">Univers &amp; Valeurs</a>
-        <a href="#pourquoi" data-section="Pourquoi">Pourquoi ce site&nbsp;?</a>
+        <a href="#projet"  data-section="Vision">Vision</a>
+        <a href="#univers" data-section="Univers">Univers &amp; Valeurs</a>
       </div>
     </div>
 
     <a href="#marches"   data-section="Marchés">Marchés</a>
-    <a href="#veille"    data-section="Veille">Veille</a>
     <a href="#outils"    data-section="Outils">Outils</a>
     <a href="#annee2027" data-section="2027">2026 / 2027</a>
     <a href="#contact"   data-section="Contact">Contact</a>
@@ -2413,11 +2246,11 @@
   <!-- ACCUEIL -->
   <section id="accueil">
     <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:url('paris.jpg') center/cover no-repeat;opacity:0.12;z-index:0;pointer-events:none;"></div>
-    <canvas id="canvas-particules" style="position:relative;z-index:1;"></canvas>
-    <div class="hero-content" style="position:relative;z-index:1;max-width:650px;text-align:left;">
+    <canvas id="canvas-particules"></canvas>
+    <div class="hero-content" style="position:relative;z-index:1;text-align:left;">
       <img src="photo.jpg" alt="Nathan Picon"
            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
-           style="width:80px;height:80px;border-radius:50%;object-fit:cover;object-position:center top;border:3px solid #C9A84C;display:block;margin:0 0 1rem;">
+           style="width:150px;height:150px;border-radius:50%;object-fit:cover;object-position:center top;border:3px solid #C9A84C;display:block;margin:0 auto 1.5rem;">
       <span class="hero-photo hero-photo--fallback" style="display:none">NP</span>
       <p class="hero-eyebrow">CV Interactif</p>
 
@@ -2433,11 +2266,11 @@
         Disponible Paris Septembre 2026
       </p>
 
-      <p class="hero-body">
+      <p class="hero-body fade-in fade-in-delay-2">
         Je ne suis pas le produit standard d'une grande école parisienne. Mon parcours s'est construit autrement, par le travail, la curiosité, et une conviction profonde sur ce que je veux construire. Trois expériences chez Avizeo, cabinet d'expertise comptable à Lyon, m'ont exposé à des missions de restructuration financière (~10 M euros), consolidation de holding et valorisation d'actifs que beaucoup n'abordent qu'en Master. En parallèle, je travaille chaque soir et chaque week-end en salle au restaurant de l'Institut Paul Bocuse, parce que la charge de travail est pour moi une source de motivation, pas une contrainte. Ce qui me différencie, c'est que je n'attends pas qu'on me dise quoi faire. Je prends des initiatives, j'apprends vite, et j'ai une vision claire de là où je vais. Vous savez mieux que quiconque qu'un bon investissement, c'est d'abord une conviction sur le potentiel, pas uniquement sur le passé.
       </p>
 
-      <div class="hero-badges">
+      <div class="hero-badges fade-in fade-in-delay-3">
         <span class="badge">Rigueur</span>
         <span class="badge">Initiative</span>
         <span class="badge">Ambition</span>
@@ -2446,9 +2279,9 @@
         <span class="badge">Loyauté</span>
       </div>
 
-      <a href="cv.pdf.pdf" download="Nathan_Picon_CV.pdf" class="btn-cv">Télécharger mon CV ↓</a>
+      <a href="cv.pdf.pdf" download="Nathan_Picon_CV.pdf" class="btn-cv fade-in fade-in-delay-4">Télécharger mon CV ↓</a>
 
-      <div class="hero-stats" id="hero-stats">
+      <div class="hero-stats fade-in fade-in-delay-5" id="hero-stats">
         <div class="stat-item">
           <div class="stat-value-wrap">
             <span class="stat-value" data-target="10" data-prefix="" data-suffix="">0</span>
@@ -2478,12 +2311,11 @@
         </div>
       </div>
 
-      <a href="#projet" class="hero-cta" id="cta-projet">
+      <a href="#projet" class="hero-cta fade-in fade-in-delay-5" id="cta-projet">
         <span>Découvrir mon parcours</span>
       </a>
-
     </div>
-    <div class="scroll-indicator" style="position:relative;z-index:1;">
+    <div class="scroll-indicator">
       <div class="scroll-line"></div>
       <span>Scroll</span>
     </div>
@@ -2650,67 +2482,13 @@
         </div>
       </div>
 
-
     </div>
-  </section>
-
-
-  <!-- POURQUOI CE SITE -->
-  <section id="pourquoi">
-    <p class="section-label fade-in">—</p>
-    <h2 class="section-title fade-in fade-in-delay-1">Pourquoi ce site&nbsp;?</h2>
-    <p class="veille-subtitle fade-in fade-in-delay-2">Une approche différenciante pour franchir les barrières à l'entrée</p>
-
-
-
-    <p class="pourquoi-body fade-in fade-in-delay-2">
-      Conscient que le marché du travail dans le domaine du Private Equity, du M&amp;A et de la finance en général fait face à d'importantes barrières à l'entrée — peut-être critiquables mais légitimes pour sélectionner des candidats assidus et performants — j'ai réalisé ce site pour tenter de les franchir différemment.
-    </p>
-
-    <p class="pourquoi-body fade-in">
-      Ces barrières, je les ai identifiées : un niveau académique minimum bac+4/5, une expérience préalable en fonds d'investissement, une origine grande école d'ingénieurs, école de commerce ou université parisienne de prestige, et parfois un réseau déjà en place dans les structures visées. Si ces critères ne sont pas réunis, l'intégration dans ce secteur peut devenir difficile — et peut alors laisser de côté des talents convaincus, motivés et capables.
-    </p>
-
-    <p class="pourquoi-body fade-in">
-      Ce site est ma réponse à ces barrières. Non pas pour les contourner, mais pour démontrer autrement ce qu'un CV classique ne peut pas montrer : la conviction, l'initiative, la rigueur et la capacité à produire un travail structuré et différenciant.
-    </p>
-
-    <blockquote class="pourquoi-quote fade-in">
-      « La difficulté n'est pas de voir ce que personne n'a jamais vu, mais de penser ce que personne n'a jamais pensé au sujet de quelque chose que tout le monde voit. »
-      <br><span style="font-size:0.82rem;font-style:normal;letter-spacing:0.06em;text-transform:uppercase;">— Schopenhauer</span>
-    </blockquote>
-
-    <p class="pourquoi-body fade-in">
-      C'est exactement l'état d'esprit dans lequel j'ai construit ce site.
-    </p>
-
-    <div class="pourquoi-cards">
-      <div class="pourquoi-card fade-in">
-        <span class="pourquoi-card-icon">⌨️</span>
-        <p class="pourquoi-card-text">Calculateurs financiers — LBO, DCF, EV/EBITDA construits et fonctionnels</p>
-      </div>
-      <div class="pourquoi-card fade-in fade-in-delay-1">
-        <span class="pourquoi-card-icon">📈</span>
-        <p class="pourquoi-card-text">Données en temps réel — indices boursiers, taux banques centrales, actualités</p>
-      </div>
-      <div class="pourquoi-card fade-in fade-in-delay-2">
-        <span class="pourquoi-card-icon">👤</span>
-        <p class="pourquoi-card-text">Parcours complet — expériences, projet, vision, certifications en cours</p>
-      </div>
-      <div class="pourquoi-card fade-in fade-in-delay-3">
-        <span class="pourquoi-card-icon">📍</span>
-        <p class="pourquoi-card-text">Disponible Paris — septembre 2026, investissement total</p>
-      </div>
-    </div>
-
   </section>
 
   <!-- OUTILS FINANCIERS -->
   <section id="outils">
     <p class="section-label fade-in">—</p>
     <h2 class="section-title fade-in fade-in-delay-1">Outils Financiers</h2>
-
-
 
     <!-- ONGLETS -->
     <div class="outils-tabs fade-in fade-in-delay-2">
@@ -2987,8 +2765,6 @@
     <p class="section-label fade-in">—</p>
     <h2 class="section-title fade-in fade-in-delay-1">Marchés &amp; Macro</h2>
 
-
-
     <!-- BLOC 1 : INDICES BOURSIERS -->
     <div class="marches-bloc fade-in fade-in-delay-2">
       <div class="marches-bloc-title">
@@ -3084,67 +2860,10 @@
 
   </section>
 
-
-  <!-- VEILLE & ANALYSE -->
-  <section id="veille">
-    <p class="section-label fade-in">—</p>
-    <h2 class="section-title fade-in fade-in-delay-1">Veille &amp; Analyse</h2>
-    <p class="veille-subtitle fade-in fade-in-delay-2">Ce que je lis, ce que j'en retiens</p>
-
-
-
-    <div class="veille-list">
-
-      <div class="veille-item fade-in">
-        <a href="https://www.ft.com" target="_blank" rel="noopener" class="veille-title">
-          Private equity faces reckoning as dealmaking drought persists
-        </a>
-        <p class="veille-meta">Financial Times · Avril 2026</p>
-        <p class="veille-analyse">La raréfaction des deals en PE depuis 2022 reflète un ajustement des valorisations post-taux zéro. Les fonds qui survivront à cette période seront ceux qui ont su créer de la valeur opérationnelle réelle — et non uniquement financière. C'est exactement la philosophie que je veux apporter dans mon projet holding.</p>
-      </div>
-
-      <div class="veille-item fade-in fade-in-delay-1">
-        <a href="https://www.lesechos.fr" target="_blank" rel="noopener" class="veille-title">
-          La BCE abaisse ses taux à 2,65% — quelles implications pour le crédit&nbsp;?
-        </a>
-        <p class="veille-meta">Les Échos · Mars 2026</p>
-        <p class="veille-analyse">La baisse des taux BCE réduit le coût de la dette et améliore mécaniquement les conditions de financement des LBO. Pour les fonds mid-market, c'est une fenêtre d'opportunité sur des cibles qui restaient hors de portée en 2023-2024.</p>
-      </div>
-
-      <div class="veille-item fade-in fade-in-delay-2">
-        <a href="https://www.bloomberg.com" target="_blank" rel="noopener" class="veille-title">
-          AI is transforming due diligence in private equity
-        </a>
-        <p class="veille-meta">Bloomberg · Février 2026</p>
-        <p class="veille-analyse">L'IA accélère la phase de due diligence en automatisant l'analyse de documents financiers et juridiques. Les fonds qui intègrent ces outils gagnent un avantage compétitif significatif sur le sourcing et l'exécution. C'est pourquoi je prépare des certifications IA en parallèle de mes certifications financières.</p>
-      </div>
-
-      <div class="veille-item fade-in">
-        <a href="https://www.bpifrance.fr" target="_blank" rel="noopener" class="veille-title">
-          PME françaises : 5 000 entreprises cherchent un repreneur chaque année
-        </a>
-        <p class="veille-meta">BPI France · 2025</p>
-        <p class="veille-analyse">Ce chiffre illustre l'ampleur du gisement d'opportunités sur le segment des PME françaises. Beaucoup sont des entreprises saines avec un savoir-faire reconnu mais fragilisées par des problèmes de gouvernance ou de transmission. C'est précisément le segment que je veux cibler avec mon projet de holding.</p>
-      </div>
-
-      <div class="veille-item fade-in fade-in-delay-1">
-        <a href="https://www.ft.com" target="_blank" rel="noopener" class="veille-title">
-          Ardian raises €10bn for its latest buyout fund
-        </a>
-        <p class="veille-meta">Financial Times · Janvier 2026</p>
-        <p class="veille-analyse">La capacité d'Ardian à lever 10 Md€ dans un contexte de marché difficile confirme que les fonds avec une track record solide et une philosophie d'investissement claire résistent mieux aux cycles. Dominique Senequier reste pour moi la référence absolue de ce qu'il est possible de construire en PE européen.</p>
-      </div>
-
-    </div>
-
-  </section>
-
   <!-- ETUDES -->
   <section id="etudes">
     <p class="section-label fade-in">02</p>
     <h2 class="section-title fade-in fade-in-delay-1">Études</h2>
-
-
 
     <div class="timeline timeline--continu">
 
@@ -3183,7 +2902,6 @@
               <span class="etude-score">15,12 / 20</span>
             </p>
             <p class="etude-etablissement">Made In Sainte-Marie Lyon</p>
-            <div style="display:inline-block;border:1px solid #C9A84C;color:#C9A84C;padding:4px 14px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:1.2rem;">Groupe Mariste — Lyon</div>
           </div>
 
           <div class="etude-notes fade-in">
@@ -3234,7 +2952,6 @@
             <span class="tl-date">2025 - 2026</span>
             <p class="etude-diplome">Licence 3 Gestion &amp; Management</p>
             <p class="etude-etablissement">IAE Lyon &middot; Université Jean Moulin Lyon 3</p>
-            <div style="display:inline-block;border:1px solid #C9A84C;color:#C9A84C;padding:4px 14px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:1.2rem;">Université Jean Moulin Lyon 3 — IAE</div>
           </div>
 
           <div class="etude-programme fade-in">
@@ -3295,9 +3012,7 @@
       <div class="timeline-item fade-in">
         <div class="etude-header">
           <a href="https://www.avizeo.eu/" class="exp-entreprise" target="_blank" rel="noopener">Avizeo</a>
-          <div style="display:inline-block;border:1px solid #C9A84C;color:#C9A84C;padding:4px 14px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:1.2rem;">Cabinet d'Expertise Comptable — Lyon</div>
           <p class="exp-description">Cabinet d'expertise comptable et de conseil basé à Lyon, spécialisé dans l'accompagnement de PME et groupes de sociétés.</p>
-
         </div>
 
         <!-- CDD 2025 -->
@@ -3355,9 +3070,7 @@
       <div class="timeline-item fade-in">
         <div class="etude-header">
           <a href="https://bocuse.fr/fr/" class="exp-entreprise" target="_blank" rel="noopener">Restaurant Fond Rose</a>
-          <div style="display:inline-block;border:1px solid #C9A84C;color:#C9A84C;padding:4px 14px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:1.2rem;">Groupe Institut Paul Bocuse — Lyon</div>
           <p class="exp-description">L'Institut Paul Bocuse est une référence mondiale de la gastronomie et de l'hôtellerie de luxe.</p>
-
         </div>
 
         <div class="exp-poste fade-in">
@@ -3385,7 +3098,6 @@
       <div class="timeline-item fade-in">
         <div class="etude-header">
           <span class="exp-entreprise">Marchés de Babylone</span>
-          <div style="display:inline-block;border:1px solid #C9A84C;color:#C9A84C;padding:4px 14px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:1.2rem;">Marchés Bio — Lyon</div>
           <p class="exp-description">Réseau de marchés bio et locaux lyonnais, acteur des circuits courts.</p>
         </div>
 
@@ -3535,13 +3247,13 @@
         <div class="langue-header">
           <span class="langue-nom">Anglais</span>
           <div class="langue-badges">
-            <span class="langue-badge">TOEIC 805 / 990</span>
-            <span class="langue-pct">82%</span>
+            <span class="langue-badge">TOEIC 725 / 990</span>
+            <span class="langue-pct">73%</span>
           </div>
         </div>
         <div class="langue-bar-outer">
           <div class="progress-bar-wrap">
-            <div class="progress-bar-fill" data-width="82%"></div>
+            <div class="progress-bar-fill" data-width="73%"></div>
           </div>
           <div class="langue-objectif-marker" style="left: 91%;">
             <span class="langue-objectif-label">Objectif 900+</span>
@@ -3568,8 +3280,6 @@
   <section id="annee2027">
     <p class="section-label fade-in">06</p>
     <h2 class="section-title fade-in fade-in-delay-1">2026 / 2027 &middot; L'Année Charnière</h2>
-
-
 
     <p class="annee-accroche fade-in fade-in-delay-2">
       "Cette année n'est pas une pause. C'est l'année la plus importante de ma trajectoire. Chaque décision, chaque heure investie, chaque contact noué sera une brique de ce que je construis."
@@ -3614,8 +3324,6 @@
   <section id="contact">
     <p class="section-label fade-in">07</p>
     <h2 class="section-title fade-in fade-in-delay-1">Contact</h2>
-
-
 
     <p class="contact-accroche fade-in fade-in-delay-2">
       "Vous savez mieux que quiconque qu'un bon investissement, c'est d'abord une conviction sur le potentiel, pas uniquement sur le passe."
@@ -4231,13 +3939,6 @@
     window.fetchIndices = fetchIndices;
     window.fetchNews    = fetchNews;
 
-  </script>
-
-  <script>
-    window.addEventListener('scroll', function() {
-      var p = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-      document.getElementById('scroll-bar').style.width = p + '%';
-    });
   </script>
 
 </body>
