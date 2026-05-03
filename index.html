@@ -2184,6 +2184,141 @@
     ::-webkit-scrollbar-track { background: var(--bg); }
     ::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 4px; }
     ::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+
+    /* =============================================
+       POURQUOI CE SITE
+    ============================================= */
+    .pourquoi-bg-img {
+      width: 100%;
+      max-height: 220px;
+      object-fit: cover;
+      border-radius: 8px;
+      opacity: 0.6;
+      display: block;
+      margin-bottom: 2.2rem;
+    }
+
+    .pourquoi-body {
+      font-size: 0.97rem;
+      line-height: 1.85;
+      color: rgba(248,245,240,0.88);
+      margin-bottom: 1.2rem;
+    }
+
+    .pourquoi-quote {
+      border-left: 2px solid var(--gold);
+      padding: 0.8rem 1.4rem;
+      margin: 1.8rem 0;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.12rem;
+      color: var(--gold);
+      background: rgba(201,168,76,0.06);
+      border-radius: 0 4px 4px 0;
+    }
+
+    .pourquoi-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 2.2rem;
+    }
+
+    .pourquoi-card {
+      background: rgba(13,22,33,0.82);
+      border: 1px solid var(--gold-dim);
+      border-radius: 4px;
+      padding: 1.4rem 1.2rem;
+      transition: border-color 0.25s ease, transform 0.25s ease;
+    }
+
+    .pourquoi-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-3px);
+    }
+
+    .pourquoi-card-icon {
+      font-size: 1.4rem;
+      margin-bottom: 0.7rem;
+      display: block;
+    }
+
+    .pourquoi-card-text {
+      font-size: 0.82rem;
+      line-height: 1.6;
+      color: rgba(248,245,240,0.75);
+    }
+
+    /* =============================================
+       VEILLE & ANALYSE
+    ============================================= */
+    .veille-subtitle {
+      font-size: 0.88rem;
+      letter-spacing: 0.08em;
+      color: rgba(201,168,76,0.75);
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+    }
+
+    .veille-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+    }
+
+    .veille-item {
+      border-left: 2px solid var(--gold-dim);
+      padding: 1.2rem 1.4rem;
+      background: rgba(13,22,33,0.6);
+      border-radius: 0 4px 4px 0;
+      transition: border-color 0.25s ease;
+    }
+
+    .veille-item:hover {
+      border-color: var(--gold);
+    }
+
+    .veille-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--text);
+      text-decoration: none;
+      display: block;
+      margin-bottom: 0.25rem;
+      transition: color 0.2s ease;
+    }
+
+    .veille-title:hover { color: var(--gold); }
+
+    .veille-meta {
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      color: rgba(248,245,240,0.4);
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
+    }
+
+    .veille-analyse {
+      font-size: 0.88rem;
+      font-style: italic;
+      line-height: 1.75;
+      color: rgba(248,245,240,0.72);
+      border-top: 1px solid var(--gold-dim);
+      padding-top: 0.7rem;
+      margin-top: 0.5rem;
+    }
+
+    /* Image projet */
+    .projet-img {
+      width: 100%;
+      max-height: 220px;
+      object-fit: cover;
+      border-radius: 8px;
+      opacity: 0.6;
+      display: block;
+      margin: 1.8rem 0;
+    }
   </style>
 </head>
 <body>
@@ -2227,12 +2362,14 @@
     <div class="menu-group">
       <span class="menu-group-label">Projet</span>
       <div class="menu-sub-items">
-        <a href="#projet"  data-section="Vision">Vision</a>
-        <a href="#univers" data-section="Univers">Univers &amp; Valeurs</a>
+        <a href="#projet"   data-section="Vision">Vision</a>
+        <a href="#univers"  data-section="Univers">Univers &amp; Valeurs</a>
+        <a href="#pourquoi" data-section="Pourquoi">Pourquoi ce site&nbsp;?</a>
       </div>
     </div>
 
     <a href="#marches"   data-section="Marchés">Marchés</a>
+    <a href="#veille"    data-section="Veille">Veille</a>
     <a href="#outils"    data-section="Outils">Outils</a>
     <a href="#annee2027" data-section="2027">2026 / 2027</a>
     <a href="#contact"   data-section="Contact">Contact</a>
@@ -2480,7 +2617,61 @@
         </div>
       </div>
 
+      <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800"
+           alt="Finance" class="projet-img fade-in">
     </div>
+  </section>
+
+
+  <!-- POURQUOI CE SITE -->
+  <section id="pourquoi">
+    <p class="section-label fade-in">—</p>
+    <h2 class="section-title fade-in fade-in-delay-1">Pourquoi ce site&nbsp;?</h2>
+    <p class="veille-subtitle fade-in fade-in-delay-2">Une approche différenciante pour franchir les barrières à l'entrée</p>
+
+    <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800"
+         alt="Paris La Défense" class="pourquoi-bg-img fade-in fade-in-delay-2">
+
+    <p class="pourquoi-body fade-in fade-in-delay-2">
+      Conscient que le marché du travail dans le domaine du Private Equity, du M&amp;A et de la finance en général fait face à d'importantes barrières à l'entrée — peut-être critiquables mais légitimes pour sélectionner des candidats assidus et performants — j'ai réalisé ce site pour tenter de les franchir différemment.
+    </p>
+
+    <p class="pourquoi-body fade-in">
+      Ces barrières, je les ai identifiées : un niveau académique minimum bac+4/5, une expérience préalable en fonds d'investissement, une origine grande école d'ingénieurs, école de commerce ou université parisienne de prestige, et parfois un réseau déjà en place dans les structures visées. Si ces critères ne sont pas réunis, l'intégration dans ce secteur peut devenir difficile — et peut alors laisser de côté des talents convaincus, motivés et capables.
+    </p>
+
+    <p class="pourquoi-body fade-in">
+      Ce site est ma réponse à ces barrières. Non pas pour les contourner, mais pour démontrer autrement ce qu'un CV classique ne peut pas montrer : la conviction, l'initiative, la rigueur et la capacité à produire un travail structuré et différenciant.
+    </p>
+
+    <blockquote class="pourquoi-quote fade-in">
+      « La difficulté n'est pas de voir ce que personne n'a jamais vu, mais de penser ce que personne n'a jamais pensé au sujet de quelque chose que tout le monde voit. »
+      <br><span style="font-size:0.82rem;font-style:normal;letter-spacing:0.06em;text-transform:uppercase;">— Schopenhauer</span>
+    </blockquote>
+
+    <p class="pourquoi-body fade-in">
+      C'est exactement l'état d'esprit dans lequel j'ai construit ce site.
+    </p>
+
+    <div class="pourquoi-cards">
+      <div class="pourquoi-card fade-in">
+        <span class="pourquoi-card-icon">⌨️</span>
+        <p class="pourquoi-card-text">Calculateurs financiers — LBO, DCF, EV/EBITDA construits et fonctionnels</p>
+      </div>
+      <div class="pourquoi-card fade-in fade-in-delay-1">
+        <span class="pourquoi-card-icon">📈</span>
+        <p class="pourquoi-card-text">Données en temps réel — indices boursiers, taux banques centrales, actualités</p>
+      </div>
+      <div class="pourquoi-card fade-in fade-in-delay-2">
+        <span class="pourquoi-card-icon">👤</span>
+        <p class="pourquoi-card-text">Parcours complet — expériences, projet, vision, certifications en cours</p>
+      </div>
+      <div class="pourquoi-card fade-in fade-in-delay-3">
+        <span class="pourquoi-card-icon">📍</span>
+        <p class="pourquoi-card-text">Disponible Paris — septembre 2026, investissement total</p>
+      </div>
+    </div>
+
   </section>
 
   <!-- OUTILS FINANCIERS -->
@@ -2854,6 +3045,59 @@
           <p class="news-meta">Chargement des actualités…</p>
         </div>
       </div>
+    </div>
+
+  </section>
+
+
+  <!-- VEILLE & ANALYSE -->
+  <section id="veille">
+    <p class="section-label fade-in">—</p>
+    <h2 class="section-title fade-in fade-in-delay-1">Veille &amp; Analyse</h2>
+    <p class="veille-subtitle fade-in fade-in-delay-2">Ce que je lis, ce que j'en retiens</p>
+
+    <div class="veille-list">
+
+      <div class="veille-item fade-in">
+        <a href="https://www.ft.com" target="_blank" rel="noopener" class="veille-title">
+          Private equity faces reckoning as dealmaking drought persists
+        </a>
+        <p class="veille-meta">Financial Times · Avril 2026</p>
+        <p class="veille-analyse">La raréfaction des deals en PE depuis 2022 reflète un ajustement des valorisations post-taux zéro. Les fonds qui survivront à cette période seront ceux qui ont su créer de la valeur opérationnelle réelle — et non uniquement financière. C'est exactement la philosophie que je veux apporter dans mon projet holding.</p>
+      </div>
+
+      <div class="veille-item fade-in fade-in-delay-1">
+        <a href="https://www.lesechos.fr" target="_blank" rel="noopener" class="veille-title">
+          La BCE abaisse ses taux à 2,65% — quelles implications pour le crédit&nbsp;?
+        </a>
+        <p class="veille-meta">Les Échos · Mars 2026</p>
+        <p class="veille-analyse">La baisse des taux BCE réduit le coût de la dette et améliore mécaniquement les conditions de financement des LBO. Pour les fonds mid-market, c'est une fenêtre d'opportunité sur des cibles qui restaient hors de portée en 2023-2024.</p>
+      </div>
+
+      <div class="veille-item fade-in fade-in-delay-2">
+        <a href="https://www.bloomberg.com" target="_blank" rel="noopener" class="veille-title">
+          AI is transforming due diligence in private equity
+        </a>
+        <p class="veille-meta">Bloomberg · Février 2026</p>
+        <p class="veille-analyse">L'IA accélère la phase de due diligence en automatisant l'analyse de documents financiers et juridiques. Les fonds qui intègrent ces outils gagnent un avantage compétitif significatif sur le sourcing et l'exécution. C'est pourquoi je prépare des certifications IA en parallèle de mes certifications financières.</p>
+      </div>
+
+      <div class="veille-item fade-in">
+        <a href="https://www.bpifrance.fr" target="_blank" rel="noopener" class="veille-title">
+          PME françaises : 5 000 entreprises cherchent un repreneur chaque année
+        </a>
+        <p class="veille-meta">BPI France · 2025</p>
+        <p class="veille-analyse">Ce chiffre illustre l'ampleur du gisement d'opportunités sur le segment des PME françaises. Beaucoup sont des entreprises saines avec un savoir-faire reconnu mais fragilisées par des problèmes de gouvernance ou de transmission. C'est précisément le segment que je veux cibler avec mon projet de holding.</p>
+      </div>
+
+      <div class="veille-item fade-in fade-in-delay-1">
+        <a href="https://www.ft.com" target="_blank" rel="noopener" class="veille-title">
+          Ardian raises €10bn for its latest buyout fund
+        </a>
+        <p class="veille-meta">Financial Times · Janvier 2026</p>
+        <p class="veille-analyse">La capacité d'Ardian à lever 10 Md€ dans un contexte de marché difficile confirme que les fonds avec une track record solide et une philosophie d'investissement claire résistent mieux aux cycles. Dominique Senequier reste pour moi la référence absolue de ce qu'il est possible de construire en PE européen.</p>
+      </div>
+
     </div>
 
   </section>
