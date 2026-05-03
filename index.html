@@ -277,6 +277,18 @@
       align-items: flex-start;
       padding-top: var(--nav-h);
       overflow: hidden;
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/La_Defense_at_night_with_Arc_de_Triomphe.jpg/1280px-La_Defense_at_night_with_Arc_de_Triomphe.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    #accueil::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(13, 22, 33, 0.78);
+      z-index: 0;
     }
 
     #canvas-particules {
@@ -2406,7 +2418,6 @@
 
   <!-- ACCUEIL -->
   <section id="accueil">
-    <div style="position:absolute;top:0;left:0;width:100%;height:100%;background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/La_Defense_at_night_with_Arc_de_Triomphe.jpg/1280px-La_Defense_at_night_with_Arc_de_Triomphe.jpg');background-size:cover;background-position:center;opacity:0.18;z-index:0;pointer-events:none;"></div>
     <canvas id="canvas-particules"></canvas>
     <div class="hero-content">
       <img src="photo.jpg" alt="Nathan Picon"
