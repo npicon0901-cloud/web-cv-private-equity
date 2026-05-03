@@ -2188,14 +2188,15 @@
     /* =============================================
        POURQUOI CE SITE
     ============================================= */
-    .pourquoi-bg-img {
+    .accueil-bg-img {
+      position: absolute;
+      inset: 0;
       width: 100%;
-      max-height: 220px;
+      height: 100%;
       object-fit: cover;
-      border-radius: 8px;
-      opacity: 0.6;
-      display: block;
-      margin-bottom: 2.2rem;
+      opacity: 0.08;
+      z-index: 0;
+      pointer-events: none;
     }
 
     .pourquoi-body {
@@ -2310,14 +2311,17 @@
     }
 
     /* Image projet */
-    .projet-img {
-      width: 100%;
-      max-height: 220px;
-      object-fit: cover;
-      border-radius: 8px;
-      opacity: 0.6;
+    .section-fig {
+      margin: 1.5rem 0;
+    }
+
+    .section-fig-caption {
+      font-style: italic;
+      font-size: 12px;
+      color: rgba(248,245,240,0.5);
+      text-align: center;
+      margin-top: 0.45rem;
       display: block;
-      margin: 1.8rem 0;
     }
 
     /* =============================================
@@ -2325,12 +2329,12 @@
     ============================================= */
     .section-img {
       width: 100%;
-      max-height: 220px;
+      max-height: 250px;
       object-fit: cover;
       border-radius: 8px;
-      opacity: 0.75;
+      opacity: 0.8;
       display: block;
-      margin: 1.5rem 0;
+      margin: 0;
     }
   </style>
 </head>
@@ -2394,6 +2398,7 @@
 
   <!-- ACCUEIL -->
   <section id="accueil">
+    <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=1920" alt="" class="accueil-bg-img">
     <canvas id="canvas-particules"></canvas>
     <div class="hero-content">
       <img src="photo.jpg" alt="Nathan Picon"
@@ -2463,7 +2468,6 @@
         <span>Découvrir mon parcours</span>
       </a>
 
-    <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=1200" alt="Paris La Défense la nuit" class="section-img fade-in">
     </div>
     <div class="scroll-indicator">
       <div class="scroll-line"></div>
@@ -2632,8 +2636,11 @@
         </div>
       </div>
 
-      <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800"
-           alt="Skyline Paris" class="projet-img fade-in">
+
+    <figure class="section-fig fade-in">
+      <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=900" alt="Building verre La Défense" class="section-img">
+      <span class="section-fig-caption">La Défense, Paris</span>
+    </figure>
     </div>
   </section>
 
@@ -2644,8 +2651,11 @@
     <h2 class="section-title fade-in fade-in-delay-1">Pourquoi ce site&nbsp;?</h2>
     <p class="veille-subtitle fade-in fade-in-delay-2">Une approche différenciante pour franchir les barrières à l'entrée</p>
 
-    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800"
-         alt="Bureau finance moderne" class="pourquoi-bg-img fade-in fade-in-delay-2">
+
+    <figure class="section-fig fade-in">
+      <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=900" alt="Paris vue aérienne" class="section-img">
+      <span class="section-fig-caption">Paris — centre financier européen</span>
+    </figure>
 
     <p class="pourquoi-body fade-in fade-in-delay-2">
       Conscient que le marché du travail dans le domaine du Private Equity, du M&amp;A et de la finance en général fait face à d'importantes barrières à l'entrée — peut-être critiquables mais légitimes pour sélectionner des candidats assidus et performants — j'ai réalisé ce site pour tenter de les franchir différemment.
@@ -2693,7 +2703,11 @@
   <section id="outils">
     <p class="section-label fade-in">—</p>
     <h2 class="section-title fade-in fade-in-delay-1">Outils Financiers</h2>
-    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800" alt="Analyse financière graphiques" class="section-img fade-in">
+
+    <figure class="section-fig fade-in">
+      <img src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=900" alt="Modélisation financière" class="section-img">
+      <span class="section-fig-caption">Modélisation financière — LBO, DCF, EV/EBITDA</span>
+    </figure>
 
 
     <!-- ONGLETS -->
@@ -2970,7 +2984,11 @@
   <section id="marches">
     <p class="section-label fade-in">—</p>
     <h2 class="section-title fade-in fade-in-delay-1">Marchés &amp; Macro</h2>
-    <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800" alt="Salle des marchés Bloomberg" class="section-img fade-in">
+
+    <figure class="section-fig fade-in">
+      <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=900" alt="Salle des marchés Bloomberg" class="section-img">
+      <span class="section-fig-caption">Marchés financiers — données en temps réel</span>
+    </figure>
 
 
     <!-- BLOC 1 : INDICES BOURSIERS -->
@@ -3074,7 +3092,11 @@
     <p class="section-label fade-in">—</p>
     <h2 class="section-title fade-in fade-in-delay-1">Veille &amp; Analyse</h2>
     <p class="veille-subtitle fade-in fade-in-delay-2">Ce que je lis, ce que j'en retiens</p>
-    <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800" alt="Lecture Financial Times" class="section-img fade-in">
+
+    <figure class="section-fig fade-in">
+      <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=900" alt="Lecture Financial Times" class="section-img">
+      <span class="section-fig-caption">Veille quotidienne — Financial Times, Bloomberg, Les Échos</span>
+    </figure>
 
 
     <div class="veille-list">
@@ -3127,7 +3149,11 @@
   <section id="etudes">
     <p class="section-label fade-in">02</p>
     <h2 class="section-title fade-in fade-in-delay-1">Études</h2>
-    <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800" alt="Bibliothèque IAE Lyon" class="section-img fade-in">
+
+    <figure class="section-fig fade-in">
+      <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=900" alt="Amphithéâtre IAE Lyon" class="section-img">
+      <span class="section-fig-caption">IAE Lyon — Université Jean Moulin Lyon 3</span>
+    </figure>
 
 
     <div class="timeline timeline--continu">
@@ -3278,7 +3304,11 @@
         <div class="etude-header">
           <a href="https://www.avizeo.eu/" class="exp-entreprise" target="_blank" rel="noopener">Avizeo</a>
           <p class="exp-description">Cabinet d'expertise comptable et de conseil basé à Lyon, spécialisé dans l'accompagnement de PME et groupes de sociétés.</p>
-    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800" alt="Bureau Avizeo comptable" class="section-img fade-in">
+
+    <figure class="section-fig fade-in">
+      <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=900" alt="Bureau open space Avizeo" class="section-img">
+      <span class="section-fig-caption">Avizeo — Cabinet d'expertise comptable, Lyon</span>
+    </figure>
 
         </div>
 
@@ -3338,7 +3368,11 @@
         <div class="etude-header">
           <a href="https://bocuse.fr/fr/" class="exp-entreprise" target="_blank" rel="noopener">Restaurant Fond Rose</a>
           <p class="exp-description">L'Institut Paul Bocuse est une référence mondiale de la gastronomie et de l'hôtellerie de luxe.</p>
-    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800" alt="Gastronomie fine dining Paul Bocuse" class="section-img fade-in">
+
+    <figure class="section-fig fade-in">
+      <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=900" alt="Restaurant gastronomique Paul Bocuse" class="section-img">
+      <span class="section-fig-caption">Restaurant Fond Rose — Groupe Institut Paul Bocuse</span>
+    </figure>
 
         </div>
 
@@ -3549,7 +3583,11 @@
   <section id="annee2027">
     <p class="section-label fade-in">06</p>
     <h2 class="section-title fade-in fade-in-delay-1">2026 / 2027 &middot; L'Année Charnière</h2>
-    <img src="https://images.unsplash.com/photo-1431274172761-fcdab704a923?w=800" alt="Paris Tour Eiffel ambition" class="section-img fade-in">
+
+    <figure class="section-fig fade-in">
+      <img src="https://images.unsplash.com/photo-1543349689-9a4d426bee8e?w=900" alt="Tour Eiffel Paris" class="section-img">
+      <span class="section-fig-caption">Paris — Septembre 2026</span>
+    </figure>
 
 
     <p class="annee-accroche fade-in fade-in-delay-2">
@@ -3595,7 +3633,10 @@
   <section id="contact">
     <p class="section-label fade-in">07</p>
     <h2 class="section-title fade-in fade-in-delay-1">Contact</h2>
-    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800" alt="Networking business Paris" class="section-img fade-in">
+
+    <figure class="section-fig fade-in">
+      <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=900" alt="Poignée de main business Paris" class="section-img">
+    </figure>
 
 
     <p class="contact-accroche fade-in fade-in-delay-2">
