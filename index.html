@@ -33,6 +33,10 @@
       cursor: none;
     }
 
+    p {
+      letter-spacing: 0.05em;
+    }
+
     @keyframes bgPulse {
       0%   { background-position: 0% 50%; }
       50%  { background-position: 100% 50%; }
@@ -89,6 +93,7 @@
       padding: 0 5vw;
       z-index: 500;
       transition: background 0.4s ease, backdrop-filter 0.4s ease;
+      box-shadow: 0 1px 20px rgba(0,0,0,0.3);
     }
 
     nav.scrolled {
@@ -199,7 +204,7 @@
       padding: 0.55rem 0;
       letter-spacing: 0.04em;
       position: relative;
-      transition: color 0.3s ease;
+      transition: all 0.3s ease;
     }
 
     .menu-drawer a::after {
@@ -257,7 +262,7 @@
     ============================================= */
     section {
       min-height: 100vh;
-      padding: calc(var(--nav-h) + 5vh) 5vw 8vh;
+      padding: max(5rem, calc(var(--nav-h) + 5vh)) 5vw max(5rem, 8vh);
       position: relative;
     }
 
@@ -276,19 +281,6 @@
       justify-content: center;
       align-items: flex-start;
       padding-top: var(--nav-h);
-      overflow: hidden;
-      background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/La_Defense_at_night_with_Arc_de_Triomphe.jpg/1280px-La_Defense_at_night_with_Arc_de_Triomphe.jpg');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-    }
-
-    #accueil::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(13, 22, 33, 0.78);
-      z-index: 0;
     }
 
     #canvas-particules {
@@ -2353,7 +2345,7 @@
 <body>
 
   <!-- DISCLAIMER BANNER -->
-  <div style="background:#1B2A4A;color:rgba(255,255,255,0.6);font-size:11px;text-align:center;padding:7px 20px;letter-spacing:0.08em;position:relative;z-index:1001;">
+  <div id="bandeau" style="background:#1B2A4A;color:rgba(255,255,255,0.6);font-size:11px;text-align:center;padding:6px 20px;letter-spacing:0.08em;width:100%;box-sizing:border-box;">
     Projet personnel de candidature — Ce site n'est pas affilié à une entreprise citée et reflète uniquement le parcours et la vision de Nathan Picon.
   </div>
 
@@ -2417,9 +2409,10 @@
   ============================================================= -->
 
   <!-- ACCUEIL -->
-  <section id="accueil">
-    <canvas id="canvas-particules"></canvas>
-    <div class="hero-content">
+  <section id="accueil" style="position:relative;overflow:hidden;">
+    <div style="position:absolute;inset:0;background:url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/La_Defense_at_night_with_Arc_de_Triomphe.jpg/1280px-La_Defense_at_night_with_Arc_de_Triomphe.jpg') center/cover no-repeat;opacity:0.08;z-index:0;pointer-events:none;"></div>
+    <canvas id="canvas-particules" style="position:relative;z-index:1;"></canvas>
+    <div class="hero-content" style="position:relative;z-index:1;">
       <img src="photo.jpg" alt="Nathan Picon"
            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
            style="width:150px;height:150px;border-radius:50%;object-fit:cover;object-position:center top;border:3px solid #C9A84C;display:block;margin:0 auto 1.5rem;">
