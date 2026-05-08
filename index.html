@@ -1624,6 +1624,115 @@
     ::-webkit-scrollbar-track { background: var(--bg); }
     ::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 4px; }
     ::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+
+    /* =============================================
+       DESKTOP NAV LINKS (apparaissent apres 100px)
+    ============================================= */
+    .nav-links {
+      display: none;
+      list-style: none;
+      gap: 1.8rem;
+      align-items: center;
+      opacity: 0;
+      transform: translateY(-6px);
+      transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+
+    nav.nav-anchors .nav-links {
+      display: flex;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .nav-links a {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 400;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(248, 245, 240, 0.55);
+      text-decoration: none;
+      transition: color 0.22s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none !important; }
+    }
+
+    /* =============================================
+       SECTION NEXT BUTTON
+    ============================================= */
+    .section-next-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 3.5rem;
+      padding: 0.58rem 1.35rem;
+      background: none;
+      border: 1px solid var(--gold-dim);
+      color: rgba(248, 245, 240, 0.38);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      cursor: none;
+      border-radius: 2px;
+      transition: border-color 0.25s ease, color 0.25s ease;
+    }
+
+    .section-next-btn:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    /* =============================================
+       STAT TOOLTIP
+    ============================================= */
+    .stat-item {
+      position: relative;
+    }
+
+    .stat-tooltip {
+      position: absolute;
+      bottom: calc(100% + 10px);
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(27, 42, 74, 0.97);
+      border: 1px solid var(--gold-dim);
+      border-radius: 3px;
+      padding: 0.5rem 0.85rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 300;
+      line-height: 1.5;
+      color: rgba(248, 245, 240, 0.72);
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.22s ease, transform 0.22s ease;
+      transform: translateX(-50%) translateY(4px);
+      z-index: 20;
+    }
+
+    .stat-tooltip::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 5px solid transparent;
+      border-top-color: var(--gold-dim);
+    }
+
+    .stat-item:hover .stat-tooltip {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
   </style>
 </head>
 <body>
@@ -1637,6 +1746,15 @@
   <!-- NAVBAR -->
   <nav id="navbar">
     <a href="#accueil" class="nav-logo">NP</a>
+    <ul class="nav-links">
+      <li><a href="#projet">Projet</a></li>
+      <li><a href="#etudes">Etudes</a></li>
+      <li><a href="#experiences">Experiences</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#langues">Langues</a></li>
+      <li><a href="#annee2027">2027</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
     <button class="hamburger" id="hamburger" aria-label="Menu">
       <span></span>
       <span></span>
@@ -1694,6 +1812,7 @@
 
       <div class="hero-stats fade-in fade-in-delay-4" id="hero-stats">
         <div class="stat-item">
+          <span class="stat-tooltip">Restructuration d'une holding, analyse des SIG et bilans de filiales</span>
           <div class="stat-value-wrap">
             <span class="stat-value" data-target="10" data-prefix="" data-suffix="">0</span>
             <span class="stat-unit">M euros</span>
@@ -1701,12 +1820,14 @@
           <p class="stat-label">Restructuration financiere</p>
         </div>
         <div class="stat-item">
+          <span class="stat-tooltip">Consolidation comptable d'un groupe multi-entites chez Avizeo</span>
           <div class="stat-value-wrap">
             <span class="stat-value" data-target="8" data-prefix="" data-suffix="">0</span>
           </div>
           <p class="stat-label">Filiales consolidees</p>
         </div>
         <div class="stat-item">
+          <span class="stat-tooltip">CDI maintenu en parallele du BTS et de la Licence, soirees et week-ends</span>
           <div class="stat-value-wrap">
             <span class="stat-value" data-target="3" data-prefix="" data-suffix="">0</span>
             <span class="stat-unit">ans</span>
@@ -1714,6 +1835,7 @@
           <p class="stat-label">Institut Paul Bocuse</p>
         </div>
         <div class="stat-item">
+          <span class="stat-tooltip">ESCP MSc Finance — 1er mondial Financial Times Ranking 2025</span>
           <div class="stat-value-wrap">
             <span class="stat-value" data-target="1" data-prefix="#" data-suffix="">0</span>
           </div>
@@ -1859,6 +1981,7 @@
       </div>
 
     </div>
+    <button class="section-next-btn" data-next="#etudes">Decouvrir &#8594;</button>
   </section>
 
   <!-- ETUDES -->
@@ -2000,6 +2123,7 @@
       </div>
 
     </div>
+    <button class="section-next-btn" data-next="#experiences">Decouvrir &#8594;</button>
   </section>
 
   <!-- EXPERIENCES -->
@@ -2113,6 +2237,7 @@
       </div>
 
     </div>
+    <button class="section-next-btn" data-next="#skills">Decouvrir &#8594;</button>
   </section>
 
   <!-- SKILLS -->
@@ -2210,6 +2335,7 @@
         <span class="certif-badge">VBA Avance</span>
       </div>
     </div>
+    <button class="section-next-btn" data-next="#langues">Decouvrir &#8594;</button>
 
   </section>
 
@@ -2266,6 +2392,7 @@
       </div>
 
     </div>
+    <button class="section-next-btn" data-next="#annee2027">Decouvrir &#8594;</button>
   </section>
 
   <!-- ANNEE 2026 / 2027 -->
@@ -2310,6 +2437,7 @@
       </p>
 
     </div>
+    <button class="section-next-btn" data-next="#contact">Decouvrir &#8594;</button>
   </section>
 
   <!-- CONTACT -->
@@ -2381,7 +2509,7 @@
     document.addEventListener('mouseleave', () => { cursor.style.opacity = '0'; });
     document.addEventListener('mouseenter', () => { cursor.style.opacity = '1'; });
 
-    document.querySelectorAll('a, button, .card, .badge').forEach(el => {
+    document.querySelectorAll('a, button, .card, .badge, .stat-item').forEach(el => {
       el.addEventListener('mouseenter', () => cursor.classList.add('hovering'));
       el.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
     });
@@ -2390,6 +2518,7 @@
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
       navbar.classList.toggle('scrolled', window.scrollY > 40);
+      navbar.classList.toggle('nav-anchors', window.scrollY > 100);
     }, { passive: true });
 
     /* ---- HAMBURGER / DRAWER ---- */
@@ -2416,6 +2545,14 @@
     menuDrawer.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         closeMenu();
+      });
+    });
+
+    /* ---- SECTION NEXT BUTTONS ---- */
+    document.querySelectorAll('.section-next-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = document.querySelector(btn.dataset.next);
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     });
 
