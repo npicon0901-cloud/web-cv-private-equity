@@ -1624,6 +1624,133 @@
     ::-webkit-scrollbar-track { background: var(--bg); }
     ::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 4px; }
     ::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+
+    /* =============================================
+       RECOMMANDATIONS
+    ============================================= */
+    .reco-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .reco-card {
+      background: var(--navy);
+      border: 1px solid var(--gold-dim);
+      border-radius: 4px;
+      padding: 2rem 1.75rem 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .reco-card:hover {
+      border-color: var(--gold);
+      box-shadow: 0 0 24px var(--gold-dim);
+    }
+
+    .reco-quotes {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.5rem;
+      line-height: 1;
+      color: var(--gold);
+      opacity: 0.6;
+      margin-bottom: -0.75rem;
+    }
+
+    .reco-lang-block {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .reco-citation {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.05rem;
+      line-height: 1.65;
+      color: var(--text);
+    }
+
+    .reco-lang-label {
+      display: inline-block;
+      font-family: 'DM Sans', sans-serif;
+      font-style: normal;
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      border: 1px solid var(--gold-dim);
+      border-radius: 2px;
+      padding: 1px 5px;
+      margin-right: 0.4rem;
+      vertical-align: middle;
+    }
+
+    .reco-separator {
+      width: 100%;
+      height: 1px;
+      background: var(--gold-dim);
+    }
+
+    .reco-author {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .reco-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--gold);
+      letter-spacing: 0.04em;
+    }
+
+    .reco-role {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 300;
+      color: rgba(248, 245, 240, 0.65);
+      letter-spacing: 0.02em;
+    }
+
+    .reco-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      align-self: flex-start;
+      margin-top: auto;
+      padding: 0.5rem 1.1rem;
+      background: transparent;
+      border: 1px solid var(--gold);
+      border-radius: 3px;
+      color: var(--gold);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      transition: background 0.25s ease, color 0.25s ease;
+    }
+
+    .reco-btn::before {
+      content: '\2193';
+      font-size: 0.85rem;
+    }
+
+    .reco-btn:hover {
+      background: var(--gold);
+      color: var(--bg);
+    }
+
+    @media (max-width: 768px) {
+      .reco-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
@@ -1652,8 +1779,9 @@
     <a href="#etudes"      data-section="Etudes">Etudes</a>
     <a href="#experiences" data-section="Experiences">Experiences</a>
     <a href="#skills"      data-section="Skills">Skills</a>
-    <a href="#langues"     data-section="Langues">Langues</a>
-    <a href="#annee2027"   data-section="2027">2027</a>
+    <a href="#langues"           data-section="Langues">Langues</a>
+    <a href="#recommandations"   data-section="Recommandations">Recommandations</a>
+    <a href="#annee2027"         data-section="2027">2027</a>
     <a href="#contact"     data-section="Contact">Contact</a>
   </div>
 
@@ -2268,9 +2396,82 @@
     </div>
   </section>
 
+  <!-- RECOMMANDATIONS -->
+  <section id="recommandations">
+    <p class="section-label fade-in">06</p>
+    <h2 class="section-title fade-in fade-in-delay-1">Recommandations</h2>
+
+    <div class="reco-grid">
+
+      <!-- 1. Alexandre JOANNES – Avizeo -->
+      <div class="reco-card fade-in">
+        <div class="reco-quotes">&ldquo;</div>
+        <div class="reco-lang-block">
+          <p class="reco-citation">
+            <span class="reco-lang-label">FR</span>
+            Nathan a pris part &agrave; des op&eacute;rations de restructuration de groupes de soci&eacute;t&eacute;s sur des probl&eacute;matiques pluridisciplinaires juridiques, fiscales et financi&egrave;res. Il d&eacute;montre une capacit&eacute; remarquable &agrave; appr&eacute;hender des environnements techniques exigeants.
+          </p>
+          <p class="reco-citation">
+            <span class="reco-lang-label">EN</span>
+            Nathan took part in group restructuring operations addressing multidisciplinary legal, tax and financial challenges. He demonstrates a remarkable ability to navigate demanding technical environments.
+          </p>
+        </div>
+        <div class="reco-separator"></div>
+        <div class="reco-author">
+          <span class="reco-name">Alexandre Joannes</span>
+          <span class="reco-role">Expert-comptable Associ&eacute; &middot; Avizeo</span>
+        </div>
+        <a href="lettre_avizeo.pdf" target="_blank" rel="noopener" class="reco-btn">T&eacute;l&eacute;charger la lettre</a>
+      </div>
+
+      <!-- 2. Nicolas PATUREL – IAE Lyon / Sainte-Marie -->
+      <div class="reco-card fade-in">
+        <div class="reco-quotes">&ldquo;</div>
+        <div class="reco-lang-block">
+          <p class="reco-citation">
+            <span class="reco-lang-label">FR</span>
+            Nathan est un &eacute;tudiant s&eacute;rieux, capable de s&rsquo;investir pleinement pour atteindre ses objectifs et ceux de l&rsquo;entit&eacute; &agrave; laquelle il est associ&eacute;.
+          </p>
+          <p class="reco-citation">
+            <span class="reco-lang-label">EN</span>
+            Nathan is a serious student, fully committed to achieving both his own goals and those of the organisation he is part of.
+          </p>
+        </div>
+        <div class="reco-separator"></div>
+        <div class="reco-author">
+          <span class="reco-name">Nicolas Paturel</span>
+          <span class="reco-role">Professeur de finance &middot; IAE Lyon / Sainte-Marie</span>
+        </div>
+        <a href="lettre_paturel.pdf" target="_blank" rel="noopener" class="reco-btn">T&eacute;l&eacute;charger la lettre</a>
+      </div>
+
+      <!-- 3. Samantha ARQUE – Institut Paul Bocuse -->
+      <div class="reco-card fade-in">
+        <div class="reco-quotes">&ldquo;</div>
+        <div class="reco-lang-block">
+          <p class="reco-citation">
+            <span class="reco-lang-label">FR</span>
+            Nathan s&rsquo;est r&eacute;v&eacute;l&eacute; &ecirc;tre un professionnel rigoureux et ayant le sens des responsabilit&eacute;s. Son aptitude &agrave; travailler en &eacute;quipe et sa disponibilit&eacute; ont &eacute;t&eacute; des atouts importants.
+          </p>
+          <p class="reco-citation">
+            <span class="reco-lang-label">EN</span>
+            Nathan proved to be a rigorous and responsible professional. His ability to work as part of a team and his commitment were key assets.
+          </p>
+        </div>
+        <div class="reco-separator"></div>
+        <div class="reco-author">
+          <span class="reco-name">Samantha Arque</span>
+          <span class="reco-role">Directrice RH &middot; Restaurant Fond Rose &mdash; Institut Paul Bocuse</span>
+        </div>
+        <a href="lettre_bocuse.pdf" target="_blank" rel="noopener" class="reco-btn">T&eacute;l&eacute;charger la lettre</a>
+      </div>
+
+    </div>
+  </section>
+
   <!-- ANNEE 2026 / 2027 -->
   <section id="annee2027">
-    <p class="section-label fade-in">06</p>
+    <p class="section-label fade-in">07</p>
     <h2 class="section-title fade-in fade-in-delay-1">2026 / 2027 &middot; L'Annee Charniere</h2>
 
     <p class="annee-accroche fade-in fade-in-delay-2">
@@ -2314,7 +2515,7 @@
 
   <!-- CONTACT -->
   <section id="contact">
-    <p class="section-label fade-in">07</p>
+    <p class="section-label fade-in">08</p>
     <h2 class="section-title fade-in fade-in-delay-1">Contact</h2>
 
     <p class="contact-accroche fade-in fade-in-delay-2">
